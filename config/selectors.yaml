@@ -1,0 +1,62 @@
+# Google Maps CSS selectors for lead_engine.py
+#
+# Google updates their Maps UI regularly. When the scraper breaks:
+#   1. Open Google Maps in Chrome DevTools
+#   2. Inspect the element that broke
+#   3. Update the selector here — never in the Python code
+#
+# To find current selectors:
+#   - Results feed: right-click the scrollable left panel → Inspect
+#   - Result cards: inspect any business listing card
+#   - Detail panel: click a result, inspect the opened right panel
+
+maps_search:
+  # Base URL — {query} is URL-encoded by the engine
+  url_template: "https://www.google.com/maps/search/{query}"
+
+  # Scrollable results sidebar
+  results_feed: 'div[role="feed"]'
+
+  # Each result card — filter by presence of a place link
+  result_cards: 'div[role="feed"] a[href*="/maps/place/"]'
+
+  # End-of-list sentinel text (when all results are loaded)
+  end_of_list: "end of the list"
+
+  # ── DETAIL PAGE (after navigating to result URL) ───────────────────────────
+
+  # Business name (h1)
+  detail_name: 'h1.DUwDvf, h1[class*="fontHeadlineLarge"]'
+
+  # Phone — aria-label format: "Phone: (617) 555-0100"
+  detail_phone_button: '[aria-label^="Phone:"]'
+
+  # Website link
+  detail_website: 'a[aria-label="Website"], a[data-tooltip="Open website"]'
+
+  # Address — aria-label format: "Address: 123 Main St"
+  detail_address: '[data-tooltip="Copy address"] .Io6YTe, [aria-label^="Address:"] .rogA2c'
+
+  # Business category (e.g. "Family medicine physician")
+  detail_category: 'button.DkEaL, [jsaction*="category"]'
+
+  # Rating number (e.g. "4.6")
+  detail_rating: '.fontDisplayLarge'
+
+  # Review count — inside the ratings summary button
+  detail_review_count: 'button[jsaction*="reviewChart"] span, [aria-label*="reviews"]'
+
+  # Instagram link if present on the detail page
+  detail_instagram: 'a[href*="instagram.com"]'
+
+  # Facebook link if present
+  detail_facebook: 'a[href*="facebook.com"]'
+
+  # ── PLACE ID EXTRACTION ────────────────────────────────────────────────────
+  # Extracted from the detail page URL via regex — not a CSS selector
+  # URL patterns:
+  #   Standard: !1sChIJ<base64chars>
+  #   Hex CID:  !1s0x<hex>:<hex>
+  place_id_patterns:
+    - '!1s(ChIJ[A-Za-z0-9_-]+)'
+    - '!1s(0x[0-9a-fA-F]+:[0-9a-fA-F]+)'

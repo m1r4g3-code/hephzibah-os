@@ -56,6 +56,21 @@ def is_transcript_processed(filename: str) -> bool:
     return filename in load_manifest().get("processed_transcripts", [])
 
 
+def mark_place_id_processed(place_id: str) -> None:
+    m = load_manifest()
+    if place_id not in m["processed_place_ids"]:
+        m["processed_place_ids"].append(place_id)
+    save_manifest(m)
+
+
+def is_place_id_processed(place_id: str) -> bool:
+    return place_id in load_manifest().get("processed_place_ids", [])
+
+
+def get_processed_place_ids() -> set:
+    return set(load_manifest().get("processed_place_ids", []))
+
+
 def today_iso() -> str:
     return datetime.now().strftime("%Y-%m-%d")
 

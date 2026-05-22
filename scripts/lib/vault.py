@@ -16,7 +16,7 @@ import yaml
 from filelock import FileLock
 
 from .utils import WIKI_DIR, slugify, today_iso
-from .schemas import CallAnalysis, CallOutcome, ObjectionInstance
+from .schemas import CallAnalysis, CallOutcome, EnrichedProspect, ObjectionInstance
 
 
 # ── FRONTMATTER ───────────────────────────────────────────────────────────────
@@ -229,6 +229,96 @@ def write_coaching_report(content: str, date: str | None = None) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     _atomic_write(path, content)
     _atomic_write(latest, content)
+    return path
+
+
+# ── RESEARCH ENGINE OUTPUT ────────────────────────────────────────────────────
+
+def write_prospect_stub(prospect: EnrichedProspect) -> Path:
+    """
+    Write or update a company note from research engine output.
+    Preserves existing call history and manual edits — only updates
+    frontmatter fields and pain signal section.
+    """
+    slug = slugify(prospect.company_name)
+    path = WIKI_DIR / "companies" / f"{slug}.md"
+
+    fm, body = _parse_frontmatter(path.read_text(encoding="utf-8")) if path.exists() else ({}, "")
+
+    # Update frontmatter — setdefault for fields the operator may have edited manually
+    fm["company"] = prospect.company_name
+    fm.setdefault("owner", prospect.owner_name)
+    fm.setdefault("phone", prospect.phone)
+    fm.setdefault("website", prospect.website)
+    fm.setdefault("google_maps_url", prospect.google_maps_url)
+    fm["city"] = prospect.city
+    fm["state"] = prospect.state
+    fm.setdefault("country", prospect.country)
+    fm.setdefault("stage", "cold")
+    fm.setdefault("lead_score", None)
+    fm.setdefault("tier", None)
+    if prospect.google_rating is not None:
+        fm["google_rating"] = prospect.google_rating
+    if prospect.review_count is not None:
+        fm["review_count"] = prospect.review_count
+
+    existing_tags = set(fm.get("tags") or [])
+    existing_tags.update({"prospect", prospect.niche})
+    fm["tags"] = sorted(existing_tags)
+
+    if not body.strip():
+        # New file — build full body
+        summary_parts = []
+        if prospect.address:
+            summary_parts.append(prospect.address)
+        if prospect.google_rating:
+            rating_str = f"Rating: {prospect.google_rating}"
+            if prospect.review_count:
+                rating_str += f" ({prospect.review_count} reviews)"
+            summary_parts.append(rating_str)
+        summary = " · ".join(summary_parts) if summary_parts else "_Scraped — awaiting qualification._"
+
+        pain_section = ""
+        if prospect.pain_signals:
+            pain_section = "## Pain Signals\n" + "\n".join(f"- {s}" for s in prospect.pain_signals) + "\n\n"
+
+        website_section = ""
+        if prospect.website_signals and prospect.website_signals.fetch_status == "success":
+            ws = prospect.website_signals
+            website_section = (
+                "## Website Signals\n"
+                f"- Quality: {ws.quality_score}\n"
+                f"- CMS: {ws.cms_detected or 'unknown'}\n"
+                f"- SSL: {'yes' if ws.has_ssl else 'no'}\n"
+                f"- Booking form: {'yes' if ws.has_booking_form else 'no'}\n"
+                f"- Copyright year: {ws.copyright_year or 'unknown'}\n\n"
+            )
+
+        body = (
+            f"## Summary\n{summary}\n\n"
+            f"{pain_section}"
+            f"{website_section}"
+            "## Opportunities\n_To be identified by qualification engine._\n\n"
+            "## Red Flags\n_To be identified by qualification engine._\n\n"
+            "## Call History\n| Date | Contact | Outcome | Follow-up |\n|------|---------|---------|----------|\n\n"
+            "## Objections Reference\nSee [[playbook]] for all known objections and responses.\n"
+        )
+    else:
+        # Existing file — refresh pain signals section only
+        if prospect.pain_signals:
+            new_pain = "## Pain Signals\n" + "\n".join(f"- {s}" for s in prospect.pain_signals)
+            if "## Pain Signals" in body:
+                body = re.sub(
+                    r"## Pain Signals\n.*?(?=\n## |\Z)",
+                    new_pain + "\n\n",
+                    body,
+                    count=1,
+                    flags=re.DOTALL,
+                )
+            else:
+                body = new_pain + "\n\n" + body
+
+    _atomic_write(path, _render_frontmatter(fm, body))
     return path
 
 

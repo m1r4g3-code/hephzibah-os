@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=flat-square)
 ![Claude Code](https://img.shields.io/badge/Powered_by-Claude_Code-orange?style=flat-square)
-![Status](https://img.shields.io/badge/Milestone-M1_Complete-green?style=flat-square)
+![Status](https://img.shields.io/badge/Milestone-M2_Complete-green?style=flat-square)
 ![Repo](https://img.shields.io/badge/Visibility-Private-red?style=flat-square)
 
 ---
@@ -130,8 +130,8 @@ outbound-os/
 │   │   └── utils.py        # Path constants, manifest R/W, env loader
 │   └── engines/
 │       ├── call_intelligence_engine.py   # ✅ M1 — transcript analysis
-│       ├── research_engine.py            # 🔒 M2 — website + social enrichment
-│       ├── lead_engine.py                # 🔒 M2 — Google Maps scraper
+│       ├── research_engine.py            # ✅ M2 — website + social enrichment
+│       ├── lead_engine.py                # ✅ M2 — Google Maps scraper
 │       ├── qualification_engine.py       # 🔒 M3 — lead scoring
 │       ├── personalization_engine.py     # 🔒 M3 — intel card generation
 │       ├── coaching_engine.py            # 🔒 M4 — cross-call pattern analysis
@@ -258,7 +258,7 @@ Direct file writes to `wiki/` from outside `vault.py` are a bug.
 |-----------|--------|----------------|
 | **M0** — Foundation | ✅ Done | Vault structure, CLAUDE.md, yt_transcript.py |
 | **M1** — Intelligence Loop | ✅ Done | analyze-call, roast-me, prep-call + all writing commands |
-| **M2** — Lead Engine | 🔒 Building | Google Maps scraper, website + social enrichment, 50 leads in < 5 min |
+| **M2** — Lead Engine | ✅ Done | Google Maps scraper, website + social enrichment, 50 leads in < 5 min |
 | **M3** — Qualification | 🔒 Blocked (needs M2) | Lead scoring, personalization engine, intel cards from real scraped data |
 | **M4** — Full Automation | 🔒 Blocked (needs M1) | Audio transcription, coaching engine, learning engine, daily brief engine |
 
