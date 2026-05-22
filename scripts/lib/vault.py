@@ -322,6 +322,29 @@ def write_prospect_stub(prospect: EnrichedProspect) -> Path:
     return path
 
 
+# ── SCORING ───────────────────────────────────────────────────────────────────
+
+def update_lead_score(
+    company_name: str,
+    score: int,
+    tier: str,
+    call_priority: int,
+) -> Path:
+    """Update lead_score, tier, call_priority in an existing company note frontmatter."""
+    slug = slugify(company_name)
+    path = WIKI_DIR / "companies" / f"{slug}.md"
+
+    fm, body = _parse_frontmatter(path.read_text(encoding="utf-8")) if path.exists() else ({}, "")
+
+    fm.setdefault("company", company_name)
+    fm["lead_score"] = score
+    fm["tier"] = tier
+    fm["call_priority"] = call_priority
+
+    _atomic_write(path, _render_frontmatter(fm, body))
+    return path
+
+
 # ── PIPELINE ──────────────────────────────────────────────────────────────────
 
 def update_pipeline_stage(company_name: str, stage: str) -> None:
