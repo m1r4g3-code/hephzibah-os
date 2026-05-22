@@ -1,0 +1,72 @@
+# Niche: Doctors / Medical Practices
+# Active when: Week 2
+# Pain angle: admin and patient communication eating staff time
+
+niche: doctors
+display_name: "Medical Practices"
+pain_angle: "admin, patient intake, and follow-up work consuming staff time that should go to patients"
+
+search_queries:
+  - "medical practice {city} {state}"
+  - "doctor clinic {city} {state}"
+  - "family practice {city} {state}"
+  - "private practice physician {city} {state}"
+
+pain_signals:
+  - Manual appointment reminders (no automated system visible)
+  - Staff handling repetitive patient intake forms manually
+  - No online booking system or outdated one
+  - Negative reviews mentioning long wait times / admin errors (ops problems, not clinical)
+  - Small independent practice (not hospital system — they have IT departments)
+  - Website with no patient portal or basic contact form only
+
+dimensions:
+  - name: practice_independence
+    weight: 0.25
+    description: "Independent or small group practice = decision maker is the doctor, budget is real"
+
+  - name: admin_pain_signals
+    weight: 0.30
+    description: "Evidence of manual admin work — reviews, website, booking system age"
+
+  - name: patient_volume_sweet_spot
+    weight: 0.20
+    description: "Busy enough to feel the pain, small enough to not have solved it yet"
+
+  - name: digital_maturity
+    weight: 0.15
+    description: "Some digital presence = they understand technology; zero presence = hard sell"
+
+  - name: decision_maker_reachable
+    weight: 0.10
+    description: "Can reach the practice owner / office manager directly"
+
+tiers:
+  A: 80
+  B: 60
+  C: 40
+  D: 0
+
+opener_templates:
+  default: >
+    "Hi, is this [doctor/practice name]? I build automation systems for medical
+    practices — specifically around patient intake, appointment follow-up, and
+    the repetitive admin work your staff handles manually. Do you have 30 seconds?"
+
+  booking_gap: >
+    "Hi — I was looking at [practice name]'s website and noticed your booking
+    process is still [manual/form-based]. I build automated patient intake and
+    reminder systems. Takes your staff out of the loop for the repetitive stuff.
+    Worth 30 seconds?"
+
+known_objections:
+  - objection: "We have a system for that."
+    reframe: >
+      "Good — what are you using? I ask because most practice management systems
+      handle scheduling but leave a lot of the follow-up and intake work manual.
+      If you're fully automated, I'll tell you you don't need me."
+
+  - objection: "I'd have to talk to my office manager."
+    reframe: >
+      "Of course — would it make more sense for me to call back when they're
+      available, or can you put me in touch with them directly?"

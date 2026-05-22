@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Source data (private prospect + call data — never commit)
+sources/prospects/
+sources/calls/
+sources/research/
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Temp
+*.tmp
+*.lock

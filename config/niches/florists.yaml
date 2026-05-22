@@ -1,0 +1,70 @@
+# Niche: Florists / Local Retail
+# Active when: Week 5
+# Pain angle: manual order management, bookings, and follow-up consuming owner time
+
+niche: florists
+display_name: "Florists & Local Retail"
+pain_angle: "manual order management, booking, and customer follow-up eating owner/staff time"
+
+search_queries:
+  - "florist {city} {state}"
+  - "flower shop {city} {state}"
+  - "floral design {city} {state}"
+
+pain_signals:
+  - Taking orders by phone/DM only (no online ordering)
+  - No automated follow-up for events (weddings, recurring orders)
+  - Manual quote requests for event florals
+  - No CRM or customer database visible
+  - Owner running everything (solo or 1–3 staff)
+  - Active on Instagram/Facebook but no automation connecting social to sales
+
+dimensions:
+  - name: order_volume_signals
+    weight: 0.25
+    description: "Busy shop = more manual work = higher ROI on automation"
+
+  - name: event_florals_focus
+    weight: 0.25
+    description: "Wedding/event work = high-value, high-coordination, perfect for automation"
+
+  - name: digital_gap
+    weight: 0.20
+    description: "Active social but no online ordering = obvious automation opportunity"
+
+  - name: owner_operator
+    weight: 0.20
+    description: "Owner answers the phone = decision maker is on the first call"
+
+  - name: review_volume
+    weight: 0.10
+    description: "High reviews = real business, not a ghost shop"
+
+tiers:
+  A: 80
+  B: 60
+  C: 40
+  D: 0
+
+opener_templates:
+  default: >
+    "Hi, is this [owner name]? I build booking and order automation for florists —
+    specifically for wedding and event inquiries so you're not going back and forth
+    manually. Do you handle event work? Worth 30 seconds."
+
+  social_gap: >
+    "Hi [name], I saw [shop name] on Instagram — beautiful work. Quick question:
+    when someone DMs you about an event, what does that process look like right now?
+    I build systems that automate that whole flow."
+
+known_objections:
+  - objection: "I like the personal touch / don't want to automate."
+    reframe: >
+      "Totally — and the personal touch stays. What I automate is the back-and-forth:
+      the quote requests, the confirmations, the payment reminders. You still do the
+      design. The admin just runs itself."
+
+  - objection: "I'm too small for something like that."
+    reframe: >
+      "That's exactly who this is built for — one person doing everything, every
+      message handled manually. What does a typical week of admin look like for you?"

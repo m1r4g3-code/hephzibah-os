@@ -1,0 +1,110 @@
+# Niche: SaaS Startups
+# Active when: Week 1 (and any week you're targeting SaaS)
+# Pain angle: manual ops and internal tooling killing engineering velocity
+
+niche: saas_startups
+display_name: "SaaS Startups"
+pain_angle: "manual ops and repetitive internal work slowing down the engineering team"
+
+# What to search on Google Maps / LinkedIn / directories
+search_queries:
+  - "saas startup {city} {state}"
+  - "software company {city} {state}"
+  - "tech startup {city} {state}"
+
+# Signals that make this lead high-priority
+pain_signals:
+  - No internal automation tooling visible on website or job listings
+  - Job postings mentioning manual data entry, ops roles doing repetitive tasks
+  - Small engineering team (1–15 engineers) — can't afford to waste dev time on ops
+  - Founder is also head of product or engineering (wearing too many hats)
+  - Publicly mentioned scaling pains (blog posts, LinkedIn, interviews)
+  - Uses spreadsheets for anything operational (visible in case studies or demos)
+  - No visible integration stack (Zapier, n8n, Make) on their stack page
+
+# Lead scoring dimensions (weights must sum to 1.0)
+dimensions:
+  - name: team_size_sweet_spot
+    weight: 0.20
+    description: "5–50 employees = enough complexity to need automation, small enough to feel the pain"
+    score_map:
+      "1-4": 4
+      "5-20": 10
+      "21-50": 8
+      "51-200": 5
+      ">200": 2
+
+  - name: manual_ops_signals
+    weight: 0.25
+    description: "Evidence of manual work that should be automated"
+
+  - name: tech_sophistication
+    weight: 0.15
+    description: "Savvy enough to understand automation value, not so technical they'd build it themselves"
+
+  - name: funding_stage
+    weight: 0.15
+    description: "Seed–Series B = budget exists, growth pressure exists"
+    score_map:
+      "pre-seed": 5
+      "seed": 9
+      "series-a": 10
+      "series-b": 8
+      "series-c+": 4
+      "bootstrapped": 7
+      "unknown": 5
+
+  - name: website_quality
+    weight: 0.10
+    description: "Well-maintained site = company is alive and investing; poor site = low priority"
+
+  - name: decision_maker_reachable
+    weight: 0.15
+    description: "Can we reach the founder/CTO/ops lead directly?"
+
+tiers:
+  A: 80
+  B: 60
+  C: 40
+  D: 0
+
+# Opener templates (Claude Code fills in specifics from research signals)
+opener_templates:
+  default: >
+    "Hey [name], I was looking at [company] — you're building [what they do].
+    Quick question: who's handling the internal ops and automation work right now,
+    or is that just falling on the engineering team?"
+
+  manual_ops_detected: >
+    "Hey [name], I noticed [specific signal — e.g. 'you're still using spreadsheets
+    for X based on your demo video']. I build automation systems that eliminate that
+    kind of manual work. Give me 30 seconds."
+
+  small_team: >
+    "Hey [name], [company] looks like a tight team. I'm curious — how much of your
+    engineering time is going into internal tooling and ops work versus actual product?
+    I ask because I build systems that take that off the plate entirely."
+
+# Objections common in this niche + calibrated responses
+known_objections:
+  - objection: "We have engineers who can build that."
+    reframe: >
+      "Totally — but are they? Most engineering teams I talk to have a list of
+      internal automation projects that's been sitting in the backlog for six months
+      because product always wins. I build it in days, not sprints."
+
+  - objection: "We're not ready / too early stage."
+    reframe: >
+      "That's usually when it matters most — bad manual habits get baked in early
+      and then you're fixing them at scale. What's the one thing your team does
+      manually right now that you know shouldn't be manual?"
+
+  - objection: "We already use Zapier / Make."
+    reframe: >
+      "Good starting point — what are you using it for? I ask because there's usually
+      a gap between what those tools can do and what actually needs to be built.
+      If you're good, I'll tell you you're good."
+
+  - objection: "Send me more information."
+    reframe: >
+      "I can do that — what's the one thing you'd want it to answer?"

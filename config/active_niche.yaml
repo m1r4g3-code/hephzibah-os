@@ -1,0 +1,12 @@
+# Active niche for this week's outreach session.
+# Change this when you rotate to a new vertical.
+# All engines load this file first to know which niche config to use.
+
+active_niche: doctors
+
+# Rotation schedule (reference only — change active_niche above manually)
+# Week 1: saas_startups
+# Week 2: doctors
+# Week 3: marketing_agencies
+# Week 4: law_firms
+# Week 5: florists

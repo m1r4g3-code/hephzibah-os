@@ -1,0 +1,74 @@
+# Niche: Law Firms
+# Active when: Week 4
+# Pain angle: document prep, client intake, and case admin consuming paralegal/associate time
+
+niche: law_firms
+display_name: "Law Firms"
+pain_angle: "document preparation, client intake, and repetitive case admin eating billable hours"
+
+search_queries:
+  - "law firm {city} {state}"
+  - "attorney office {city} {state}"
+  - "legal practice {city} {state}"
+  - "solicitor {city} {country}"
+
+pain_signals:
+  - Small firm (1–20 attorneys) — no in-house tech team
+  - Manual client intake forms / questionnaires
+  - No visible client portal
+  - Associates/paralegals doing repetitive document assembly
+  - Practice areas with high document volume (real estate, wills/estates, immigration, contracts)
+  - Outdated website with no online intake
+
+dimensions:
+  - name: firm_size_sweet_spot
+    weight: 0.20
+    description: "2–20 attorneys = feels the pain, owner makes the buying decision"
+
+  - name: document_volume_practice_area
+    weight: 0.30
+    description: "Real estate, immigration, estates = highest document automation ROI"
+
+  - name: intake_automation_gap
+    weight: 0.25
+    description: "Manual intake = immediate win, easy to demo value"
+
+  - name: digital_maturity
+    weight: 0.15
+    description: "Some tech adoption signals = easier sell"
+
+  - name: decision_maker_reachable
+    weight: 0.10
+    description: "Managing partner reachable directly"
+
+tiers:
+  A: 80
+  B: 60
+  C: 40
+  D: 0
+
+opener_templates:
+  default: >
+    "Hi, I'm looking for [managing partner name]. I build document automation
+    and client intake systems for law firms — cuts the repetitive prep work
+    that eats paralegal and associate time. Is [name] available?"
+
+  document_heavy: >
+    "Hi [name], I build automation for [practice area] firms specifically —
+    document assembly, client intake, the repetitive back-and-forth. Most
+    firms I work with recover 5–10 hours of staff time per week. Worth
+    30 seconds?"
+
+known_objections:
+  - objection: "We have a legal practice management system."
+    reframe: >
+      "What are you using? Those systems handle case management well —
+      but most firms I talk to are still assembling documents and chasing
+      client info manually even with one in place. Is that accurate for you?"
+
+  - objection: "We're too small / not the right fit."
+    reframe: >
+      "That's usually when it matters most — one paralegal doing the work
+      of three, no budget to hire. I build systems that let small firms
+      punch above their weight. What's the most repetitive thing your
+      staff does every week?"

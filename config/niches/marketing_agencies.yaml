@@ -1,0 +1,72 @@
+# Niche: Marketing Agencies
+# Active when: Week 3
+# Pain angle: client reporting, content ops, and delivery work that should be automated
+
+niche: marketing_agencies
+display_name: "Marketing Agencies"
+pain_angle: "manual client reporting, content ops, and repetitive delivery tasks eating account manager time"
+
+search_queries:
+  - "marketing agency {city} {state}"
+  - "digital marketing agency {city} {state}"
+  - "social media agency {city} {state}"
+  - "advertising agency {city} {state}"
+
+pain_signals:
+  - Manual monthly client reporting (no automated dashboard visible)
+  - Account managers handling repetitive content scheduling manually
+  - Small agency (2–30 staff) — can't hire ops people to fix this
+  - Glassdoor/reviews mentioning burnout, repetitive work, long hours
+  - No visible tech stack / automation tools on website
+  - Pricing page that suggests thin margins (meaning they need efficiency)
+
+dimensions:
+  - name: agency_size_sweet_spot
+    weight: 0.20
+    description: "5–30 staff = feels the ops pain, can't afford dedicated ops hire"
+
+  - name: reporting_automation_gap
+    weight: 0.25
+    description: "Evidence of manual reporting — biggest ROI for agencies"
+
+  - name: content_ops_volume
+    weight: 0.20
+    description: "High content output with no visible automation = major pain"
+
+  - name: client_count_signals
+    weight: 0.20
+    description: "Managing 10+ clients manually = automation pays for itself immediately"
+
+  - name: decision_maker_reachable
+    weight: 0.15
+    description: "Agency owner or ops director reachable directly"
+
+tiers:
+  A: 80
+  B: 60
+  C: 40
+  D: 0
+
+opener_templates:
+  default: >
+    "Hey [name], I work with marketing agencies to automate the stuff that eats
+    account manager time — client reporting, content scheduling, internal ops.
+    Quick question: how are you handling monthly client reports right now?"
+
+  reporting_gap: >
+    "Hey [name], I noticed [agency] is running [X clients]. Quick question —
+    how long does monthly reporting take your team? I build systems that cut
+    that to near zero. Worth 30 seconds?"
+
+known_objections:
+  - objection: "We already use tools for that."
+    reframe: >
+      "What are you using? I ask because there's usually a gap between what
+      the tool does out of the box and what actually needs to happen. If
+      you're genuinely sorted, I'll tell you."
+
+  - objection: "Our clients are all different, we can't automate."
+    reframe: >
+      "That's what everyone says before we look at it. Usually 60–70% of
+      the work is identical across clients — it's just not obvious until
+      you map it out. That's usually where I start."
