@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=flat-square)
 ![Claude Code](https://img.shields.io/badge/Powered_by-Claude_Code-orange?style=flat-square)
-![Status](https://img.shields.io/badge/Milestone-M3_Complete-green?style=flat-square)
+![Status](https://img.shields.io/badge/Milestone-M4_Complete-green?style=flat-square)
 ![Repo](https://img.shields.io/badge/Visibility-Private-red?style=flat-square)
 
 ---
@@ -134,9 +134,9 @@ outbound-os/
 │       ├── lead_engine.py                # ✅ M2 — Google Maps scraper
 │       ├── qualification_engine.py       # ✅ M3 — lead scoring
 │       ├── personalization_engine.py     # ✅ M3 — intel card generation
-│       ├── coaching_engine.py            # 🔒 M4 — cross-call pattern analysis
-│       ├── learning_engine.py            # 🔒 M4 — script evolution
-│       └── daily_brief_engine.py        # 🔒 M4 — prioritized call sheet
+│       ├── coaching_engine.py            # ✅ M4 — cross-call pattern analysis
+│       ├── learning_engine.py            # ✅ M4 — script evolution
+│       └── daily_brief_engine.py        # ✅ M4 — prioritized call sheet
 │
 ├── wiki/                   # AI-maintained. Claude Code writes. Operator reads.
 │   ├── contacts/           # One .md per person contacted
@@ -260,7 +260,7 @@ Direct file writes to `wiki/` from outside `vault.py` are a bug.
 | **M1** — Intelligence Loop | ✅ Done | analyze-call, roast-me, prep-call + all writing commands |
 | **M2** — Lead Engine | ✅ Done | Google Maps scraper, website + social enrichment, 50 leads in < 5 min |
 | **M3** — Qualification | ✅ Done | Lead scoring, personalization engine, intel cards from real scraped data |
-| **M4** — Full Automation | 🔒 Blocked (needs M1) | Audio transcription, coaching engine, learning engine, daily brief engine |
+| **M4** — Full Automation | ✅ Done | Audio transcription, coaching engine, learning engine, daily brief engine |
 
 ---
 
