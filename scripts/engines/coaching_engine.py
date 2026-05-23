@@ -235,5 +235,5 @@ if __name__ == "__main__":
         console.print("  Outcome distribution:")
         for outcome, count in sorted(ctx["outcome_distribution"].items(), key=lambda x: -x[1]):
             console.print(f"    {outcome:<25} {count}")
-    console.print(f"\n  Context → [cyan]logs/_coaching_context.json[/cyan]")
+    console.print(f"\n  Context -> [cyan]logs/_coaching_context.json[/cyan]")
     console.print("  Run /roast-me to generate the coaching report.")

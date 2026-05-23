@@ -15,9 +15,8 @@ __pycache__/
 *.pyo
 .pytest_cache/
 
-# Obsidian workspace state (local UI only)
-wiki/.obsidian/workspace.json
-wiki/.obsidian/workspace-mobile.json
+# Obsidian local state (UI only — not vault content)
+wiki/.obsidian/
 
 # Temp
 *.tmp

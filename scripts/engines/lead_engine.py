@@ -462,5 +462,5 @@ if __name__ == "__main__":
     output = run(city_arg, state_arg)
 
     count = sum(1 for line in output.open(encoding="utf-8") if line.strip())
-    console.print(f"\n[bold green]Done.[/bold green] {count} leads → [cyan]{output.name}[/cyan]")
+    console.print(f"\n[bold green]Done.[/bold green] {count} leads -> [cyan]{output.name}[/cyan]")
     console.print(f"  Next: python research_engine.py --latest")

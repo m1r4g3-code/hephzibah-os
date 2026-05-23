@@ -226,7 +226,7 @@ if __name__ == "__main__":
     if not audio_file.is_absolute():
         audio_file = VAULT_ROOT / audio_file
 
-    console.print(f"\n[bold]Audio → Transcript[/bold]")
+    console.print(f"\n[bold]Audio -> Transcript[/bold]")
     console.print(f"  Input:  [cyan]{audio_file.name}[/cyan]")
 
     try:

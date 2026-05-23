@@ -366,4 +366,4 @@ if __name__ == "__main__":
     else:
         remaining = MIN_CALLS_TO_LEARN - total
         console.print(f"\n  [yellow]{remaining} more call(s) needed before script evolution triggers.[/yellow]")
-        console.print(f"  Context still written for reference → [cyan]logs/_learning_context.json[/cyan]")
+        console.print(f"  Context still written for reference -> [cyan]logs/_learning_context.json[/cyan]")

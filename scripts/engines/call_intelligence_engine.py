@@ -263,7 +263,7 @@ def display_analysis(analysis: CallAnalysis) -> None:
         for flag in analysis.coaching_flags:
             color = {"critical": "red", "moderate": "yellow", "minor": "dim"}.get(flag.severity, "white")
             console.print(f"  [{color}][{flag.severity.upper()}][/] {flag.coaching_note}")
-            console.print(f"  [dim]  → \"{flag.exact_quote[:80]}\"[/]")
+            console.print(f"  [dim]  -> \"{flag.exact_quote[:80]}\"[/]")
 
     if analysis.objections:
         console.print("\n[bold yellow]Objections:[/]")

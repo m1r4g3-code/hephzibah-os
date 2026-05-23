@@ -423,7 +423,7 @@ if __name__ == "__main__":
             signal,
         )
 
-    console.print(f"\n  Scored [bold]{len(all_cards)}[/bold] leads → output in [cyan]sources/prospects/scored/[/cyan]\n")
+    console.print(f"\n  Scored [bold]{len(all_cards)}[/bold] leads -> output in [cyan]sources/prospects/scored/[/cyan]\n")
     console.print(table)
     console.print(f"\n  Wiki frontmatter updated for all companies.")
     console.print(f"  Next: /prep-call <company> or python personalization_engine.py")

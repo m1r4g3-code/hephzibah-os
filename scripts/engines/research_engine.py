@@ -397,10 +397,10 @@ if __name__ == "__main__":
 
     total = 0
     for t in targets:
-        console.print(f"  → [cyan]{t.name}[/cyan]")
+        console.print(f"  -> [cyan]{t.name}[/cyan]")
         output_path, count = run(t)
         total += count
-        console.print(f"     [green]{count} leads enriched[/green] → {output_path.name}")
+        console.print(f"     [green]{count} leads enriched[/green] -> {output_path.name}")
 
     console.print(f"\n[bold green]Done.[/bold green] {total} total leads enriched.")
     console.print("  Wiki stubs written to [cyan]wiki/companies/[/cyan]")

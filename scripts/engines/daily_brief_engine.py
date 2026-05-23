@@ -216,7 +216,7 @@ def _render_brief(buckets: dict, niche_openers: dict, companies: dict) -> str:
         flag_str = "  " + " ".join(flags) if flags else ""
         lines += [
             "TODAY'S PRIORITY",
-            f"→ {pco} ({pname}){flag_str}",
+            f"-> {pco} ({pname}){flag_str}",
             "",
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
         ]
@@ -393,7 +393,7 @@ if __name__ == "__main__":
     console.print(f"  ❄️  Going cold:      {ctx['going_cold_count']}")
 
     if not dry:
-        console.print(f"\n  Brief saved → [cyan]{output_path}[/cyan]")
+        console.print(f"\n  Brief saved -> [cyan]{output_path}[/cyan]")
 
     console.print("\n" + "─" * 50)
     console.print(output_path.read_text(encoding="utf-8")[:1000])
