@@ -123,20 +123,67 @@ def _score_quality(soup: BeautifulSoup, text_content: str) -> str:
     return "poor"
 
 
+_EMAIL_RE = re.compile(
+    r"[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}",
+)
+_EMAIL_BLOCKLIST = {"example.com", "sentry.io", "wixpress.com", "squarespace.com",
+                    "wordpress.com", "godaddy.com", "schema.org"}
+
+
+def _extract_email(html: str, domain: str) -> str | None:
+    """Extract the most relevant contact email from page HTML."""
+    candidates: list[str] = []
+
+    # mailto: links first — highest confidence
+    for m in re.finditer(r'mailto:([^\'"?\s&]+)', html, re.IGNORECASE):
+        candidates.append(m.group(1).lower().strip())
+
+    # Plain text email addresses
+    for m in _EMAIL_RE.finditer(html):
+        candidates.append(m.group(0).lower().strip())
+
+    seen: set[str] = set()
+    for email in candidates:
+        if email in seen:
+            continue
+        seen.add(email)
+        # Skip tracking pixels, CDN addresses, blocked domains
+        email_domain = email.split("@")[-1]
+        if email_domain in _EMAIL_BLOCKLIST:
+            continue
+        if any(skip in email for skip in ("@2x", "noreply", "no-reply", ".png", ".jpg")):
+            continue
+        # Prefer emails on the same domain as the website
+        if domain and domain in email_domain:
+            return email
+
+    # Fallback: return first valid candidate regardless of domain match
+    for email in seen:
+        email_domain = email.split("@")[-1]
+        if email_domain not in _EMAIL_BLOCKLIST:
+            if not any(skip in email for skip in ("@2x", "noreply", "no-reply", ".png", ".jpg")):
+                return email
+
+    return None
+
+
 async def _fetch_website(
     session: aiohttp.ClientSession,
     raw_url: str,
     logger: EngineLogger,
-) -> WebsiteSignals | None:
+) -> tuple[WebsiteSignals | None, str | None]:
     if not raw_url:
         return None
 
     url = _normalize_url(raw_url)
     has_ssl = url.startswith("https://")
+    try:
+        domain = url.split("/")[2].lstrip("www.")
+    except IndexError:
+        domain = ""
 
     try:
         async with session.get(url, headers=HEADERS, allow_redirects=True, ssl=False) as resp:
-            # Check if HTTPS redirect occurred
             if str(resp.url).startswith("https://"):
                 has_ssl = True
 
@@ -145,7 +192,7 @@ async def _fetch_website(
                     fetch_status="error",
                     has_ssl=has_ssl,
                     quality_score="poor",
-                )
+                ), None
 
             html = await resp.text(errors="replace")
             html_lower = html.lower()
@@ -170,6 +217,8 @@ async def _fetch_website(
                 except ValueError:
                     pass
 
+            email = _extract_email(html, domain)
+
             return WebsiteSignals(
                 quality_score=quality,
                 cms_detected=cms,
@@ -177,19 +226,19 @@ async def _fetch_website(
                 has_ssl=has_ssl,
                 copyright_year=copyright_year,
                 fetch_status="success",
-            )
+            ), email
 
     except asyncio.TimeoutError:
-        return WebsiteSignals(fetch_status="timeout", has_ssl=has_ssl)
+        return WebsiteSignals(fetch_status="timeout", has_ssl=has_ssl), None
     except Exception:
-        return WebsiteSignals(fetch_status="error", has_ssl=has_ssl)
+        return WebsiteSignals(fetch_status="error", has_ssl=has_ssl), None
 
 
 async def _enrich_all_websites(
     prospects: list[RawProspect],
     logger: EngineLogger,
-) -> dict[str, WebsiteSignals | None]:
-    """Fetch all prospect websites concurrently. Returns {place_id: WebsiteSignals}."""
+) -> dict[str, tuple[WebsiteSignals | None, str | None]]:
+    """Fetch all prospect websites concurrently. Returns {place_id: (WebsiteSignals, email)}."""
     connector = aiohttp.TCPConnector(limit=MAX_CONCURRENT, ssl=False)
     semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
@@ -202,12 +251,12 @@ async def _enrich_all_websites(
         tasks = [_bounded(p) for p in prospects if p.website]
         raw_results = await asyncio.gather(*tasks, return_exceptions=True)
 
-    out: dict[str, WebsiteSignals | None] = {}
+    out: dict[str, tuple[WebsiteSignals | None, str | None]] = {}
     for item in raw_results:
         if isinstance(item, Exception):
             continue
-        pid, signals = item
-        out[pid] = signals
+        pid, signals_tuple = item
+        out[pid] = signals_tuple
     return out
 
 
@@ -301,14 +350,16 @@ async def _run_async(input_path: Path, logger: EngineLogger) -> tuple[Path, int,
     # Build EnrichedProspect list
     enriched: list[EnrichedProspect] = []
     for p in prospects:
-        ws = website_results.get(p.place_id)
+        result = website_results.get(p.place_id, (None, None))
+        ws, contact_email = result if isinstance(result, tuple) else (result, None)
         pain_signals = _extract_pain_signals(p, ws, niche["niche"])
 
         ep = EnrichedProspect(
             **p.model_dump(),
             website_signals=ws,
-            social_signals=None,  # Social enrichment needs Playwright — M4
+            social_signals=None,
             pain_signals=pain_signals,
+            contact_email=contact_email,
             enriched_at=now_iso(),
         )
         enriched.append(ep)

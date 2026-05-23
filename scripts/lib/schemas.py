@@ -54,6 +54,7 @@ class EnrichedProspect(RawProspect):
     website_signals: WebsiteSignals | None = None
     social_signals: SocialSignals | None = None
     pain_signals: list[str] = []
+    contact_email: str | None = None
     enriched_at: str
 
 
@@ -74,6 +75,20 @@ class LeadScoreCard(BaseModel):
     call_priority: int
     recommended_opener: str
     skip_reason: str | None = None
+
+
+# ── EMAIL PIPELINE ────────────────────────────────────────────────────────────
+
+class EmailDraft(BaseModel):
+    company_name: str
+    to_email: str
+    subject: str
+    body: str
+    email_type: Literal["cold", "follow-up", "sequence"]
+    created_at: str
+    status: Literal["pending", "sent", "bounced"] = "pending"
+    gmail_draft_id: str | None = None
+    gmail_draft_url: str | None = None
 
 
 # ── CALL PIPELINE ─────────────────────────────────────────────────────────────

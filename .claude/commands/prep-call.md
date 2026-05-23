@@ -155,6 +155,9 @@ ALWAYS:
 
 ## OUTPUT ARCHITECTURE
 
+The card has two parts: BACKGROUND (read before dialing) and THE SCRIPT (say out loud).
+No methodology labels (S/P/I/N). No framework markers. Just plain spoken lines.
+
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 COMPANY:   [Name] — [City, State]
@@ -162,72 +165,99 @@ CONTACT:   [Name/Role] | [Phone]
 TIER:      [A/B/C/D] (score: [N])  ·  [CALL NOW / WARM / LOW PRIORITY]
 NICHE:     [Active niche]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-OPENER:
-  "[Exact opening line — specific, pattern-interrupt, 2-3 sentences]"
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ACCOUNT DIAGNOSIS:
-
-  Economic Buyer:    [Who + why they're the decision maker]
-  Blocker Risk:      [Who might resist + how to neutralize]
-  Emotional Driver:  [What they actually feel, not the rational case]
-  Trigger Urgency:   [Why act now, not in 3 months]
-
-  QUANTIFIED GAP:
-    Current state:   [What's broken — specific evidence]
-    Cost of nothing: [Hours/year or $/year — calculated estimate]
-
-  CHALLENGER INSIGHT:
-    "[The one thing true about their business they haven't said out loud]"
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PAIN SIGNALS:
-  ✗ [Signal #1 — specific evidence, not category]
+  ✗ [Signal #1 — specific, with evidence]
   ✗ [Signal #2]
   ✗ [Signal #3+]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FULL SCRIPT:
-
-HOOK:
-  [Opener — exact words]
-
-DISCOVERY (run BEFORE pitching):
-  S: "[Situation question — one, establishes current process]"
-  P: "[Problem question — surfaces daily friction]"
-  I: "[Implication question — makes them feel the downstream cost]"
-  I: "[Second implication if needed]"
-  N: "[Need-payoff — gets them to say the value out loud themselves]"
-
-PIVOT (only after they've confirmed the pain):
-  "[One sentence connecting their words back to your offer]"
-
-VALUE FRAME:
-  "[What you build. What it eliminates. Quantified outcome — not features.]"
-
-SOFT CLOSE:
-  "[Specific next step. Two time options. Low friction.]"
+WHAT THIS CALL IS WORTH:
+  ~$[X]/year they're losing right now:
+  $[X] — [pain source 1]
+  $[X] — [pain source 2]
+  $[X] — [pain source 3]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-OBJECTION PRE-LOADS:
+BACKGROUND (read before dialing — don't say out loud):
+  [Challenger insight — the one thing true about their business
+   they haven't said out loud yet. What they think the problem is
+   vs. what it actually is. Decision maker and blocker identified.
+   How to neutralize the blocker.]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-IF "[surface objection]":
-  ROOT: [What they actually mean]
-  -> "[Acknowledge → Reframe using their data → Re-open with question]"
 
-IF "[surface objection]":
-  ROOT: [What they actually mean]
-  -> "[Acknowledge → Reframe using their data → Re-open with question]"
+THE SCRIPT
+──────────────────────────────────────────
 
-IF "[surface objection]":
-  ROOT: [What they actually mean]
-  -> "[Acknowledge → Reframe using their data → Re-open with question]"
+OPEN WITH THIS:
+
+  "[Opener — Challenger reframe or most damning specific signal.
+   2-3 sentences. Specific number or observation. Not generic.]"
+
+──────────────────────────────────────────
+
+ONCE THEY'RE TALKING — ask these one at a time, wait for the answer:
+
+  "[Situation question — confirms current process]"
+
+  "[Problem question — surfaces the daily friction]"
+
+  "[Implication question — makes them feel the downstream cost]"
+
+  "[Second implication — forces them to quantify the revenue leak]"
+
+  "[Need-payoff — gets them to say the value out loud themselves]"
+
+──────────────────────────────────────────
+
+AFTER THEY'VE ANSWERED — say this:
+
+  "[One sentence connecting their exact words back to your offer]"
+
+──────────────────────────────────────────
+
+WHAT YOU DO (say this once, then stop):
+
+  "[What you build. What it eliminates. Quantified outcome.
+   3 sentences max. Stop after the last sentence.]"
+
+──────────────────────────────────────────
+
+CLOSE WITH THIS:
+
+  "[Free audit offer. Two specific time options. No vague ask.]"
+
+──────────────────────────────────────────
+
+
+WHEN THEY PUSH BACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IF "[most likely objection]":
+
+  "[Acknowledge → reframe using their own data → re-open with question]"
+
+──────────────────────────────────────────
+
+IF "[second objection — often the office manager deflection]":
+
+  ⚠ [Warning if this maps to a known operator weakness]
+
+  "[Acknowledge → re-route to specific next step with both parties]"
+
+──────────────────────────────────────────
+
+IF "[third objection — timing/not interested]":
+
+  "[Tie back to the cost of inaction, not to your product]"
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 RAPPORT HOOK:
-  [One genuine connection point — not manufactured, evidence-based]
+  [One genuine connection point — evidence-based, not forced]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-COACHING FLAG (from ME.md):
-  [If a known weakness from ME.md is a risk on this specific call, flag it here]
+WATCH YOURSELF:
+  [Coaching flags tied to known weaknesses from ME.md,
+   specific to the risks on this exact call]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PREVIOUS CONTACT:
-  [Last outcome + what was said + re-entry angle]
-  OR: [First contact]
+  [Last outcome + re-entry angle] OR: [First contact]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```

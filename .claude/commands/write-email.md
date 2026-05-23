@@ -56,6 +56,28 @@ Before outputting, check:
 - Is any sentence longer than 20 words? Break it.
 - Does it end with one clear, low-friction ask? If not, fix it.
 
+**Step 6 — Push to Gmail as draft**
+After the email passes the self-audit, run the email engine to create a Gmail draft automatically:
+
+```
+python scripts/engines/email_engine.py \
+  --company "<company_name>" \
+  --to "<to_email>" \
+  --subject "<subject_line>" \
+  --body "<full_email_body>" \
+  --type <cold|follow-up|sequence>
+```
+
+The engine will:
+- Save the draft to `drafts/<slug>_<date>_<type>.md` (always — for review in Obsidian)
+- Create a Gmail draft at the URL shown in the output (if Gmail is configured)
+- Write `logs/_email_context.json` with full context
+
+The operator reviews the draft in Gmail and clicks Send. Nothing is ever sent automatically.
+
+If `credentials.json` is not yet set up, the markdown draft is still saved — no email is lost.
+See **Email Funnel Setup** in the README for Gmail configuration steps.
+
 ---
 
 ## THINKING MODEL

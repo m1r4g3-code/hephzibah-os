@@ -55,6 +55,7 @@ The result: a system that researches prospects before you call, generates a pers
                       │  coaching_engine.py          (M4)          │
                       │  learning_engine.py          (M4)          │
                       │  audio_to_transcript.py      (M4)          │
+                      │  email_engine.py             (M4)          │
                       └──────────────────────────────────────────┘
 ```
 
@@ -69,7 +70,8 @@ The result: a system that researches prospects before you call, generates a pers
 ④ Drop audio/transcript → sources/calls/
 ⑤ /analyze-call         → Wiki updated: contact, company, objections, coaching flags
 ⑥ /roast-me             → Brutal coaching report with exact quotes
-⑦ Loop repeats          → Script evolves, playbook grows, next call is smarter
+⑦ /write-email [company]→ Email written + Gmail draft created — operator approves, clicks Send
+⑧ Loop repeats          → Script evolves, playbook grows, next call is smarter
 ```
 
 Each loop iteration compounds. Call 50 is statistically better than call 1 because every objection, winning phrase, and close attempt gets absorbed into the system.
@@ -136,7 +138,8 @@ outbound-os/
 │       ├── personalization_engine.py     # ✅ M3 — intel card generation
 │       ├── coaching_engine.py            # ✅ M4 — cross-call pattern analysis
 │       ├── learning_engine.py            # ✅ M4 — script evolution
-│       └── daily_brief_engine.py        # ✅ M4 — prioritized call sheet
+│       ├── daily_brief_engine.py        # ✅ M4 — prioritized call sheet
+│       └── email_engine.py              # ✅ M4 — Gmail draft creator
 │
 ├── wiki/                   # AI-maintained. Claude Code writes. Operator reads.
 │   ├── contacts/           # One .md per person contacted
@@ -153,12 +156,14 @@ outbound-os/
 │   ├── calls/              # Call transcripts (.txt)
 │   └── prospects/          # Scraped lead data (.jsonl), intel cards
 │
+├── drafts/                 # Email drafts — operator reviews before sending (gitignored)
 ├── daily/                  # Daily call briefs — generated each morning
 ├── logs/                   # Structured engine logs (gitignored)
 │
 ├── CLAUDE.md               # Agent operating instructions for Claude Code
 ├── ME.md                   # Operator profile — loaded for coaching + personalization
 ├── .env                    # API keys (gitignored — never committed)
+├── credentials.json        # Gmail OAuth2 credentials (gitignored — see Email Funnel Setup)
 └── yt_transcript.py        # YouTube transcript fetcher (free, no API cost)
 ```
 
@@ -231,11 +236,53 @@ cp config/niches/doctors.yaml config/niches/accountants.yaml
 
 ---
 
+## Email Funnel Setup
+
+The email funnel writes a personalized cold email and pushes it to Gmail as a draft. You review it in Gmail and click Send. Nothing is ever sent automatically.
+
+### One-time Gmail configuration
+
+**Step 1** — Go to [console.cloud.google.com](https://console.cloud.google.com)
+
+**Step 2** — Create a project (or select an existing one)
+
+**Step 3** — Enable the Gmail API:
+- APIs & Services -> Enable APIs -> search "Gmail API" -> Enable
+
+**Step 4** — Create OAuth credentials:
+- APIs & Services -> Credentials -> Create Credentials -> OAuth 2.0 Client ID
+- Application type: **Desktop App**
+- Download the JSON file
+
+**Step 5** — Save the file as `credentials.json` in the vault root (same folder as CLAUDE.md)
+
+**Step 6** — First run opens a browser tab for authorization. Approve once. A token is saved to `.gmail_token.json` — you never need to authorize again.
+
+Both `credentials.json` and `.gmail_token.json` are gitignored and never leave your machine.
+
+### How it works
+
+When you run `/write-email [company]`:
+
+1. Claude Code reads company wiki + ME.md and writes the email
+2. `email_engine.py` creates a Gmail draft automatically
+3. A markdown copy is saved to `drafts/<company>_<date>_<type>.md` for review in Obsidian
+4. The terminal shows a direct link to the Gmail draft
+5. You open it, review, and click Send
+
+If Gmail is not configured, the markdown draft is still saved — no email is lost.
+
+### Skip Gmail (markdown-only mode)
+
+If you don't want Gmail integration, simply don't create `credentials.json`. The engine detects its absence and saves the draft locally. You can copy-paste from `drafts/` into any email client.
+
+---
+
 ## Data Model
 
 All data models are defined once in `scripts/lib/schemas.py` (Pydantic v2). Every engine imports from here. Changing a field in schemas propagates everywhere — no duplication.
 
-Key models: `RawProspect`, `EnrichedProspect`, `LeadScoreCard`, `CallAnalysis`, `ObjectionInstance`, `CoachingFlag`, `CoachingReport`.
+Key models: `RawProspect`, `EnrichedProspect`, `LeadScoreCard`, `CallAnalysis`, `ObjectionInstance`, `CoachingFlag`, `CoachingReport`, `EmailDraft`.
 
 ---
 

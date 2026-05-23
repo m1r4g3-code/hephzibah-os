@@ -1,5 +1,10 @@
 # Secrets
 .env
+credentials.json
+.gmail_token.json
+
+# Email drafts (private — operator reviews before sending)
+drafts/
 
 # Source data (private prospect + call data — never commit)
 sources/prospects/

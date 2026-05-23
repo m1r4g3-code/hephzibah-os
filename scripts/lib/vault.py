@@ -15,8 +15,8 @@ from typing import Any
 import yaml
 from filelock import FileLock
 
-from .utils import WIKI_DIR, slugify, today_iso
-from .schemas import CallAnalysis, CallOutcome, EnrichedProspect, ObjectionInstance
+from .utils import WIKI_DIR, VAULT_ROOT, slugify, today_iso
+from .schemas import CallAnalysis, CallOutcome, EmailDraft, EnrichedProspect, ObjectionInstance
 
 
 # ── FRONTMATTER ───────────────────────────────────────────────────────────────
@@ -261,6 +261,8 @@ def write_prospect_stub(prospect: EnrichedProspect) -> Path:
         fm["google_rating"] = prospect.google_rating
     if prospect.review_count is not None:
         fm["review_count"] = prospect.review_count
+    if prospect.contact_email:
+        fm["contact_email"] = prospect.contact_email
 
     existing_tags = set(fm.get("tags") or [])
     existing_tags.update({"prospect", prospect.niche})
@@ -349,6 +351,49 @@ def update_lead_score(
 
 def update_pipeline_stage(company_name: str, stage: str) -> None:
     write_company_note(company_name, stage=stage, last_contact=today_iso())
+
+
+# ── EMAIL DRAFTS ──────────────────────────────────────────────────────────────
+
+def write_email_draft(draft: EmailDraft) -> Path:
+    """
+    Save an email draft to drafts/<company-slug>_<date>_<type>.md.
+    Human-readable — operator reviews and approves before sending.
+    Also updates company frontmatter with gmail_draft_id if present.
+    """
+    drafts_dir = VAULT_ROOT / "drafts"
+    drafts_dir.mkdir(parents=True, exist_ok=True)
+
+    slug = slugify(draft.company_name)
+    filename = f"{slug}_{draft.created_at[:10]}_{draft.email_type}.md"
+    path = drafts_dir / filename
+
+    lines = [
+        "---",
+        f"company: {draft.company_name}",
+        f"to: {draft.to_email}",
+        f"subject: {draft.subject}",
+        f"type: {draft.email_type}",
+        f"status: {draft.status}",
+        f"created_at: {draft.created_at[:10]}",
+    ]
+    if draft.gmail_draft_id:
+        lines.append(f"gmail_draft_id: {draft.gmail_draft_id}")
+    if draft.gmail_draft_url:
+        lines.append(f"gmail_draft_url: {draft.gmail_draft_url}")
+    lines += ["---", "", f"SUBJECT: {draft.subject}", "", f"TO: {draft.to_email}", "", "---", "", draft.body]
+
+    _atomic_write(path, "\n".join(lines))
+
+    # Mirror gmail_draft_id into company wiki frontmatter for easy lookup
+    if draft.gmail_draft_id:
+        company_path = WIKI_DIR / "companies" / f"{slug}.md"
+        if company_path.exists():
+            fm, body = _parse_frontmatter(company_path.read_text(encoding="utf-8"))
+            fm["gmail_draft_id"] = draft.gmail_draft_id
+            _atomic_write(company_path, _render_frontmatter(fm, body))
+
+    return path
 
 
 # ── DAILY BRIEF ───────────────────────────────────────────────────────────────
