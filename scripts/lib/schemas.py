@@ -45,6 +45,7 @@ class RawProspect(BaseModel):
     last_google_review_date: str | None = None
     instagram_handle: str | None = None
     facebook_url: str | None = None
+    contact_email: str | None = None
     scraped_at: str
     source_query: str
     niche: str

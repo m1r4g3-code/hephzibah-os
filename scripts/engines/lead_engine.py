@@ -251,6 +251,18 @@ def _scrape_detail(page, href: str, sel: dict, logger: EngineLogger) -> dict | N
         except Exception:
             pass
 
+        # Email — mailto: links in the Maps detail panel
+        contact_email = None
+        try:
+            email_el = page.query_selector("a[href^='mailto:']")
+            if email_el:
+                href_val = email_el.get_attribute("href") or ""
+                raw_email = href_val.replace("mailto:", "").split("?")[0].strip().lower()
+                if raw_email and "@" in raw_email:
+                    contact_email = raw_email
+        except Exception:
+            pass
+
         city, state = _parse_city_state(address or "")
         place_id = _extract_place_id(page.url, fallback_seed=f"{name}|{address}")
 
@@ -267,6 +279,7 @@ def _scrape_detail(page, href: str, sel: dict, logger: EngineLogger) -> dict | N
             "state": state,
             "instagram_handle": instagram_handle,
             "facebook_url": facebook_url,
+            "contact_email": contact_email,
             "maps_url": page.url,
         }
 
@@ -393,6 +406,7 @@ def run(city: str, state: str, max_per_query: int = 60) -> Path:
                         review_count=detail.get("review_count"),
                         instagram_handle=detail.get("instagram_handle"),
                         facebook_url=detail.get("facebook_url"),
+                        contact_email=detail.get("contact_email"),
                         scraped_at=now_iso(),
                         source_query=query,
                         niche=niche["niche"],
