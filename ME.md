@@ -1,6 +1,8 @@
 ---
 type: operator-profile
-last_updated: 2026-05-22
+last_updated: 2026-05-23
+name: Adekoya Emmanuel Hephzibah Ifeoluwa
+email_signature: Emmanuel
 ---
 
 ## Offer

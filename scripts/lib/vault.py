@@ -53,6 +53,36 @@ def _atomic_write(path: Path, content: str) -> None:
             raise
 
 
+# ── CROSS-LINK HELPERS ────────────────────────────────────────────────────────
+
+def _inject_contact_link_into_company(company_name: str, contact_name: str) -> None:
+    """Add [[contact-slug]] into the company note Key Contacts section."""
+    slug = slugify(company_name)
+    contact_slug = slugify(contact_name)
+    path = WIKI_DIR / "companies" / f"{slug}.md"
+    if not path.exists():
+        return
+    fm, body = _parse_frontmatter(path.read_text(encoding="utf-8"))
+    contact_link = f"[[{contact_slug}]]"
+    if contact_link in body:
+        return  # already linked
+    if "## Key Contacts" in body:
+        body = re.sub(
+            r"(## Key Contacts\n)",
+            f"\\1- {contact_link}\n",
+            body, count=1,
+        )
+    else:
+        section = f"## Key Contacts\n- {contact_link}\n\n"
+        if "## Objections Reference" in body:
+            body = body.replace("## Objections Reference", section + "## Objections Reference", 1)
+        elif "## Call History" in body:
+            body = body.replace("## Call History", section + "## Call History", 1)
+        else:
+            body = section + body
+    _atomic_write(path, _render_frontmatter(fm, body))
+
+
 # ── CONTACT NOTES ─────────────────────────────────────────────────────────────
 
 def write_contact_note(analysis: CallAnalysis) -> Path:
@@ -117,6 +147,8 @@ _To be filled by personalization engine._
             body += f"\n## Call History\n| Date | Outcome | Objections | Follow-up |\n|------|---------|------------|----------|\n{call_row}\n"
 
     _atomic_write(path, _render_frontmatter(fm, body))
+    if analysis.company_name:
+        _inject_contact_link_into_company(analysis.company_name, name)
     return path
 
 
@@ -128,6 +160,7 @@ def write_company_note(
     last_contact: str | None = None,
     extra_fm: dict | None = None,
     summary: str | None = None,
+    contact_name: str | None = None,
 ) -> Path:
     slug = slugify(company_name)
     path = WIKI_DIR / "companies" / f"{slug}.md"
@@ -144,22 +177,17 @@ def write_company_note(
         fm.update(extra_fm)
 
     if not body.strip():
-        body = f"""## Summary
-{summary or "_Awaiting research engine enrichment._"}
-
-## Opportunities
-_To be identified by research engine._
-
-## Red Flags
-_To be identified by research engine._
-
-## Call History
-| Date | Contact | Outcome | Follow-up |
-|------|---------|---------|-----------|
-
-## Objections Reference
-See [[playbook]] for all known objections and responses.
-"""
+        contacts_section = ""
+        if contact_name:
+            contacts_section = f"## Key Contacts\n- [[{slugify(contact_name)}]]\n\n"
+        body = (
+            f"## Summary\n{summary or '_Awaiting research engine enrichment._'}\n\n"
+            f"{contacts_section}"
+            "## Opportunities\n_To be identified by research engine._\n\n"
+            "## Red Flags\n_To be identified by research engine._\n\n"
+            "## Call History\n| Date | Contact | Outcome | Follow-up |\n|------|---------|---------|----------|\n\n"
+            "## Objections Reference\nSee [[playbook]] for all known objections and responses.\n"
+        )
 
     _atomic_write(path, _render_frontmatter(fm, body))
     return path
@@ -167,7 +195,12 @@ See [[playbook]] for all known objections and responses.
 
 # ── OBJECTION PLAYBOOK ────────────────────────────────────────────────────────
 
-def append_objection(objection: ObjectionInstance, source_file: str) -> Path:
+def append_objection(
+    objection: ObjectionInstance,
+    source_file: str,
+    company_name: str | None = None,
+    contact_name: str | None = None,
+) -> Path:
     path = WIKI_DIR / "objections" / "playbook.md"
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -200,13 +233,21 @@ def append_objection(objection: ObjectionInstance, source_file: str) -> Path:
         "closed": objection.caller_response,
     }
 
+    source_parts = []
+    if company_name:
+        source_parts.append(f"[[{slugify(company_name)}]]")
+    if contact_name:
+        source_parts.append(f"[[{slugify(contact_name)}]]")
+    source_parts.append(f"`{source_file}`")
+    source_display = " · ".join(source_parts)
+
     entry = f"""
 ### "{quote_clean}"
 **Category:** {objection.category}
 **Frequency:** 1
 **Caller response quality:** {objection.response_quality}
 **Best response:** {response_quality_map.get(objection.response_quality, objection.caller_response)}
-**Source calls:** {source_file}
+**Source calls:** {source_display}
 
 ---
 """
@@ -296,10 +337,15 @@ def write_prospect_stub(prospect: EnrichedProspect) -> Path:
                 f"- Copyright year: {ws.copyright_year or 'unknown'}\n\n"
             )
 
+        contacts_section = ""
+        if prospect.owner_name:
+            contacts_section = f"## Key Contacts\n- [[{slugify(prospect.owner_name)}]]\n\n"
+
         body = (
             f"## Summary\n{summary}\n\n"
             f"{pain_section}"
             f"{website_section}"
+            f"{contacts_section}"
             "## Opportunities\n_To be identified by qualification engine._\n\n"
             "## Red Flags\n_To be identified by qualification engine._\n\n"
             "## Call History\n| Date | Contact | Outcome | Follow-up |\n|------|---------|---------|----------|\n\n"

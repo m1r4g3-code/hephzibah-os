@@ -1,18 +1,21 @@
 ---
+city: Auburn
 company: Inspire Family Medicine
+country: US
+email: info@inspirefamilymedicine.com
+follow_up_date: null
+last_contact: null
+lead_score: null
 owner: Dr. Jennifer LaBonte
 phone: (774) 772-5161
-email: info@inspirefamilymedicine.com
-website: https://www.inspirefamilymedicine.com
-city: Auburn
-state: MA
-country: US
-lead_score: null
-tier: null
 stage: cold
-last_contact: null
-follow_up_date: null
-tags: [prospect, doctors, dpc]
+state: MA
+tags:
+- prospect
+- doctors
+- dpc
+tier: null
+website: https://www.inspirefamilymedicine.com
 ---
 
 ## Summary
@@ -36,6 +39,9 @@ First DPC (Direct Primary Care) practice in Worcester County. Dr. LaBonte has 25
 - Dr. LaBonte is highly educated and established (25 years, Associate Professor at UMass) — may be skeptical of external services
 - They already have SOME digital presence — not a zero-baseline conversation
 - DPC community is tight-knit; word of mouth matters — deliver or don't call
+
+## Key Contacts
+- [[dr-jennifer-labonte]]
 
 ## Call History
 | Date | Contact | Outcome | Follow-up |
