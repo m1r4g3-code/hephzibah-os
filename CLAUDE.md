@@ -1,7 +1,7 @@
-# Cold Outreach Brain — Agent Instructions
+# Second Brain OS — Agent Instructions
 
-This is an LLM-maintained knowledge vault following the Karpathy LLM Wiki pattern.
-The operator drops raw files into `sources/`. Claude Code reads, synthesizes, and maintains `wiki/`.
+This is an AI-maintained multi-domain knowledge vault following the Karpathy LLM Wiki pattern.
+The operator drops raw files into `sources/<domain>/`. Claude Code reads, synthesizes, and maintains `wiki/<domain>/`.
 The operator browses. Claude Code writes.
 
 Claude Code IS the intelligence engine. Python scripts are mechanical arms — they handle
@@ -9,105 +9,158 @@ I/O, file writes, data formatting. Claude Code handles all analysis, reasoning, 
 
 ---
 
+## Architecture — Domain-Driven
+
+Each life domain is self-contained under a shared namespace pattern:
+
+```
+sources/<domain>/          ← raw inputs for that domain (immutable)
+wiki/<domain>/             ← AI-maintained outputs for that domain
+scripts/modules/<domain>/  ← engines that serve that domain
+config/<domain>/           ← config specific to that domain
+```
+
+Shared layers (above all domains):
+- `wiki/me/` — identity hub: story, brand, goals, platforms, startup
+- `wiki/concepts/` — atomic concept nodes linked across all domains
+- `scripts/lib/` — shared Python libs used by all engines
+- `ME.md` — operator profile loaded for coaching + personalization
+
+---
+
 ## Vault Layout
 
 ```
-sources/           ← RAW INPUTS. Never edit these.
-  calls/           ← call transcripts (.txt)
-  prospects/       ← scraped lead data (.jsonl), intel cards
-  research/        ← industry research, competitor analysis
+sources/
+  outreach/          <- cold outreach raw inputs
+    calls/           <- call transcripts (.txt)
+    prospects/       <- scraped lead data (.jsonl), intel cards
+    research/        <- industry + competitor research
+  content/           <- content drafts, post ideas (scaffold)
+  learning/          <- course notes, book highlights (scaffold)
+  startup/           <- product research, competitor docs (scaffold)
 
-wiki/              ← AI-MAINTAINED. Synthesized from sources.
-  contacts/        ← one .md per person
-  companies/       ← one .md per business
-  objections/
-    playbook.md    ← living objection playbook, ranked by frequency
-  scripts/
-    master_script.md   ← self-updating call script
-  coaching/
-    latest_roast.md    ← most recent coaching report
+wiki/
+  me/                <- identity hub (above all domains)
+    identity.md      <- story, inner circle, personal rules
+    brand.md         <- positioning, voice, real strengths
+    goals.md         <- financial, physical, spiritual targets
+    startup.md       <- webapp vision, name shortlist
+    platforms/       <- github.md, contra.md, linkedin.md
+  concepts/          <- shared atomic concept nodes (cross-domain)
+  outreach/          <- cold outreach intelligence (active)
+    companies/       <- one .md per business
+    contacts/        <- one .md per person
+    objections/
+      playbook.md    <- living objection playbook, ranked by frequency
+    scripts/
+      master_script.md  <- self-updating call script
+    coaching/
+      latest_roast.md
+    examples/        <- study material, not live prospects
+  content/           <- brand content notes (scaffold)
+  learning/          <- learning notes (scaffold)
+  startup/           <- startup research (scaffold)
+  clients/           <- active + closed client notes (scaffold)
+  disciplines/       <- fitness, spiritual, habits (scaffold)
 
-scripts/           ← Python engines (I/O only, Claude Code is the brain)
-  lib/
-    schemas.py     ← Pydantic models, single source of truth
-    vault.py       ← Only writer to wiki/ (atomic, merge-safe)
-    logger.py      ← Structured JSON logs to logs/
-    utils.py       ← Path helpers, manifest R/W, env loader
-  engines/
-    call_intelligence_engine.py
-    research_engine.py (M2)
-    lead_engine.py (M2)
-    qualification_engine.py (M3)
-    personalization_engine.py (M3)
-    coaching_engine.py (M4)
-    learning_engine.py (M4)
-    daily_brief_engine.py (M4)
-  audio_to_transcript.py (M4)
+scripts/
+  lib/               <- shared libraries (all domains import from here)
+    schemas.py       <- Pydantic models, single source of truth
+    vault.py         <- Only writer to wiki/ (atomic, merge-safe)
+    logger.py        <- Structured JSON logs to logs/
+    utils.py         <- DOMAIN_PATHS registry, manifest R/W, env loader
+  modules/
+    outreach/        <- engines for the outreach domain
+      call_intelligence_engine.py
+      research_engine.py
+      lead_engine.py
+      qualification_engine.py
+      personalization_engine.py
+      coaching_engine.py
+      learning_engine.py
+      daily_brief_engine.py
+      email_engine.py
 
 config/
-  scoring_rules.yaml    ← niche-specific lead scoring (M2, BLOCKED until niche confirmed)
-  selectors.yaml        ← Google Maps CSS selectors (update when DOM changes)
+  outreach/          <- outreach-specific config
+    active_niche.yaml
+    selectors.yaml
+    niches/
 
 pipeline/
-  pipeline.md           ← deal stage kanban
+  pipeline.md        <- deal stage kanban
 
-daily/                  ← daily call logs + briefing cards
+daily/               <- daily call logs + briefing cards
+logs/                <- structured JSON engine logs
 
-ME.md                   ← operator profile (loaded for personalization + coaching)
-.env                    ← API keys (never committed)
-logs/                   ← structured JSON engine logs
+ME.md                <- operator profile (loaded by /prep-call, /roast-me)
+CLAUDE.md            <- this file
+.env                 <- API keys (never committed)
 ```
 
 ---
 
 ## Custom Commands
 
-| Command | What I do |
-|---------|-----------|
-| `/analyze-call [file]` | Read transcript → extract all calls → write wiki → show coaching flags |
-| `/roast-me [file\|all\|last-N]` | Load ME.md + transcripts → brutal coaching report → write to wiki/coaching/ |
-| `/prep-call [company]` | Load company wiki + playbook + ME.md → generate intel card |
-| `/score-lead [company\|--batch]` | Score lead against scoring_rules.yaml → update frontmatter |
-| `/update-vault` | Process all new sources/ files → update wiki → summary |
-| `/daily-brief` | Read pipeline + leads → generate prioritized call sheet |
+| Command | Domain | What I do |
+|---------|--------|-----------|
+| `/analyze-call [file]` | outreach | Read transcript -> extract all calls -> write wiki -> show coaching flags |
+| `/roast-me [file\|all\|last-N]` | outreach | Load ME.md + transcripts -> brutal coaching report -> write to wiki/outreach/coaching/ |
+| `/prep-call [company]` | outreach | Load company wiki + playbook + ME.md -> generate intel card |
+| `/score-lead [company\|--batch]` | outreach | Score lead against scoring_rules.yaml -> update frontmatter |
+| `/update-vault` | outreach | Process all new sources/ files -> update wiki -> summary |
+| `/daily-brief` | outreach | Read pipeline + leads -> generate prioritized call sheet |
+| `/write-email [company]` | outreach | Write cold/follow-up email -> push to Gmail as draft |
+| `/write-linkedin [company]` | me | LinkedIn connection request or DM |
+| `/build-case-study [company]` | me | Case study from closed client |
+| `/write-proposal [company]` | me | Scoped proposal with ROI framing |
 
 ---
 
 ## Core Rules
 
-### When a new file lands in `sources/calls/`
+### When a new file lands in `sources/outreach/calls/`
 1. Read the full transcript.
 2. Split into individual calls (one conversation = one analysis unit).
 3. For each call extract: prospect name/company/phone, outcome, objections (exact quotes),
    winning phrases, rapport moments, coaching flags (exact quotes, severity), close type,
    follow-up date/action.
-4. Write `wiki/contacts/<name>.md` — create or merge (never overwrite call history).
-5. Write `wiki/companies/<company>.md` — create or update stage + last_contact.
-6. Append new objections to `wiki/objections/playbook.md` with exact quotes.
-7. Update `sources/prospects/.processed_manifest.json`.
+4. Write `wiki/outreach/contacts/<name>.md` — create or merge (never overwrite call history).
+5. Write `wiki/outreach/companies/<company>.md` — create or update stage + last_contact.
+6. Append new objections to `wiki/outreach/objections/playbook.md` with exact quotes.
+7. Update `sources/outreach/prospects/.processed_manifest.json`.
 
 ### When `/roast-me` is invoked
 1. Load `ME.md` for operator context.
-2. Read all specified transcripts.
+2. Read all specified transcripts from `sources/outreach/calls/`.
 3. Produce CoachingReport — cite exact quotes for every criticism, no generic feedback.
-4. Write to `wiki/coaching/latest_roast.md` and `wiki/coaching/roast_<date>.md`.
+4. Write to `wiki/outreach/coaching/latest_roast.md` and `wiki/outreach/coaching/roast_<date>.md`.
 5. Never soften output. The operator explicitly requested brutal feedback.
 
-### When a new file lands in `sources/prospects/`
+### When a new file lands in `sources/outreach/prospects/`
 1. Parse as JSONL (one RawProspect or EnrichedProspect per line).
-2. Create stub `wiki/companies/<company>.md` for each prospect.
+2. Create stub `wiki/outreach/companies/<company>.md` for each prospect.
 3. If enriched: populate pain signals, website signals, social signals in frontmatter.
 4. Set `stage: cold` in frontmatter.
 
-### When a new file lands in `sources/research/`
+### When a new file lands in `sources/outreach/research/`
 1. Extract insights relevant to the operator's niche.
-2. Update `wiki/scripts/` or `wiki/objections/playbook.md` if new language is found.
+2. Update `wiki/outreach/scripts/` or `wiki/outreach/objections/playbook.md` if new language is found.
 
 ### Never
 - Edit anything inside `sources/`
 - Invent contact details not present in source files
 - Mark outcome as "booked" unless transcript explicitly confirms a date/time
 - Overwrite existing call history rows — always append
+
+---
+
+## Wikilink Resolution
+
+Obsidian resolves `[[filename]]` by scanning all `.md` files recursively — path is irrelevant.
+`[[balcones-psychiatry]]` works whether the file is in `wiki/outreach/companies/` or anywhere else.
+Moving files within the vault never breaks wikilinks.
 
 ---
 
@@ -212,7 +265,7 @@ tags: []
 | Flag | What it means |
 |------|--------------|
 | `let_go_moment` | Prospect showed interest/warmth but caller accepted soft no without any pushback |
-| `filler_density` | High um/uh/like/you know count — signals nervousness |
+| `filler_density` | High um/uh/like/you know count -- signals nervousness |
 | `close_vague` | Call ended without a specific date and time confirmed |
 | `over_explained` | Caller dumped full service description when one sentence would have done |
 | `lost_frame` | Caller became nervous/needy, let prospect take control of pacing |
@@ -228,3 +281,13 @@ Load `ME.md` when:
 - Running `/analyze-call` — flag coaching issues relative to stated goals
 
 Do NOT auto-load ME.md on every command — token discipline.
+
+---
+
+## Adding a New Domain
+
+1. Create `sources/<domain>/` for raw inputs
+2. Create `wiki/<domain>/` with a `_index.md` stub
+3. Create `scripts/modules/<domain>/` for any domain-specific engines
+4. Add the domain to `DOMAIN_PATHS` in `scripts/lib/utils.py`
+5. Document the domain's custom commands in this file

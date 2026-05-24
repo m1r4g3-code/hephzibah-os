@@ -16,9 +16,32 @@ except ImportError:
     pass
 
 VAULT_ROOT = Path(__file__).parent.parent.parent
-SOURCES_DIR = VAULT_ROOT / "sources"
-WIKI_DIR = VAULT_ROOT / "wiki"
-LOGS_DIR = VAULT_ROOT / "logs"
+
+# Domain-aware path registry
+DOMAIN_PATHS = {
+    "outreach": {
+        "sources": VAULT_ROOT / "sources" / "outreach",
+        "wiki":    VAULT_ROOT / "wiki" / "outreach",
+        "config":  VAULT_ROOT / "config" / "outreach",
+    },
+    "content": {
+        "sources": VAULT_ROOT / "sources" / "content",
+        "wiki":    VAULT_ROOT / "wiki" / "content",
+    },
+    "learning": {
+        "sources": VAULT_ROOT / "sources" / "learning",
+        "wiki":    VAULT_ROOT / "wiki" / "learning",
+    },
+    "startup": {
+        "sources": VAULT_ROOT / "sources" / "startup",
+        "wiki":    VAULT_ROOT / "wiki" / "startup",
+    },
+}
+
+# Legacy aliases — all outreach engines use these unchanged
+SOURCES_DIR = DOMAIN_PATHS["outreach"]["sources"]
+WIKI_DIR    = DOMAIN_PATHS["outreach"]["wiki"]
+LOGS_DIR    = VAULT_ROOT / "logs"
 MANIFEST_PATH = SOURCES_DIR / "prospects" / ".processed_manifest.json"
 
 
