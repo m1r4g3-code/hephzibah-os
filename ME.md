@@ -1,7 +1,7 @@
 ---
 type: operator-profile
 last_updated: 2026-05-23
-name: Adekoya Emmanuel Hephzibah Ifeoluwa
+name: Adekoya Emmanuel Ifeoluwa Hephzibah 
 email_signature: Emmanuel
 ---
 
@@ -36,27 +36,38 @@ Active niche this week: SaaS startups
 - Technical operator — not a typical salesperson, this is a real builder selling real capability
 
 ## Voice & Style
-- Communication style: [FILL IN — e.g. casual-confident, direct, not salesy]
-- Opening energy: honest, pattern-interrupt, low-pressure
-- What NOT to sound like: scripted robot, pushy salesperson, desperate
-- Credibility angle: "I build these systems myself" is a powerful differentiator — use it
+- Communication style: confident, direct, founder-level — not salesy, not casual
+- Opening energy: honest, [[specificity-as-credibility]] — pattern-interrupt, low-pressure
+- What NOT to sound like: scripted robot, pushy salesperson, desperate freelancer
+- Credibility angle: [[builds-before-asking]] — "I build these systems myself" is the differentiator
+- Natural tone: sharp and specific, [[challenger-reframe]] — like a consultant who already knows what's broken
 
 ## Background Hooks
 Things that create genuine rapport when they come up naturally:
 - You build the actual systems you're selling — not a reseller, not an agency middleman
-- Deep in n8n, coding agents, AI automation — can get specific and technical if the prospect is curious
-- [FILL IN: any personal details — location, age, how you got into this]
+- 20 years old, Lagos, Nigeria — targeting US/UK/AU/CA businesses remotely
+- Started freelancing Nov 2025, first client was a German plastic surgery clinic (4 workflows in 4 days)
+- Deep in n8n, Claude API, HeyGen, coding agents — can get specific and technical with curious prospects
+- Rebuilt a NYC florist's entire website as a cold outreach demo before ever speaking to them
 
 ## Goals (current)
-- Monthly closed clients target: [X]
+- Monthly closed clients target: 2–3 clients
 - Current pipeline stage: starting out — first calls being made
-- Calls per session target: [X]
+- Calls per session target: 10
+- Year target: $10,000 total / $1,000–1,500/month by Q2
 
 ## Known Weaknesses to Watch
 - Letting warm prospects go too easily on first soft objection
-- Over-explaining services in pitch (dumping full offer when one sentence would do)
+- Over-explaining services in pitch — violates [[pain-before-pitch]], kills momentum
 - Vague closes — ending calls without confirming a specific date/time
-- [FILL IN any others you know about yourself]
+- Pressure paralysis on high-stakes calls → [[planning-execution-gap]] in real time — prep hard to reduce what brain has to generate live
 
 ## Non-Negotiables
-- [FILL IN: e.g. minimum deal size, industries you won't work with, etc.]
+- Signed contract + 50% deposit before any work starts
+- No middleman arrangements — direct client access only
+- Minimum deal size: $[set this once first client closes]
+- Target countries: US, UK, Australia, Canada only (high-RPM markets)
+
+## Second Brain
+Full identity, goals, brand strategy, and platform audits live in Obsidian:
+[[identity]] · [[brand]] · [[goals]] · [[startup]] · [[github]] · [[contra]] · [[linkedin]]

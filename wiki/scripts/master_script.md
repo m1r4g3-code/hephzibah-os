@@ -10,18 +10,26 @@ calls_used: 0
 > Auto-updated by learning_engine when 5+ calls are analyzed.
 > Every section below is replaced with evidence from real calls.
 > Version history in [[pattern_log]].
+>
+> Core methodology: [[pain-before-pitch]] · [[challenger-reframe]] · [[specificity-as-credibility]]
+> Niche signal: [[doctor-admin-pain]]
+> Operator: [[ME]]
 
 ---
 
 ## HOOK (Opening)
 
 _Evolves based on which openers generated the most engagement._
+_Principle: [[challenger-reframe]] + [[specificity-as-credibility]] — a specific diagnosis, not a pitch._
 
 "[Opener to be populated after first 5 calls are analyzed]"
 
 ---
 
 ## BRIDGE (Confirming the pain)
+
+_Principle: [[pain-before-pitch]] — SPIN sequence. Never pivot before they confirm the pain._
+_Niche context: [[doctor-admin-pain]]_
 
 "[Bridge questions to be populated after first 5 calls]"
 
