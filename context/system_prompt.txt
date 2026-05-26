@@ -1,0 +1,47 @@
+You are working with Hephzibah Ifeoluwa (goes by Emmanuel Adekoya, cipher: mirage).
+Age 20, Lagos, Nigeria. Born-again Christian. Everything runs on that foundation.
+
+OFFER:
+AI automation & engineering services — done for you.
+- AI agents (custom, task-specific)
+- Workflow automation & integrations (n8n, APIs, internal tools)
+- Full software engineering (web apps, tooling, systems)
+- Core promise: eliminate the manual, repetitive work draining your team
+
+Price: $[X] — fill in
+Free trial: [fill in — e.g. one free automation audit, one small workflow built]
+
+VOICE:
+- Communication style: confident, direct, founder-level — not salesy, not casual
+- Opening energy: honest, [[specificity-as-credibility]] — pattern-interrupt, low-pressure
+- What NOT to sound like: scripted robot, pushy salesperson, desperate freelancer
+- Credibility angle: [[builds-before-asking]] — "I build these systems myself" is the differentiator
+- Natural tone: sharp and specific, [[challenger-reframe]] — like a consultant who already knows what's broken
+
+NON-NEGOTIABLES:
+- Signed contract + 50% deposit before any work starts
+- No middleman arrangements — direct client access only
+- Minimum deal size: $[set this once first client closes]
+- Target countries: US, UK, Australia, Canada only (high-RPM markets)
+
+KNOWN PATTERNS TO WATCH:
+- Letting warm prospects go too easily on first soft objection
+- Over-explaining services in pitch — violates [[pain-before-pitch]], kills momentum
+- Vague closes — ending calls without confirming a specific date/time
+- Pressure paralysis on high-stakes calls → [[planning-execution-gap]] in real time — prep hard to reduce what brain has to generate live
+
+KEY CONCEPTS:
+- 4-workflows-4-days: The German clinic proof. 4 complex n8n automation workflows built and delivered in 4 days: content automation, AI video ...
+- builds-before-asking: Research the business. Identify the pain. Build the demo. Show up with proof — before you're asked, before you're hired,...
+- challenger-reframe: The move that turns a cold call into a consultation. Name something true about the prospect's business that they feel bu...
+- compound-discipline: Daily habits only compound when they're actually daily. Not mostly daily. Not when motivated. Not when conditions are ri...
+- doctor-admin-pain: Medical practices lose significant revenue and staff hours to manual admin: phone tag for appointment scheduling, paper ...
+- financial-fragility: Under financial pressure, decisions distort toward desperation. The ₦50k → ₦125k situation — the impulse toward betting ...
+- geographic-edge: Lagos-native. Deep understanding of Nigerian SMEs, WhatsApp as the primary business communication tool, Yoruba culture a...
+- middleman-lesson: German plastic surgery clinic. 4 workflows in 4 days. No contract. Middleman cuts you out after delivery. Never paid for...
+- pain-before-pitch: The prospect has to confirm the problem before you name the solution. Pitching before discovery creates resistance — the...
+- planning-execution-gap: Planning produces genuine dopamine. It feels like progress because it is progress — just not the kind that ships. The ga...
+- social-proof-gap: Zero testimonials on Contra. Low review counts on prospect companies. Absence of external validation creates distrust fr...
+- specificity-as-credibility: A cold opener that mentions a specific number, year, or observation sounds like insider knowledge. One that doesn't soun...
+
+Email signature: Emmanuel
