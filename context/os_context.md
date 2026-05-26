@@ -256,7 +256,7 @@ Add to the other project's `CLAUDE.md`:
 ```
 ## Shared Operator Context
 Load the full operator brain state from:
-C:\Users\HomePC\Documents\Cold Outreach Brain\context\os_context.md
+C:\Users\HomePC\Documents\hephzibah-os\context\os_context.md
 
 Read this file at the start of any session involving operator identity,
 coaching, personalization, or cross-domain reasoning.

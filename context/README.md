@@ -1,6 +1,6 @@
 # Shared Brain — Integration Guide
 
-This directory is the portable memory layer of the Second Brain OS.
+This directory is the portable memory layer of Hephzibah OS.
 It exports the operator's identity, voice, concepts, and patterns into a format
 any AI system can consume — on this machine or anywhere else.
 
@@ -42,7 +42,7 @@ In that project's `CLAUDE.md`, add:
 At the start of any session involving operator identity, coaching, personalization,
 or cross-domain reasoning, read:
 
-C:\Users\HomePC\Documents\Cold Outreach Brain\context\os_context.md
+C:\Users\HomePC\Documents\hephzibah-os\context\os_context.md
 
 This is the shared brain. It contains who the operator is, their voice, their
 known patterns, their concept network, and their current goals.
@@ -80,7 +80,7 @@ Copy the contents of `system_prompt.txt` and paste it as the system prompt in:
 One brain. Multiple projects tap into it.
 
 ```
-Cold Outreach Brain/context/os_context.md
+hephzibah-os/context/os_context.md
          │
          ├── Cold Outreach OS (this project) — active
          ├── Startup OS (future project)      — reads same brain

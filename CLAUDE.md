@@ -1,4 +1,4 @@
-# Second Brain OS — Agent Instructions
+# Hephzibah OS — Agent Instructions
 
 This is an AI-maintained multi-domain knowledge vault following the Karpathy LLM Wiki pattern.
 The operator drops raw files into `sources/<domain>/`. Claude Code reads, synthesizes, and maintains `wiki/<domain>/`.

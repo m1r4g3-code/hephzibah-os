@@ -144,7 +144,7 @@ Add to the other project's `CLAUDE.md`:
 ```
 ## Shared Operator Context
 Load the full operator brain state from:
-C:\\Users\\HomePC\\Documents\\Cold Outreach Brain\\context\\os_context.md
+C:\\Users\\HomePC\\Documents\\hephzibah-os\\context\\os_context.md
 
 Read this file at the start of any session involving operator identity,
 coaching, personalization, or cross-domain reasoning.
@@ -209,7 +209,7 @@ def main():
     print("  Written: context/system_prompt.txt")
     print()
     print("To use in another project, add to its CLAUDE.md:")
-    print(f"  Read C:\\Users\\HomePC\\Documents\\Cold Outreach Brain\\context\\os_context.md")
+    print(f"  Read C:\\Users\\HomePC\\Documents\\hephzibah-os\\context\\os_context.md")
     print()
     print("To use in any AI chat, paste context/system_prompt.txt as the system prompt.")
 

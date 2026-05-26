@@ -1,6 +1,6 @@
-# Second Brain OS
+# Hephzibah OS
 
-> A multi-domain AI-maintained knowledge system. Cold outreach is one module. Every domain gets smarter over time.
+> A multi-domain AI-maintained second brain. Cold outreach is one module. Every domain of life gets smarter over time.
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=flat-square)
 ![Claude Code](https://img.shields.io/badge/Powered_by-Claude_Code-orange?style=flat-square)
@@ -114,7 +114,7 @@ Shared above all domains:
 ## Project Structure
 
 ```
-Second Brain OS/
+hephzibah-os/
 │
 ├── wiki/
 │   ├── me/                    # Identity hub — above all domains
