@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 42
 city: TX 78758
 company: Thrive Medical
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Thrive+Medical/data=!4m7!3m6!1s0x8644cdede707bcaf:0x97709b8943e460b9!8m2!3d30.4077792!4d-97.7040594!16s%2Fg%2F11ghlk9_d8!19sChIJr7wH5-3NRIYRuWDkQ4mbcJc?authuser=0&hl=en&rclk=1
 google_rating: 4.7
 lead_score: 45
+name: Thrive Medical
 owner: null
 phone: +1 512-697-7090
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 1054
 stage: cold
 state: United

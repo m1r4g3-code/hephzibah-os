@@ -1,13 +1,22 @@
 ---
+aliases: []
 city: Auburn
 company: Inspire Family Medicine
 country: US
 email: info@inspirefamilymedicine.com
+entity_type: company
 follow_up_date: null
 last_contact: null
 lead_score: null
+name: Inspire Family Medicine
 owner: Dr. Jennifer LaBonte
 phone: (774) 772-5161
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[dr-jennifer-labonte]]'
+  type: mentioned_in
 stage: cold
 state: MA
 tags:

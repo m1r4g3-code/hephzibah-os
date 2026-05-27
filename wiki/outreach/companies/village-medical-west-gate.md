@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 43
 city: TX 78745
 company: Village Medical - West Gate
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Village+Medical+-+West+Gate/data=!4m7!3m6!1s0x865b4b3ec07e0eb3:0x90c6b3e164b63219!8m2!3d30.2309821!4d-97.8033039!16s%2Fg%2F1tfjlk1s!19sChIJsw5-wD5LW4YRGTK2ZOGzxpA?authuser=0&hl=en&rclk=1
 google_rating: 4.6
 lead_score: 45
+name: Village Medical - West Gate
 owner: null
 phone: +1 512-394-6020
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 578
 stage: cold
 state: United

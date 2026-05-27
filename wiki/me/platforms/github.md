@@ -1,9 +1,28 @@
 ---
-type: platform-audit
-platform: GitHub
+aliases: []
+entity_type: platform
 handle: m1r4g3-code
-url: https://github.com/m1r4g3-code
 last_audited: 2026-05-24
+name: GitHub
+platform: GitHub
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[contra]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[linkedin]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[brand]]'
+  type: mentioned_in
+type: platform-audit
+url: https://github.com/m1r4g3-code
 ---
 
 ## Current State

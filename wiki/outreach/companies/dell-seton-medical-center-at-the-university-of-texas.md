@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 53
 city: TX 78701
 company: Dell Seton Medical Center at The University of Texas
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Dell+Seton+Medical+Center+at+The+University+of+Texas/data=!4m7!3m6!1s0x8644b5a27ba55557:0x106309e430c2c7ce!8m2!3d30.27651!4d-97.7338352!16s%2Fg%2F11ddyxdp9v!19sChIJV1Wle6K1RIYRzsfCMOQJYxA?authuser=0&hl=en&rclk=1
 google_rating: 4.0
 lead_score: 45
+name: Dell Seton Medical Center at The University of Texas
 owner: null
 phone: +1 512-324-7000
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 1754
 stage: cold
 state: United

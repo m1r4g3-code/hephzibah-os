@@ -1,9 +1,43 @@
 ---
-type: platform-audit
-platform: Contra
+aliases: []
+entity_type: platform
 handle: adekoya_afolasadelawal_7r788pz8
-url: https://contra.com/adekoya_afolasadelawal_7r788pz8/work
 last_audited: 2026-05-24
+name: Contra
+platform: Contra
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[middleman-lesson]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[social-proof-gap]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[4-workflows-4-days]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[github]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[linkedin]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[brand]]'
+  type: mentioned_in
+type: platform-audit
+url: https://contra.com/adekoya_afolasadelawal_7r788pz8/work
 ---
 
 ## Current State

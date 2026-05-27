@@ -26,6 +26,7 @@ from lib.utils import (
 )
 from lib.vault import write_contact_note, write_company_note, append_objection
 from lib.schemas import CallAnalysis, CallOutcome, ObjectionInstance, CoachingFlag
+from modules.brain.graph_engine import process_conversation
 
 try:
     from rich.console import Console
@@ -228,6 +229,15 @@ def write_analysis_results(analyses: list[CallAnalysis], source_file: str) -> di
         coaching_flags_total += len(analysis.coaching_flags)
 
     mark_transcript_processed(source_file)
+
+    # Wire new entities and relationships into the knowledge graph
+    try:
+        from lib.utils import SOURCES_DIR
+        transcript_path = SOURCES_DIR / "calls" / source_file
+        if transcript_path.exists():
+            process_conversation(transcript_path.read_text(encoding="utf-8"))
+    except Exception:
+        pass  # graph enrichment is non-blocking
 
     return {
         "contacts_written": contacts_written,

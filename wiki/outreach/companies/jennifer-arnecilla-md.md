@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 39
 city: TX 78758
 company: Jennifer Arnecilla, MD
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Jennifer+Arnecilla,+MD/data=!4m7!3m6!1s0x8644cd1d4f91c559:0x699e59bd82df009c!8m2!3d30.4132319!4d-97.7038682!16s%2Fg%2F11hdjsnwcf!19sChIJWcWRTx3NRIYRnADfgr1Znmk?authuser=0&hl=en&rclk=1
 google_rating: 4.9
 lead_score: 51
+name: Jennifer Arnecilla, MD
 owner: null
 phone: +1 512-901-4026
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 194
 stage: cold
 state: United

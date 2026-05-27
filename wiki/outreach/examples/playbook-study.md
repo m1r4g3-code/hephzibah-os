@@ -1,7 +1,10 @@
 ---
-type: objection-playbook
+aliases: []
+entity_type: person
 last_updated: 2026-05-22
+name: Playbook Study
 total_objections: 5
+type: objection-playbook
 ---
 
 # Objection Playbook

@@ -1,11 +1,14 @@
 ---
-name: Ted
+aliases: []
 company: Unknown (one-man travel shop)
+entity_type: person
+follow_up_date: 2027-05-22
+last_contact: 2026-05-22
+name: Ted
 phone: unknown
 stage: nurturing
-last_contact: 2026-05-22
-follow_up_date: 2027-05-22
-tags: [prospect]
+tags:
+- prospect
 ---
 
 ## Call History

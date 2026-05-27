@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 24
 city: TX 78705
 company: Euphora Health
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Euphora+Health/data=!4m7!3m6!1s0x8644ca7e179b7a4f:0x8857f170c19172e7!8m2!3d30.3032826!4d-97.7402585!16s%2Fg%2F1pp2vjb9c!19sChIJT3qbF37KRIYR53KRwXDxV4g?authuser=0&hl=en&rclk=1
 google_rating: 5.0
 lead_score: 59
+name: Euphora Health
 owner: null
 phone: +1 512-887-3955
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 84
 stage: cold
 state: United

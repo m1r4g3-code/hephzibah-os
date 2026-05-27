@@ -1,8 +1,22 @@
 ---
-type: startup-vision
-last_updated: 2026-05-24
-stage: architected — not yet building
+aliases: []
 build_start: Q2–Q3 2026 (after MacBook secured)
+entity_type: domain
+last_updated: 2026-05-24
+name: Startup Vision
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[builds-before-asking]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[geographic-edge]]'
+  type: mentioned_in
+stage: architected — not yet building
+type: startup-vision
 ---
 
 ## Primary Vision: AI Video Editing Webapp

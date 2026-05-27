@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 21
 city: TX 78757
 company: HarmonyCares Medical Group
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/HarmonyCares+Medical+Group/data=!4m7!3m6!1s0x8644cb09d5ef01bd:0x9d0e33947fee8f4f!8m2!3d30.360285!4d-97.7425703!16s%2Fg%2F1tkf1c8x!19sChIJvQHv1QnLRIYRT4_uf5QzDp0?authuser=0&hl=en&rclk=1
 google_rating: 4.5
 lead_score: 60
+name: HarmonyCares Medical Group
 owner: null
 phone: +1 512-407-8880
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 58
 stage: cold
 state: United

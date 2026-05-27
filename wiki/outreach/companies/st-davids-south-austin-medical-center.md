@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 29
 city: TX 78704
 company: St. David's South Austin Medical Center
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/St.+David%27s+South+Austin+Medical+Center/data=!4m7!3m6!1s0x8644b4b788f28eff:0xf4f1e787e94c184b!8m2!3d30.2260391!4d-97.7745692!16s%2Fm%2F04g3pg1!19sChIJ_47yiLe0RIYRSxhM6Yfn8fQ?authuser=0&hl=en&rclk=1
 google_rating: 4.3
 lead_score: 54
+name: St. David's South Austin Medical Center
 owner: null
 phone: +1 512-447-2211
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 4837
 stage: cold
 state: United

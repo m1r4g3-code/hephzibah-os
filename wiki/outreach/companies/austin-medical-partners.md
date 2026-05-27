@@ -1,14 +1,23 @@
 ---
+aliases: []
 call_priority: 14
 city: TX 78705
 company: Austin Medical Partners
 country: US
+entity_type: company
 gmail_draft_id: r6297960623528170617
 google_maps_url: https://www.google.com/maps/place/Austin+Medical+Partners/data=!4m7!3m6!1s0x8644cbbc36c1f30f:0xeb9ff2ad25f516a3!8m2!3d30.3049563!4d-97.7440893!16s%2Fg%2F11h4lnqmhg!19sChIJD_PBNrzLRIYRoxb1Ja3yn-s?authuser=0&hl=en&rclk=1
 google_rating: 4.9
 lead_score: 68
+name: Austin Medical Partners
 owner: null
 phone: +1 512-640-2691
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 36
 stage: cold
 state: United

@@ -1,11 +1,14 @@
 ---
-name: Rachel
+aliases: []
 company: Unknown
+entity_type: person
+follow_up_date: null
+last_contact: 2026-05-22
+name: Rachel
 phone: unknown
 stage: attempted
-last_contact: 2026-05-22
-follow_up_date: null
-tags: [prospect]
+tags:
+- prospect
 ---
 
 ## Pain Signals

@@ -1,10 +1,54 @@
 ---
-type: platform-audit
-platform: LinkedIn
+aliases: []
+entity_type: platform
 handle: hephzibah-ifeoluwa-2ab82b2b7
-url: https://www.linkedin.com/in/hephzibah-ifeoluwa-2ab82b2b7
 last_audited: 2026-05-24
+name: LinkedIn
+platform: LinkedIn
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[middleman-lesson]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[specificity-as-credibility]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[builds-before-asking]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[pain-before-pitch]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[4-workflows-4-days]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[github]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[contra]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[brand]]'
+  type: mentioned_in
 status: not-fully-audited (blocked automated access)
+type: platform-audit
+url: https://www.linkedin.com/in/hephzibah-ifeoluwa-2ab82b2b7
 ---
 
 ## Current State

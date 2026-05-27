@@ -1,11 +1,15 @@
 ---
-name: Janet
+aliases: []
 company: Unknown (Sandals/Beaches affiliate travel advisor)
+entity_type: person
+follow_up_date: 2026-05-25
+last_contact: 2026-05-22
+name: Janet
 phone: unknown
 stage: callback_scheduled
-last_contact: 2026-05-22
-follow_up_date: 2026-05-25
-tags: [prospect, hot-lead]
+tags:
+- prospect
+- hot-lead
 ---
 
 ## Pain Signals

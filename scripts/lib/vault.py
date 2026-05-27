@@ -16,7 +16,7 @@ import yaml
 from filelock import FileLock
 
 from .utils import WIKI_DIR, VAULT_ROOT, slugify, today_iso
-from .schemas import CallAnalysis, CallOutcome, EmailDraft, EnrichedProspect, ObjectionInstance
+from .schemas import CallAnalysis, CallOutcome, EmailDraft, EnrichedProspect, ObjectionInstance, Relationship
 
 
 # ── FRONTMATTER ───────────────────────────────────────────────────────────────
@@ -438,6 +438,112 @@ def write_email_draft(draft: EmailDraft) -> Path:
             fm, body = _parse_frontmatter(company_path.read_text(encoding="utf-8"))
             fm["gmail_draft_id"] = draft.gmail_draft_id
             _atomic_write(company_path, _render_frontmatter(fm, body))
+
+    return path
+
+
+# ── KNOWLEDGE GRAPH ───────────────────────────────────────────────────────────
+
+INVERSE_TYPE = {
+    "uses": "used_by", "built": "built_by", "knows": "known_by",
+    "works_at": "employs", "sells_to": "targeted_by", "competes_with": "competed_by",
+    "pain_signal": "has_pain", "identity_on": "hosted_at", "part_of": "contains",
+    "embodies": "embodied_by", "reinforces": "reinforced_by", "opposes": "opposed_by",
+    "teaches": "taught_by", "mentioned_in": "references",
+}
+
+
+def _resolve_wiki_path(slug: str) -> Path | None:
+    """Find a node file anywhere in wiki/ by slug."""
+    for p in VAULT_ROOT.glob(f"wiki/**/{slug}.md"):
+        return p
+    return None
+
+
+def write_entity_relationships(
+    slug: str,
+    wiki_subpath: str,
+    entity_type: str,
+    name: str,
+    new_relationships: list[Relationship],
+    aliases: list[str] | None = None,
+) -> Path:
+    """
+    Merge new typed relationships into an entity node's frontmatter.
+    - Increments strength if relationship already exists (same target + type).
+    - Appends new relationships if not seen before.
+    - Writes bidirectional inverse to target nodes.
+    - Creates stub node if it doesn't exist yet.
+    """
+    path = VAULT_ROOT / "wiki" / wiki_subpath / f"{slug}.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    fm, body = _parse_frontmatter(path.read_text(encoding="utf-8")) if path.exists() else ({}, "")
+
+    fm.setdefault("entity_type", entity_type)
+    fm.setdefault("name", name)
+    if aliases:
+        fm.setdefault("aliases", aliases)
+
+    existing: list[dict] = fm.get("relationships") or []
+    existing_index = {(r["target"], r["type"]): i for i, r in enumerate(existing)}
+
+    for rel in new_relationships:
+        key = (rel.target, rel.type)
+        if key in existing_index:
+            existing[existing_index[key]]["strength"] = min(
+                10, existing[existing_index[key]]["strength"] + 1
+            )
+            existing[existing_index[key]]["last_reinforced"] = today_iso()
+        else:
+            entry = {
+                "target": rel.target,
+                "type": rel.type,
+                "strength": rel.strength,
+                "first_seen": rel.first_seen or today_iso(),
+                "last_reinforced": today_iso(),
+            }
+            existing.append(entry)
+            existing_index[key] = len(existing) - 1
+
+        # Add wikilink to body if missing (keeps Obsidian graph wired)
+        target_slug = rel.target.strip("[]")
+        if f"[[{target_slug}]]" not in body:
+            body = body.rstrip() + f"\n- [[{target_slug}]]  <!-- {rel.type} -->\n"
+
+    fm["relationships"] = existing
+    _atomic_write(path, _render_frontmatter(fm, body))
+
+    # Write bidirectional inverses to target nodes
+    for rel in new_relationships:
+        inverse_type = INVERSE_TYPE.get(rel.type)
+        if not inverse_type:
+            continue
+        target_slug = rel.target.strip("[]")
+        target_path = _resolve_wiki_path(target_slug)
+        if target_path is None:
+            continue
+        t_fm, t_body = _parse_frontmatter(target_path.read_text(encoding="utf-8"))
+        t_existing: list[dict] = t_fm.get("relationships") or []
+        t_index = {(r["target"], r["type"]): i for i, r in enumerate(t_existing)}
+        back_key = (f"[[{slug}]]", inverse_type)
+        if back_key in t_index:
+            t_existing[t_index[back_key]]["strength"] = min(
+                10, t_existing[t_index[back_key]]["strength"] + 1
+            )
+            t_existing[t_index[back_key]]["last_reinforced"] = today_iso()
+        else:
+            t_existing.append({
+                "target": f"[[{slug}]]",
+                "type": inverse_type,
+                "strength": rel.strength,
+                "first_seen": rel.first_seen or today_iso(),
+                "last_reinforced": today_iso(),
+            })
+        if f"[[{slug}]]" not in t_body:
+            t_body = t_body.rstrip() + f"\n- [[{slug}]]  <!-- {inverse_type} -->\n"
+        t_fm["relationships"] = t_existing
+        _atomic_write(target_path, _render_frontmatter(t_fm, t_body))
 
     return path
 

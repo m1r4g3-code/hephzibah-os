@@ -1,14 +1,23 @@
 ---
+aliases: []
 call_priority: 18
 city: TX 78705
 company: Capital Medical Clinic
 country: US
+entity_type: company
 gmail_draft_id: r3913930493155668491
 google_maps_url: https://www.google.com/maps/place/Capital+Medical+Clinic/data=!4m7!3m6!1s0x8644ca86a0c267bb:0x8f195c83353a7ee6!8m2!3d30.3013167!4d-97.7458431!16s%2Fg%2F1thd71q5!19sChIJu2fCoIbKRIYR5n46NYNcGY8?authuser=0&hl=en&rclk=1
 google_rating: 3.9
 lead_score: 63
+name: Capital Medical Clinic
 owner: null
 phone: +1 512-454-5171
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 153
 stage: cold
 state: United

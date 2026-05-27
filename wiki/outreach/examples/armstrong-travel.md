@@ -1,12 +1,15 @@
 ---
-name: Armstrong Travel
-location: Ravena, NY
-stage: nurturing
-lead_score: null
-tier: null
+aliases: []
+entity_type: person
 last_contact: 2026-05-22
+lead_score: null
+location: Ravena, NY
+name: Armstrong Travel
 primary_contact: Brooke
-tags: [prospect]
+stage: nurturing
+tags:
+- prospect
+tier: null
 ---
 
 ## Business Signals

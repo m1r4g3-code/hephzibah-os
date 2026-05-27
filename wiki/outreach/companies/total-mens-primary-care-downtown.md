@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 44
 city: TX 78701
 company: Total Men's Primary Care - Downtown
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Total+Men%27s+Primary+Care+-+Downtown/data=!4m7!3m6!1s0x8644b50a002d777d:0x4a6743e29ddc60c6!8m2!3d30.2704832!4d-97.7416545!16s%2Fg%2F11fy113d2b!19sChIJfXctAAq1RIYRxmDcneJDZ0o?authuser=0&hl=en&rclk=1
 google_rating: 4.8
 lead_score: 45
+name: Total Men's Primary Care - Downtown
 owner: null
 phone: +1 512-229-1533
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 1159
 stage: cold
 state: United

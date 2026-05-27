@@ -1,6 +1,25 @@
 ---
-type: goals
+aliases: []
+entity_type: domain
 last_updated: 2026-05-24
+name: Goals
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[planning-execution-gap]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[compound-discipline]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[financial-fragility]]'
+  type: mentioned_in
+type: goals
 year: 2026
 ---
 

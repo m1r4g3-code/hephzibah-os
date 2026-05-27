@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 55
 city: TX 78704
 company: 'Austin Regional Clinic: ARC South 1st'
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Austin+Regional+Clinic:+ARC+South+1st/data=!4m7!3m6!1s0x8644b4b8b9fdf0fb:0x773a346aad9d045f!8m2!3d30.2273269!4d-97.7695552!16s%2Fg%2F11c480h3ks!19sChIJ-_D9ubi0RIYRXwSdrWo0Onc?authuser=0&hl=en&rclk=1
 google_rating: 4.4
 lead_score: 45
+name: 'Austin Regional Clinic: ARC South 1st'
 owner: null
 phone: +1 512-443-1311
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 485
 stage: cold
 state: United

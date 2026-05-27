@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 33
 city: TX 78731
 company: 'Austin Regional Clinic: ARC Far West'
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Austin+Regional+Clinic:+ARC+Far+West/data=!4m7!3m6!1s0x8644cb048d35d007:0xc4c72fcc164981cc!8m2!3d30.351358!4d-97.7506003!16s%2Fg%2F12hx7dcm_!19sChIJB9A1jQTLRIYRzIFJFswvx8Q?authuser=0&hl=en&rclk=1
 google_rating: 3.9
 lead_score: 51
+name: 'Austin Regional Clinic: ARC Far West'
 owner: null
 phone: +1 512-346-6611
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 907
 stage: cold
 state: United

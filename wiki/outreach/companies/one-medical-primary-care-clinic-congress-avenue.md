@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 9
 city: TX 78701
 company: One Medical Primary Care Clinic - Congress Avenue
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/One+Medical+Primary+Care+Clinic+-+Congress+Avenue/data=!4m7!3m6!1s0x8644b5a35cb59a59:0x80c7191525a13121!8m2!3d30.2657188!4d-97.7434372!16s%2Fg%2F11rfn5274p!19sChIJWZq1XKO1RIYRITGhJRUZx4A?authuser=0&hl=en&rclk=1
 google_rating: 4.5
 lead_score: 70
+name: One Medical Primary Care Clinic - Congress Avenue
 owner: null
 phone: +1 888-663-6331
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 42
 stage: cold
 state: United

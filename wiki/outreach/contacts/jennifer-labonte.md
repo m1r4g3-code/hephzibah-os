@@ -1,12 +1,22 @@
 ---
-name: Dr. Jennifer LaBonte
+aliases: []
 company: Inspire Family Medicine
-phone: (774) 772-5161
 email: info@inspirefamilymedicine.com
-stage: cold
-last_contact: null
+entity_type: person
 follow_up_date: null
-tags: [prospect, decision-maker]
+last_contact: null
+name: Dr. Jennifer LaBonte
+phone: (774) 772-5161
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[inspire-family-medicine]]'
+  type: mentioned_in
+stage: cold
+tags:
+- prospect
+- decision-maker
 ---
 
 **Company:** [[inspire-family-medicine]]

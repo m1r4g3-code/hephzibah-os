@@ -1,11 +1,14 @@
 ---
-name: Lisa
+aliases: []
 company: Unknown (first prospect — website had poor Facebook, no Instagram)
+entity_type: person
+follow_up_date: null
+last_contact: 2026-05-22
+name: Lisa
 phone: unknown
 stage: dead
-last_contact: 2026-05-22
-follow_up_date: null
-tags: [prospect]
+tags:
+- prospect
 ---
 
 ## Call History

@@ -34,6 +34,7 @@ from lib.logger import EngineLogger
 from lib.schemas import EnrichedProspect, RawProspect, SocialSignals, WebsiteSignals
 from lib.utils import VAULT_ROOT, SOURCES_DIR, now_iso
 from lib.vault import write_prospect_stub
+from modules.brain.graph_engine import process_text
 
 # ── CONFIG ─────────────────────────────────────────────────────────────────────
 
@@ -386,6 +387,16 @@ async def _run_async(input_path: Path, logger: EngineLogger) -> tuple[Path, int,
             stubs_fail += 1
 
     logger.info(f"Wiki stubs written: {stubs_ok} ok, {stubs_fail} failed")
+
+    # Wire company entities into knowledge graph
+    try:
+        for ep in enriched:
+            pain_text = " ".join(ep.pain_signals) if ep.pain_signals else ""
+            context = f"{ep.company_name}. {ep.owner_name or ''}. {pain_text}"
+            process_text(context)
+    except Exception:
+        pass  # graph enrichment is non-blocking
+
     return output_path, len(enriched), stubs_fail
 
 

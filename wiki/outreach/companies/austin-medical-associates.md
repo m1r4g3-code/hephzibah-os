@@ -1,14 +1,23 @@
 ---
+aliases: []
 call_priority: 20
 city: TX 78705
 company: Austin Medical Associates
 country: US
+entity_type: company
 gmail_draft_id: r2819224830917201157
 google_maps_url: https://www.google.com/maps/place/Austin+Medical+Associates/data=!4m7!3m6!1s0x8644b58e2b08f6e5:0xfda6c652691699fc!8m2!3d30.2880745!4d-97.7273188!16s%2Fg%2F11cjk46p6_!19sChIJ5fYIK461RIYR_JkWaVLGpv0?authuser=0&hl=en&rclk=1
 google_rating: 4.6
 lead_score: 60
+name: Austin Medical Associates
 owner: null
 phone: +1 512-477-1405
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 154
 stage: cold
 state: United

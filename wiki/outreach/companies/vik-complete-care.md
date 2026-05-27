@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 36
 city: TX 78746
 company: Vik Complete Care
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Vik+Complete+Care/data=!4m7!3m6!1s0x865b3585959b92f7:0xcf519d693eb04210!8m2!3d30.30046!4d-97.838015!16s%2Fg%2F1vfp8mhk!19sChIJ95KblYU1W4YREEKwPmmdUc8?authuser=0&hl=en&rclk=1
 google_rating: 4.9
 lead_score: 51
+name: Vik Complete Care
 owner: null
 phone: +1 512-387-3800
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 859
 stage: cold
 state: United

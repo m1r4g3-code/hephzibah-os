@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 25
 city: TX 78701
 company: Baylor Scott & White Clinic - Austin Downtown
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Baylor+Scott+%26+White+Clinic+-+Austin+Downtown/data=!4m7!3m6!1s0x8644b508a7929413:0x39fe96b95cc3f0ee!8m2!3d30.263074!4d-97.7424523!16s%2Fg%2F11g69y0g3p!19sChIJE5SSpwi1RIYR7vDDXLmW_jk?authuser=0&hl=en&rclk=1
 google_rating: 4.1
 lead_score: 59
+name: Baylor Scott & White Clinic - Austin Downtown
 owner: null
 phone: +1 512-654-4100
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 142
 stage: cold
 state: United

@@ -1,11 +1,14 @@
 ---
-name: Brooke
+aliases: []
 company: Armstrong Travel
+entity_type: person
+follow_up_date: null
+last_contact: 2026-05-22
+name: Brooke
 phone: unknown (email collected)
 stage: nurturing
-last_contact: 2026-05-22
-follow_up_date: null
-tags: [prospect]
+tags:
+- prospect
 ---
 
 ## Pain Signals

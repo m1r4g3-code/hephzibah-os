@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 37
 city: TX 78748
 company: Texas MedClinic Urgent Care - Southpark
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Texas+MedClinic+Urgent+Care+-+Southpark/data=!4m7!3m6!1s0x865b4cd39f7a07c9:0xa15deeaa90aea3a0!8m2!3d30.1543849!4d-97.7921189!16s%2Fg%2F1tkjlmcj!19sChIJyQd6n9NMW4YRoKOukKruXaE?authuser=0&hl=en&rclk=1
 google_rating: 3.9
 lead_score: 51
+name: Texas MedClinic Urgent Care - Southpark
 owner: null
 phone: +1 512-291-5577
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 1152
 stage: cold
 state: United

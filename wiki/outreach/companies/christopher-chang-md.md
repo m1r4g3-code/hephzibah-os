@@ -1,13 +1,22 @@
 ---
+aliases: []
 call_priority: 61
 city: TX 78731
 company: Christopher Chang, MD
 country: US
+entity_type: company
 google_maps_url: https://www.google.com/maps/place/Christopher+Chang,+MD/data=!4m7!3m6!1s0x8644cb048d35daa9:0xff81b50fb08b7428!8m2!3d30.3513431!4d-97.7504051!16s%2Fg%2F11c75227q9!19sChIJqdo1jQTLRIYRKHSLsA-1gf8?authuser=0&hl=en&rclk=1
 google_rating: 5.0
 lead_score: 45
+name: Christopher Chang, MD
 owner: null
 phone: +1 512-346-6611
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[playbook]]'
+  type: mentioned_in
 review_count: 158
 stage: cold
 state: United

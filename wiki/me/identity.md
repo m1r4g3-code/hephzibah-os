@@ -1,8 +1,21 @@
 ---
-name: Hephzibah Ifeoluwa
 alias: Emmanuel Adekoya / mirage
-type: identity
+aliases: []
+entity_type: person
 last_updated: 2026-05-24
+name: Hephzibah Ifeoluwa
+relationships:
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[middleman-lesson]]'
+  type: mentioned_in
+- first_seen: '2026-05-27'
+  last_reinforced: '2026-05-27'
+  strength: 1
+  target: '[[4-workflows-4-days]]'
+  type: mentioned_in
+type: identity
 ---
 
 ## Core Identity

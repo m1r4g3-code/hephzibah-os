@@ -1,12 +1,15 @@
 ---
-name: Dr. Trip Travel
-location: unknown
-stage: gatekeeper_blocked
-lead_score: null
-tier: null
+aliases: []
+entity_type: person
 last_contact: 2026-05-22
+lead_score: null
+location: unknown
+name: Dr. Trip Travel
 primary_contact: unknown (owner not reached)
-tags: [prospect]
+stage: gatekeeper_blocked
+tags:
+- prospect
+tier: null
 ---
 
 ## Contact Log
