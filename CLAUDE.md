@@ -7,6 +7,19 @@ The operator browses. Claude Code writes.
 Claude Code IS the intelligence engine. Python scripts are mechanical arms — they handle
 I/O, file writes, data formatting. Claude Code handles all analysis, reasoning, and synthesis.
 
+## Shared Brain — Git Subtree
+
+`wiki/` is also pushed to a standalone GitHub repo (`hephzibah-brain`) via git subtree.
+Other OS projects clone `hephzibah-brain` to get full shared memory and can write new nodes back.
+
+```bash
+# Push new wiki changes to brain repo (run after committing to hephzibah-OS)
+git subtree push --prefix=wiki brain main
+
+# Pull memory nodes written by another project into wiki/
+git subtree pull --prefix=wiki brain main --squash
+```
+
 ---
 
 ## Architecture — Domain-Driven
