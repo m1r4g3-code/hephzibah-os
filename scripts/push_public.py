@@ -72,8 +72,10 @@ def main():
             STAGING.mkdir(parents=True, exist_ok=True)
             run(["git", "init"], cwd=STAGING)
             run(["git", "remote", "add", "origin", REMOTE_URL], cwd=STAGING)
-            run(["git", "config", "user.email", "femijames613@gmail.com"], cwd=STAGING)
-            run(["git", "config", "user.name", "m1r4g3-code"], cwd=STAGING)
+
+    # Always set identity in staging dir — never inherit global git config
+    run(["git", "config", "user.email", "adekoyaemmanuel15@gmail.com"], cwd=STAGING)
+    run(["git", "config", "user.name", "m1r4g3-code"], cwd=STAGING)
 
     # 3. Wipe existing .md files from staging
     for existing in STAGING.rglob("*.md"):
