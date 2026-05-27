@@ -7,17 +7,40 @@ The operator browses. Claude Code writes.
 Claude Code IS the intelligence engine. Python scripts are mechanical arms — they handle
 I/O, file writes, data formatting. Claude Code handles all analysis, reasoning, and synthesis.
 
-## Shared Brain — Git Subtree
+## Shared Brain — Two Repos
 
-`wiki/` is also pushed to a standalone GitHub repo (`hephzibah-brain`) via git subtree.
-Other OS projects clone `hephzibah-brain` to get full shared memory and can write new nodes back.
+`wiki/` ships as two GitHub repos with tiered access:
+
+| Repo | Visibility | Contents |
+|---|---|---|
+| `hephzibah-brain` | **Private** | Full brain. Trusted OS instances only. |
+| `hephzibah-brain-public` | **Public** | `sensitivity: public` nodes only. External/anonymous agents. |
+
+**Sensitivity tiers on every wiki node:**
+- `public` — concepts, tools, platforms, methods. Safe for any agent.
+- `private` — outreach intel, contacts, sales scripts. Trusted only.
+- `sensitive` — identity, financials, inner circle. Full brain only.
+
+**Load context first in any new session:**
+```
+Read wiki/_CONTEXT.md
+```
 
 ```bash
-# Push new wiki changes to brain repo (run after committing to hephzibah-OS)
+# Push wiki to full brain (after committing)
 git subtree push --prefix=wiki brain main
 
-# Pull memory nodes written by another project into wiki/
+# Pull brain into wiki
 git subtree pull --prefix=wiki brain main --squash
+
+# Sync public-only nodes to hephzibah-brain-public
+python scripts/push_public.py
+
+# Clone full brain in a new OS project (trusted)
+git clone https://github.com/m1r4g3-code/hephzibah-brain.git wiki
+
+# Clone public brain in a new OS project (external agent)
+git clone https://github.com/m1r4g3-code/hephzibah-brain-public.git wiki
 ```
 
 ---

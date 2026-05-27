@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 entity_type: domain
 name: Hephzibah OS
 aliases: [hephzibah-brain, outbound-os]

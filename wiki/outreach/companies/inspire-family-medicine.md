@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 city: Auburn
 company: Inspire Family Medicine

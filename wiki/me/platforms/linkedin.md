@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 aliases: []
 entity_type: platform
 handle: hephzibah-ifeoluwa-2ab82b2b7

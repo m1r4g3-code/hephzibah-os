@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 domain: startup
 status: scaffold
 ---

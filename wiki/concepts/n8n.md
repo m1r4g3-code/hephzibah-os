@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 entity_type: tool
 name: n8n
 aliases: [n8n.io]

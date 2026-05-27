@@ -1,3 +1,7 @@
+---
+sensitivity: private
+---
+
 # Script Pattern Log
 
 > Auto-appended by learning_engine after each script evolution.

@@ -1,4 +1,6 @@
 ---
+sensitivity: sensitive
+
 alias: Emmanuel Adekoya / mirage
 aliases: []
 entity_type: person

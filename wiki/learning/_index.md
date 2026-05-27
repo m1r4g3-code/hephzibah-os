@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 domain: learning
 status: scaffold
 ---

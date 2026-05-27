@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 domain: clients
 status: scaffold
 ---

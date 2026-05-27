@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 entity_type: skill
 name: Cold Outreach
 aliases: [cold calling, outbound sales]

@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 entity_type: place
 name: Lagos, Nigeria
 aliases: [Lagos, Yaba]

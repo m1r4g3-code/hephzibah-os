@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 entity_type: tool
 name: Claude API
 aliases: [Anthropic API, claude]

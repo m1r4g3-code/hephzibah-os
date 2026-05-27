@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 aliases: []
 entity_type: platform
 handle: adekoya_afolasadelawal_7r788pz8

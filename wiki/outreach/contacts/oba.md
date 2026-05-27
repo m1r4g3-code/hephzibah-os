@@ -1,4 +1,6 @@
 ---
+sensitivity: sensitive
+
 entity_type: person
 name: Oba (Obanijesu)
 aliases: [Obanijesu]

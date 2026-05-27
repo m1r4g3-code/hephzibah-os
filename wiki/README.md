@@ -1,4 +1,10 @@
+---
+sensitivity: public
+---
+
 # hephzibah-brain
+
+> **New here?** Read [`_CONTEXT.md`](_CONTEXT.md) first. One file. Full picture.
 
 The shared memory layer for every OS I build.
 
@@ -53,6 +59,27 @@ disciplines/            fitness, spiritual, habits
 
 ---
 
+## Two repos — one brain
+
+The brain ships in two versions:
+
+| Repo | Visibility | Contents |
+|---|---|---|
+| [`hephzibah-brain`](https://github.com/m1r4g3-code/hephzibah-brain) | **Private** | Full brain — all nodes. Trusted OS instances only. |
+| [`hephzibah-brain-public`](https://github.com/m1r4g3-code/hephzibah-brain-public) | **Public** | `sensitivity: public` nodes only. Safe for external agents. |
+
+Every wiki node has a `sensitivity` field in its frontmatter:
+- `public` — concepts, tools, methods, platforms. Any agent can read this.
+- `private` — outreach companies, contacts, sales scripts, coaching notes. Trusted only.
+- `sensitive` — identity, financial goals, inner circle. Full brain only.
+
+**After adding new nodes, sync the public brain:**
+```bash
+python scripts/push_public.py
+```
+
+---
+
 ## hephzibah-OS — the home OS
 
 `wiki/` inside `hephzibah-OS` is linked here via git subtree. Files live there locally. Two commands keep them in sync.
@@ -78,9 +105,21 @@ git remote add brain https://github.com/m1r4g3-code/hephzibah-brain.git
 
 ## Starting a new OS project
 
-Clone this repo as the brain layer:
+Choose your access level:
+
+**Full brain (trusted agent):**
 ```bash
-git clone https://github.com/m1r4g3-code/hephzibah-brain.git
+git clone https://github.com/m1r4g3-code/hephzibah-brain.git wiki
+```
+
+**Public brain (external agent):**
+```bash
+git clone https://github.com/m1r4g3-code/hephzibah-brain-public.git wiki
+```
+
+**First thing after cloning — load context:**
+```
+Read wiki/_CONTEXT.md
 ```
 
 The cloned root IS the brain. Point Obsidian here. Your AI reads from these files directly.
@@ -136,12 +175,14 @@ brain: add me/goals — Q3 targets
 
 | Scenario | Command |
 |---|---|
-| hephzibah-OS → push wiki to brain | `git subtree push --prefix=wiki brain main` |
-| hephzibah-OS → pull brain into wiki | `git subtree pull --prefix=wiki brain main --squash` |
-| New OS → clone brain | `git clone https://github.com/m1r4g3-code/hephzibah-brain.git` |
+| hephzibah-OS → push wiki to full brain | `git subtree push --prefix=wiki brain main` |
+| hephzibah-OS → pull full brain into wiki | `git subtree pull --prefix=wiki brain main --squash` |
+| hephzibah-OS → push filtered public nodes | `python scripts/push_public.py` |
+| New OS → clone full brain (trusted) | `git clone https://github.com/m1r4g3-code/hephzibah-brain.git wiki` |
+| New OS → clone public brain (external) | `git clone https://github.com/m1r4g3-code/hephzibah-brain-public.git wiki` |
 | Any OS → pull latest before writing | `git pull origin main` |
 | Any OS → push new node | `git add . && git commit -m "brain: add [node]" && git push origin main` |
-| hephzibah-OS → verify brain remote | `git remote -v` |
+| hephzibah-OS → verify remotes | `git remote -v` |
 | Any OS → check what changed in brain | `git log --oneline origin/main` |
 
 ---

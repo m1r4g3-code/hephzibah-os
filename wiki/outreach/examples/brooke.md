@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 company: Armstrong Travel
 entity_type: person

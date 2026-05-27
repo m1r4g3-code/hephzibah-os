@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 aliases: []
 entity_type: platform
 handle: m1r4g3-code

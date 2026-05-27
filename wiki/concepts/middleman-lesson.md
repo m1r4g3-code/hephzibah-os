@@ -1,4 +1,6 @@
 ---
+sensitivity: public
+
 aliases: []
 entity_type: concept
 last_updated: 2026-05-24

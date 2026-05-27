@@ -26,3 +26,6 @@ wiki/.obsidian/
 # Temp
 *.tmp
 *.lock
+
+# Brain public staging (temp clone for push_public.py)
+.brain-public-staging/

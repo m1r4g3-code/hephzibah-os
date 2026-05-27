@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 company: Unknown (Sandals/Beaches affiliate travel advisor)
 entity_type: person

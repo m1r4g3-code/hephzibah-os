@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 company: Unknown (first prospect — website had poor Facebook, no Instagram)
 entity_type: person

@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 company: Unknown (one-man travel shop)
 entity_type: person

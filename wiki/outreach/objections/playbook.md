@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 type: objection-playbook
 last_updated: 2026-05-22
 total_objections: 0

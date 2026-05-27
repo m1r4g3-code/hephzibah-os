@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 version: 1
 niche: doctors
 last_updated: 2026-05-22

@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 build_start: Q2–Q3 2026 (after MacBook secured)
 entity_type: domain

@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 company: Unknown
 entity_type: person

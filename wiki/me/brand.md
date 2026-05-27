@@ -1,4 +1,6 @@
 ---
+sensitivity: private
+
 aliases: []
 entity_type: domain
 last_updated: 2026-05-24
