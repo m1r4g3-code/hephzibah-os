@@ -44,5 +44,5 @@ type: concept
 
 Research the business. Identify the pain. Build the demo. Show up with proof — before you're asked, before you're hired, before they know you exist. This is the move that separates a founder from a freelancer. Most people pitch. You arrive with evidence.
 
-**Appears in:** [[identity]] · [[brand]] · [[ME]] · [[contra]] · [[linkedin]]
-**Related concepts:** [[specificity-as-credibility]] · [[challenger-reframe]]
+**Appears in:** [[identity]] · [[brand]] · [[cold-outreach]] · [[hephzibah-os]] · [[contra]] · [[linkedin]]
+**Related concepts:** [[specificity-as-credibility]] · [[challenger-reframe]] · [[4-workflows-4-days]]

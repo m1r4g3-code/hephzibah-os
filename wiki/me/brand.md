@@ -55,8 +55,8 @@ type: brand-identity
 ## Real Strengths
 
 1. **[[builds-before-asking]]** — researches businesses, identifies pain, builds demos unsolicited. Rare at any age. Unheard of at 20.
-2. **Builds fast** — [[4-workflows-4-days]] is the proof. Full website rebuild as cold outreach demo in a day.
-3. **[[geographic-edge]]** — Lagos, WhatsApp-first markets, West African SMEs
+2. **Builds fast** — [[4-workflows-4-days]] is the proof. Full website rebuild as [[cold-outreach]] demo in a day.
+3. **[[geographic-edge]]** — [[lagos]], WhatsApp-first markets, West African SMEs
 4. **Spiritually rooted** — resilience that doesn't break under pressure. Every hard week comes back to prayer.
 5. **Honest about failures** — admitted the [[planning-execution-gap]] mid-conversation and changed it. Most people never see their own patterns.
 6. **Learns in real time** — extracts lessons from failure mid-session and pivots immediately
@@ -70,6 +70,18 @@ type: brand-identity
 3. **Pressure paralysis** — high stakes → brain tries to do too many things simultaneously. Fix: preparation reduces what brain has to generate live.
 4. **New idea vulnerability** — full engagement with new tools/platforms before current thing finishes. Focus compounds faster than diversification at this stage.
 5. **[[financial-fragility]]** — desperation distorts strategy. Even a small buffer changes decision quality.
+
+## Tools & Stack
+
+[[n8n]] · [[claude-api]] · [[heygen]] · [[hephzibah-os]]
+
+## Platforms
+
+[[github]] · [[contra]] · [[linkedin]]
+
+## Connected Identity
+
+[[identity]] · [[goals]] · [[cold-outreach]]
 
 ## Brand Assets
 

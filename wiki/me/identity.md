@@ -5,16 +5,30 @@ entity_type: person
 last_updated: 2026-05-24
 name: Hephzibah Ifeoluwa
 relationships:
-- first_seen: '2026-05-27'
-  last_reinforced: '2026-05-27'
-  strength: 1
-  target: '[[middleman-lesson]]'
-  type: mentioned_in
-- first_seen: '2026-05-27'
-  last_reinforced: '2026-05-27'
-  strength: 1
-  target: '[[4-workflows-4-days]]'
-  type: mentioned_in
+- {target: '[[middleman-lesson]]', type: embodies, strength: 9, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[4-workflows-4-days]]', type: embodies, strength: 10, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[builds-before-asking]]', type: embodies, strength: 10, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[financial-fragility]]', type: embodies, strength: 8, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[planning-execution-gap]]', type: embodies, strength: 7, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[compound-discipline]]', type: embodies, strength: 7, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[geographic-edge]]', type: embodies, strength: 9, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[challenger-reframe]]', type: uses, strength: 8, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[specificity-as-credibility]]', type: uses, strength: 8, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[pain-before-pitch]]', type: uses, strength: 9, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[n8n]]', type: uses, strength: 8, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[claude-api]]', type: uses, strength: 9, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[heygen]]', type: uses, strength: 5, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[hephzibah-os]]', type: built, strength: 10, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[github]]', type: identity_on, strength: 10, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[contra]]', type: identity_on, strength: 8, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[linkedin]]', type: identity_on, strength: 6, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[fiverr]]', type: mentioned_in, strength: 2, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[cyrus]]', type: knows, strength: 9, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[oba]]', type: knows, strength: 8, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[yemi]]', type: knows, strength: 7, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[cold-outreach]]', type: uses, strength: 9, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[doctor-admin-pain]]', type: sells_to, strength: 8, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
+- {target: '[[lagos]]', type: part_of, strength: 10, first_seen: '2026-05-27', last_reinforced: '2026-05-27'}
 type: identity
 ---
 
@@ -34,23 +48,27 @@ Started freelancing November 2025. First real client: plastic surgeon in Germany
 That taught everything about professional client management the hard way.
 
 Since then:
-- Fiverr permanently banned (auto-reloader + VPN flagged)
-- Built Contra profile with 4 verified case studies
+- [[fiverr]] permanently banned (auto-reloader + VPN flagged)
+- Built [[contra]] profile with 4 verified case studies
 - Built contract template, payment follow-up system
-- Rebuilt NYC florist site as unsolicited cold outreach demo
-- Built AI video ad for aunt's catering business (she cried)
-- Started this cold outreach system targeting US doctors
-- Lost iPhone 13 Pro Max to theft
+- Rebuilt NYC florist site as unsolicited [[cold-outreach]] demo — [[builds-before-asking]] in action
+- Built AI video ad using [[heygen]] for aunt's catering business (she cried)
+- Started [[hephzibah-os]] targeting US doctors — [[doctor-admin-pain]]
+- Lost iPhone 13 Pro Max to theft — [[financial-fragility]]
 - Miva fees deferred (₦125k gap)
-- Closed phone swap deal bringing in ₦25k
+- Closed phone swap deal with [[yemi]] bringing in ₦25k
 
-4 months in. Under $500 total earned. Still standing.
+4 months in. Under $500 total earned. Still standing. Based in [[lagos]].
+
+**Tools:** [[n8n]] · [[claude-api]] · [[heygen]]
+**Platforms:** [[github]] · [[contra]] · [[linkedin]]
+**Concepts:** [[builds-before-asking]] · [[geographic-edge]] · [[planning-execution-gap]] · [[compound-discipline]] · [[financial-fragility]] · [[challenger-reframe]] · [[specificity-as-credibility]] · [[pain-before-pitch]]
 
 ## Inner Circle
 
-- **Cyrus** — Real G. Deferred his Miva exam to stay with you. Rare loyalty.
-- **Oba (Obanijesu)** — Close brother. Landed Upwork client. You helped him prep for the meeting.
-- **Yemi** — Gadget business partner. Phone deals, profit splits.
+- **[[cyrus]]** — Real G. Deferred his Miva exam to stay with you. Rare loyalty.
+- **[[oba]]** — Close brother. Landed Upwork client. You helped him prep for the meeting.
+- **[[yemi]]** — Gadget business partner. Phone deals, profit splits.
 
 ## Personal Rules (Non-Negotiable)
 
