@@ -41,7 +41,8 @@ upwork/
 │   ├── profile.md               ← Upwork profile: JSS, badges, bio, portfolio gaps
 │   ├── niche.md                 ← active niche + rotation log
 │   ├── pricing.md               ← rate philosophy, anchor points, value stack
-│   └── voice.md                 ← writing style guide + calibration notes
+│   ├── voice.md                 ← writing style guide + calibration notes
+│   └── brand.md                 ← visual identity: colors, fonts, portfolio thumbnails, SOW template
 ├── market/
 │   ├── intelligence.md          ← running market observations log
 │   ├── niches/                  ← one .md per niche dossier
@@ -60,7 +61,8 @@ upwork/
 │   ├── _template.md             ← client quality card
 │   └── active/                  ← active/past client nodes
 ├── playbooks/
-│   ├── proposal-framework.md    ← master proposal methodology
+│   ├── proposal-framework.md    ← master proposal methodology (6-pass pipeline)
+│   ├── loom-strategy.md         ← Loom video proposal playbook (Pass 6)
 │   ├── objections.md            ← Upwork-specific objection library
 │   ├── client-types.md          ← client archetypes + psychology
 │   ├── niche-dossiers.md        ← niche-specific positioning intel
