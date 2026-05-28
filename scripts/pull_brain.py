@@ -98,16 +98,22 @@ def main():
         sys.exit(1)
 
     # 4. Extract brain/main via git archive into temp dir
+    # Pipe binary directly: git archive | tar — avoids Windows encoding issues
     tmpdir = Path(tempfile.mkdtemp(prefix="brain_pull_"))
     try:
-        archive = run(["git", "archive", "brain/main"])
-        extract = subprocess.run(
-            ["tar", "-C", str(tmpdir), "-xf", "-"],
-            input=archive.stdout.encode(),
-            capture_output=True
+        archive_proc = subprocess.Popen(
+            ["git", "archive", "brain/main"],
+            cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
-        if extract.returncode != 0:
-            print(f"ERROR extracting archive: {extract.stderr.decode()}")
+        tar_proc = subprocess.Popen(
+            ["tar", "-C", str(tmpdir), "-xf", "-"],
+            stdin=archive_proc.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
+        archive_proc.stdout.close()
+        _, tar_err = tar_proc.communicate()
+        archive_proc.wait()
+        if tar_proc.returncode != 0:
+            print(f"ERROR extracting archive: {tar_err.decode(errors='replace')}")
             sys.exit(1)
 
         # 5. Copy only the changed files into wiki/
