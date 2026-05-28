@@ -29,3 +29,6 @@ wiki/.obsidian/
 
 # Brain public staging (temp clone for push_public.py)
 .brain-public-staging/
+
+# Brain sync state (local — tracks last pulled commit SHA)
+.brain_last_pull
