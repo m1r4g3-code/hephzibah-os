@@ -63,6 +63,7 @@ upwork/
 ├── playbooks/
 │   ├── proposal-framework.md    ← master proposal methodology (6-pass pipeline)
 │   ├── loom-strategy.md         ← Loom video proposal playbook (Pass 6)
+│   ├── handoff.md               ← delivery brief + contract close + JSS engineering
 │   ├── objections.md            ← Upwork-specific objection library
 │   ├── client-types.md          ← client archetypes + psychology
 │   ├── niche-dossiers.md        ← niche-specific positioning intel
@@ -106,6 +107,8 @@ Full principles in `CLAUDE.md` at OS root. Short form:
 | `/analyze-conversation [chat]` | Upwork message thread to analyze |
 | `/prep-job [url]` | Full intel before writing (complex jobs) |
 | `/log-outcome [file] [result]` | After any outcome: reply, win, ghost |
+| `/quote [project]` | Generate bid assessment + SOW pricing tiers |
+| `/close-contract [client] [project]` | Handoff sequence — delivery brief + contract close |
 | `/niche-radar [niche]` | Market intelligence check |
 | `/strategy-review` | Weekly — what's working, what's not |
 | `/reputation-brief` | Weekly — profile, portfolio, content |

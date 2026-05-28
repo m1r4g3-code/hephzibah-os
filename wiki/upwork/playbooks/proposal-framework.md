@@ -28,9 +28,31 @@ The operational playbook for writing Upwork proposals through the OS. This is th
 
 ---
 
-## The 5-Pass Pipeline
+## The Goal of a Proposal
 
-Every proposal goes through 5 passes. For high-value jobs (composite score 80+): all 5 passes. For mid-range (65–79): passes 1, 3, 4, 5.
+Ramshaw's words: "The goal of your proposal isn't even to get hired. The goal is to get viewed. Stop trying to win the job in 200 words. Start trying to win the conversation."
+
+The sequence: Proposal → get viewed → get replied → start conversation → close on call.
+
+The written proposal's only job is to make them reply. The close happens on the call.
+
+---
+
+## Step 0 — Determine Job Type (Context vs No-Context)
+
+Before any other pass, classify the job:
+
+**Context job:** Has website URL, social media links, or a Google-able business name → Full Audit pipeline (all passes)
+
+**No-context job (80% of jobs):** No external links, no identifiable business → Short Loom asking for more context. Skip to Pass 6 only.
+
+**To find context jobs quickly:** In Upwork Advanced Search, type `www` in the "Any of these words" field. Filters for jobs containing URLs.
+
+---
+
+## The 6-Pass Pipeline (Context Jobs)
+
+Every proposal goes through 6 passes. For high-value jobs (composite score 80+): all passes. For mid-range (65–79): passes 1, 3, 4, 5, 6.
 
 ### Pass 1 — Research
 
@@ -96,17 +118,26 @@ Positioning angle: [how Emmanuel positions relative to this job]
 
 **Structure (from `concepts/proposal-anatomy.md`):**
 ```
-[Hook — 1 sentence. Their situation. NOT "I".]
-[Diagnosis — 2-3 sentences. Name the real problem.]
-[Proof — 1-2 sentences. One specific relevant thing.]
-[Question — 1 sentence. Sharp. Specific to this job.]
+[Opener — 1 sentence. Their situation. NOT "I". Something specific from their job.]
+[Bullets — 3-4 observations about THEIR specific situation. Scannable. Not skills.]
+[Loom link — "I put together a quick walkthrough: [link]"]
+[Question — 1 sentence. Low friction. Answerable in 10 seconds.]
 ```
+
+**The closing question rule (Ramshaw: "increases reply rate 50%+"):**
+A question mark creates an open loop the brain can't ignore. But the question must require minimal cognitive load. Ask something answerable in 10 seconds:
+- YES: "Is this project live yet or still in planning?"
+- YES: "Roughly how many leads are you generating per month?"
+- YES: "Would Tuesday work for a quick call?"
+- NO: "What's the big vision for the company?" (homework — too much effort)
+- NO: "What are your thoughts on my approach?" (vague — no clear answer)
 
 **Voice constraints:**
 - First word: not "I"
 - No AI-smell phrases (see `identity/voice.md`)
 - Confident, not eager
 - Length: 150–250 words
+- Bullets = specific findings, not skill lists
 
 ---
 
@@ -124,6 +155,52 @@ If score < 7: revise. Rerun check.
 - Cut the last sentence if it's "I look forward to hearing from you"
 - If first word is "I": restructure the opening line
 - If over 250 words: cut proof section to 1 sentence
+
+---
+
+### Pass 6 — Loom Script
+
+**Output:** 60–90 second video script ready to record.
+
+This is non-optional on jobs scoring 75+. Ramshaw built $10k/month specifically on Loom video proposals. A personalized video attached to a proposal is immediately memorable — most clients have never received one. It makes the proposal feel 10x more custom regardless of the text quality.
+
+**Structure (60–90 seconds exactly):**
+```
+[0:00–0:10] Hook — Name the specific thing from their job post that caught your attention.
+            "I noticed you're building [X] — you mentioned [specific detail]."
+            DO NOT say "Hi, I'm Emmanuel." They can see your name. Start with their situation.
+
+[0:10–0:25] Problem reframe — Show you understand the real problem.
+            "The thing that usually trips people up with this is [non-obvious insight]."
+            This is the diagnosis from Pass 2, spoken aloud.
+
+[0:25–0:55] Solution sketch — Walk through how you'd approach it.
+            If possible: open a blank doc or whiteboard and sketch the architecture live.
+            Ramshaw often builds a quick workflow diagram on screen while narrating.
+            "Here's how I'd structure this: [X] feeds into [Y], and the tricky part is [Z]."
+            This is PROOF. You are demonstrating thinking, not claiming capability.
+
+[0:55–1:10] One result — Name a similar thing you built and the outcome.
+            "I did this for [type of company], they went from [state A] to [state B]."
+            Specific. Not "I have experience with similar projects."
+
+[1:10–1:20] CTA — Same sharp question as the written proposal.
+            "One thing I'd want to know before scoping this: [the question]."
+            Close. Don't say "I hope to hear from you."
+```
+
+**Recording notes:**
+- Use Loom (loom.com) — the client gets a link, not a file attachment
+- Paste the Loom link in the first line of your written proposal, above the text
+- Video thumbnail should show your face + screen share simultaneously (Loom default)
+- No script reading on camera — talk like you're explaining to a colleague
+- One take unless you stumble badly. Imperfect = authentic. Perfect = scripted.
+- Title the Loom: "[Job type] — Quick thoughts on your project"
+
+**When to skip Loom:**
+- Jobs scoring below 75 (don't spend the time)
+- Client has 0% hire rate (window shoppers won't watch a video)
+- Very simple/small tasks where a video feels disproportionate
 
 ---
 
@@ -189,6 +266,36 @@ If score < 7: revise. Rerun check.
 2. Note connects spent
 3. Set follow-up reminder if no reply in 5 days
 4. Log outcome within 24h of knowing it
+
+---
+
+## SOW — Post-Discovery Call Structure
+
+When a client replies and a discovery call happens, the SOW closes the deal. It is not a
+follow-up email. It is a formal document that signals: this is a practice.
+
+Full template in `identity/brand.md`. Key additions beyond the basic structure:
+
+**Checkpoint gates in every multi-phase build:**
+Number them into the pipeline. "⟳ CHECKPOINT 1 — Prompt Review" between steps. The client
+approves before work continues. This protects JSS (no "it wasn't what I expected") and signals
+professionalism. Never deliver a multi-phase project without at least one explicit gate.
+
+**Cost per run (automation projects only):**
+For any project that produces repeating outputs — leads processed, reports generated, emails
+sent, records synced — include a line-item cost table: tool/API + per-unit cost + role.
+Then add: manual baseline cost vs automated cost vs savings per run. This turns the project
+fee into a math problem the client wins. Niche-agnostic: works for CRM automation, lead
+scoring, content pipelines, data sync — anything with a recurring output.
+
+**Ongoing platform costs (if client needs tool subscriptions):**
+List every tool the system depends on post-delivery, with monthly cost and why it's in the
+stack. Clients hate surprise bills after delivery. Showing this upfront is a trust signal.
+Clearly note: "These are tool costs, not fees to me."
+
+**When NOT to include cost sections:**
+One-time builds, static integrations, or any project with no recurring compute cost. Don't
+add sections that don't apply — an overcomplicated SOW reads as padding.
 
 ---
 
