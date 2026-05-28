@@ -81,7 +81,7 @@ def main():
 
     # 2. Show what changed
     changed = get_changed_files(old_sha, new_sha)
-    print(f"  New commits found: {old_sha[:8]} → {new_sha[:8]}")
+    print(f"  New commits found: {old_sha[:8]} -> {new_sha[:8]}")
     print(f"  {len(changed)} file(s) changed:")
     for f in changed:
         print(f"    + {f}")
