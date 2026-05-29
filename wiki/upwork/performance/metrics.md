@@ -11,20 +11,20 @@ Live performance tracker. Updated after every outcome. Source of truth for `/dai
 
 ---
 
-## Current State (as of 2026-05-27)
+## Current State (as of 2026-05-29)
 
-**Status:** Pre-launch. OS initialized. No proposals sent yet.
+**Status:** Live. First proposals sent. Awaiting replies.
 
 | Metric | Value |
 |---|---|
-| Total proposals sent | 0 |
+| Total proposals sent | 2 |
 | Replies received | 0 |
 | Interviews | 0 |
 | Contracts won | 0 |
 | Contracts completed | 0 |
 | Total revenue via Upwork | $0 |
 | JSS | — (no contracts yet) |
-| Connects remaining | — (check Upwork dashboard) |
+| Connects remaining | ~129 (as of 2026-05-29) |
 | Active contracts | 0 |
 
 ---
@@ -43,6 +43,24 @@ Append a new section each week. Never delete old entries.
 **Niche:** AI Automation (n8n + Claude API)
 
 **Notes:** OS initialized. Phase 0 complete. Starting Phase 1 (intelligence layer).
+
+### Week of 2026-05-29 (Week 2 — First Proposals)
+
+**Proposals sent:** 2
+**Replies:** 0 (pending)
+**Wins:** 0
+**Connects spent:** 23 (10 social media + 13 automation)
+**Revenue:** $0
+**Niches active:** AI Automation + Social Media & Content Marketing
+
+**Jobs evaluated today:**
+- AI Automation Engineer (Greece agency) — score 68, BID, proposal sent @ $50/hr
+  File: `outputs/proposals/2026-05-29-ai-automation-engineer-greece.md`
+- Social Media & Content Marketing Specialist (same Greece agency) — score 64, BID, proposal sent @ $35/hr
+  File: `outputs/proposals/2026-05-29-social-media-specialist-greece.md`
+- Social Media role initially scored as SKIP (wrong niche assumption, corrected — Emmanuel is multi-niche)
+
+**Notes:** First live proposals. Both sent to same Greece-based agency (Thessaloniki). Dual-bid strategy: automation + creative. OS writing pipeline fully operational. Roast skill added today after voice quality iteration.
 
 ---
 
