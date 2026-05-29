@@ -48,3 +48,4 @@ A cold opener that mentions a specific number, year, or observation sounds like 
 
 **Appears in:** [[ME]] · [[master_script]] · [[identity]] · [[linkedin]] · [[brand]]
 **Related concepts:** [[challenger-reframe]] · [[builds-before-asking]]
+[[client-quality-score|client-evaluation]]
