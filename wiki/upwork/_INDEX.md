@@ -64,6 +64,7 @@ upwork/
 │   ├── proposal-framework.md    ← master proposal methodology (6-pass pipeline)
 │   ├── loom-strategy.md         ← Loom video proposal playbook (Pass 6)
 │   ├── handoff.md               ← delivery brief + contract close + JSS engineering
+│   ├── discovery-call.md        ← pre-call prep, question bank, close script, red flags
 │   ├── objections.md            ← Upwork-specific objection library
 │   ├── client-types.md          ← client archetypes + psychology
 │   ├── niche-dossiers.md        ← niche-specific positioning intel
@@ -106,6 +107,7 @@ Full principles in `CLAUDE.md` at OS root. Short form:
 | `/roast-proposal [file]` | Reviewing a sent or drafted proposal |
 | `/analyze-conversation [chat]` | Upwork message thread to analyze |
 | `/prep-job [url]` | Full intel before writing (complex jobs) |
+| `/prep-call [job-file]` | Before every discovery call — generates pre-call brief |
 | `/log-outcome [file] [result]` | After any outcome: reply, win, ghost |
 | `/quote [project]` | Generate bid assessment + SOW pricing tiers |
 | `/close-contract [client] [project]` | Handoff sequence — delivery brief + contract close |
