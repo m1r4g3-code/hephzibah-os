@@ -48,6 +48,13 @@ year: 2026
 - Get Grey card — unlock Upwork properly
 - Build signature fragrance + sharp founder/professor wardrobe
 
+**Pricing (locked — never negotiate below):**
+- Simple integration: $500–$1,000
+- Automation workflow (n8n/AI): $1,500–$3,000
+- Full AI agent (Claude + tools + interface): $5,000–$7,500
+- Hourly (own account, June+): $40/hr minimum
+- Payment structure: 40% upfront · 30% midpoint · 30% delivery
+
 ## Lifestyle Targets
 
 - Own apartment in Yaba (Q3 — after income stabilises)

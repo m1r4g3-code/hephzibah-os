@@ -12,8 +12,8 @@ AI automation & engineering services — done for you.
 - Full software engineering (web apps, tooling, systems)
 - Core promise: eliminate the manual, repetitive work draining your team
 
-Price: $[X] — fill in
-Free trial: [fill in — e.g. one free automation audit, one small workflow built]
+Price: $1,500–$3,000 (automation workflow) · $500–$1,000 (simple integration) · $5,000–$7,500 (full AI agent)
+Free trial: Free automation audit — diagnose one manual process, show what the workflow would look like
 
 ## Niche Rotation (weekly cadence)
 Different vertical each week. Same offer, different pain framing.
@@ -65,7 +65,7 @@ Things that create genuine rapport when they come up naturally:
 ## Non-Negotiables
 - Signed contract + 50% deposit before any work starts
 - No middleman arrangements — direct client access only
-- Minimum deal size: $[set this once first client closes]
+- Minimum deal size: $500 (simple integration) · $1,500 (automation workflow) — never discount below this
 - Target countries: US, UK, Australia, Canada only (high-RPM markets)
 
 ## Second Brain

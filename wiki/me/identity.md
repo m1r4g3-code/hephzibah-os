@@ -96,6 +96,11 @@ relationships:
   strength: 2
   first_seen: '2026-05-27'
   last_reinforced: '2026-05-27'
+- target: '[[upwork]]'
+  type: identity_on
+  strength: 5
+  first_seen: '2026-05-29'
+  last_reinforced: '2026-05-29'
 - target: '[[cyrus]]'
   type: knows
   strength: 9
@@ -158,7 +163,7 @@ Since then:
 4 months in. Under $500 total earned. Still standing. Based in [[lagos]].
 
 **Tools:** [[n8n]] · [[claude-api]] · [[heygen]]
-**Platforms:** [[github]] · [[contra]] · [[linkedin]]
+**Platforms:** [[github]] · [[contra]] · [[linkedin]] · [[upwork]]
 **Concepts:** [[builds-before-asking]] · [[geographic-edge]] · [[planning-execution-gap]] · [[compound-discipline]] · [[financial-fragility]] · [[challenger-reframe]] · [[specificity-as-credibility]] · [[pain-before-pitch]]
 
 ## Inner Circle
