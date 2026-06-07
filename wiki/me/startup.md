@@ -60,3 +60,13 @@ type: startup-vision
 
 **The proof of concept:** You are living the prototype right now. This vault, ME.md, the memory system, the way every session builds on the last — is the architecture. The product is what happens when that's packaged for any founder. The same [[builds-before-asking]] instinct that made you build the florist demo will make you build this before anyone asks for it.
 
+## Fourth Vision: Persistent AI Stack (Memory → Twin → World)
+
+The most ambitious direction — three connected ideas, built in order. Full breakdown in [[persistent-ai-thesis]].
+
+1. **[[ai-memory-system]]** — model-agnostic memory layer that solves the context problem big labs struggle with. The wedge. Build first. (hephzibah-os is the living prototype.)
+2. **[[digital-twin]]** — a persistent model of *how a person thinks*, able to act and predict as them. Sits on memory.
+3. **[[simulated-world]]** — many twins interacting in a persistent environment; a prediction engine at societal scale.
+
+**Discipline note:** all three are deep research problems. The trap is starting all three — [[planning-execution-gap]]. Ship the memory layer narrow and real first.
+
