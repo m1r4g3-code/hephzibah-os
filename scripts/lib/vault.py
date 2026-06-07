@@ -450,6 +450,8 @@ INVERSE_TYPE = {
     "pain_signal": "has_pain", "identity_on": "hosted_at", "part_of": "contains",
     "embodies": "embodied_by", "reinforces": "reinforced_by", "opposes": "opposed_by",
     "teaches": "taught_by", "mentioned_in": "references",
+    "relates_to": "relates_to", "informs": "informed_by",
+    "extends": "extended_by", "targets": "targeted_by",
 }
 
 
