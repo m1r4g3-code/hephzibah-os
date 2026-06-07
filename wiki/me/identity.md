@@ -103,9 +103,9 @@ relationships:
   last_reinforced: '2026-05-29'
 - target: '[[cyrus]]'
   type: knows
-  strength: 9
+  strength: 10
   first_seen: '2026-05-27'
-  last_reinforced: '2026-05-27'
+  last_reinforced: '2026-06-07'
 - target: '[[oba]]'
   type: knows
   strength: 8
