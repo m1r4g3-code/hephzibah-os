@@ -93,4 +93,15 @@ Source of truth for the active Upwork profile. `qualify.py` reads this to score 
 ## Current account notes
 
 Partner account (Adelaja O.), 50/50 split. Handback ~June 2026. Emmanuel's own account launches then at $40/hr minimum.
-Profile is solid for automation jobs. 1 five-star review, 3 portfolio items (all automation), strong keyword-matched title.
+Profile is solid for automation jobs. 1 five-star review, 5 portfolio items (all automation), strong keyword-matched title.
+
+## Profile URLs
+
+**Active (partner account — Adelaja O.):**
+- Upwork: https://www.upwork.com/freelancers/~01aadc86ab0654f5d8
+
+**Emmanuel's own profiles:**
+- Upwork (own, inactive): https://www.upwork.com/freelancers/~011b48d2eabbfa6361
+- Portfolio: https://v0-portfolio-website-plan-indol.vercel.app
+- LinkedIn: https://www.linkedin.com/in/hephzibah-ifeoluwa-2ab82b2b7
+- GitHub: https://github.com/m1r4g3-code

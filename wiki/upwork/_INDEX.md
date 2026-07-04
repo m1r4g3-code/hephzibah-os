@@ -42,6 +42,7 @@ upwork/
 │   ├── niche.md                 ← active niche + rotation log
 │   ├── pricing.md               ← rate philosophy, anchor points, value stack
 │   ├── voice.md                 ← writing style guide + calibration notes
+│   ├── skills.md                ← Emmanuel's full skill set (automation + creative — read before scoring fit)
 │   └── brand.md                 ← visual identity: colors, fonts, portfolio thumbnails, SOW template
 ├── market/
 │   ├── intelligence.md          ← running market observations log
@@ -77,7 +78,8 @@ upwork/
     ├── job-scoring.md            ← scoring methodology
     ├── client-quality-score.md  ← client evaluation framework
     ├── proposal-anatomy.md       ← what makes proposals convert
-    └── upwork-psychology.md      ← platform buyer psychology
+    ├── upwork-psychology.md      ← platform buyer psychology
+    └── os-behavior-rules.md      ← Claude engine contract (run things, save to vault, memory vs vault)
 ```
 
 ---
@@ -112,6 +114,7 @@ Full principles in `CLAUDE.md` at OS root. Short form:
 | `/quote [project]` | Generate bid assessment + SOW pricing tiers |
 | `/close-contract [client] [project]` | Handoff sequence — delivery brief + contract close |
 | `/niche-radar [niche]` | Market intelligence check |
+| `/gap-audit` | After 3+ skips — root cause diagnosis + fix priority list |
 | `/strategy-review` | Weekly — what's working, what's not |
 | `/reputation-brief` | Weekly — profile, portfolio, content |
 
