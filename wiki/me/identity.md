@@ -137,7 +137,9 @@ type: identity
 ## Core Identity
 
 **Full Name:** Hephzibah Ifeoluwa (also goes by Emmanuel Adekoya)
-**Age:** 20
+**Age:** 21
+**Birthday:** June 15
+**Mother's Birthday:** June 29
 **Location:** Lagos, Nigeria (targeting Yaba)
 **Education:** Miva Open University (online, flexible)
 **Faith:** Born-again Christian. Holy Ghost filled. This is the foundation, not a label.

@@ -5,7 +5,8 @@ name: Osawaye Cyrus Iwonisa
 aliases: [Cyrus, cypher125]
 tags: [inner-circle, builder, connector]
 github: cypher125
-last_updated: '2026-06-07'
+birthday: '06-26'
+last_updated: '2026-06-08'
 relationships:
 - target: '[[identity]]'
   type: known_by
