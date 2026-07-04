@@ -116,6 +116,31 @@ relationships:
   strength: 7
   first_seen: '2026-05-27'
   last_reinforced: '2026-05-27'
+- target: '[[ayo]]'
+  type: knows
+  strength: 5
+  first_seen: '2026-06-28'
+  last_reinforced: '2026-06-28'
+- target: '[[yekini]]'
+  type: knows
+  strength: 5
+  first_seen: '2026-06-28'
+  last_reinforced: '2026-06-28'
+- target: '[[zaynab]]'
+  type: knows
+  strength: 6
+  first_seen: '2026-06-28'
+  last_reinforced: '2026-06-28'
+- target: '[[giovanni]]'
+  type: sells_to
+  strength: 9
+  first_seen: '2026-06-28'
+  last_reinforced: '2026-06-28'
+- target: '[[yabatech]]'
+  type: part_of
+  strength: 7
+  first_seen: '2026-06-28'
+  last_reinforced: '2026-06-28'
 - target: '[[cold-outreach]]'
   type: uses
   strength: 9
@@ -170,9 +195,12 @@ Since then:
 
 ## Inner Circle
 
-- **[[cyrus]]** — Real G. Deferred his Miva exam to stay with you. Rare loyalty.
-- **[[oba]]** — Close brother. Landed Upwork client. You helped him prep for the meeting.
+- **[[cyrus]]** — Real G. Deferred his Miva exam to stay with you. Rare loyalty. Birthday: June 26.
+- **[[oba]]** — Close brother. Landed Upwork client. Introduced Giovanni/Seraman — Emmanuel's most complex active build. 50/50 split.
 - **[[yemi]]** — Gadget business partner. Phone deals, profit splits.
+- **[[ayo]]** — Close circle. Details thin — add as known.
+- **[[yekini]]** — Close circle. Details thin — add as known.
+- **[[zaynab]]** — Friend. Mobile hair stylist, Ilorin. Emmanuel built her a surprise website.
 
 ## Verified Builds (GitHub: m1r4g3-code)
 
