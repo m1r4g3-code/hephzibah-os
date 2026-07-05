@@ -43,11 +43,11 @@ Introduced by [[oba]] (Adelaja O.) — originally Oba's Fiverr client. Oba manag
 
 ## Financials
 
-| Milestone | Amount | Status |
-|---|---|---|
-| Milestone 1 | $1,000 | Delivered — 5-star review |
-| Milestone 2 | $1,000 | In progress |
-| Long-form pipeline (5–8 min) | $1,500 | Scoped, not started |
+| Milestone                    | Amount | Status                    |
+| ---------------------------- | ------ | ------------------------- |
+| Milestone 1                  | $500   | Delivered — 5-star review |
+| Milestone 2                  | $500   | In progress               |
+| Long-form pipeline (5–8 min) | $1,500 | Scoped, not started       |
 
 **Total potential: $3,500+**
 
