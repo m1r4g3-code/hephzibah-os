@@ -32,3 +32,5 @@ wiki/.obsidian/
 
 # Brain sync state (local — tracks last pulled commit SHA)
 .brain_last_pull
+# Brain private staging (temp clone for push_brain.py)
+.brain-staging/
