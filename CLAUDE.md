@@ -28,10 +28,12 @@ Read wiki/_CONTEXT.md
 
 ```bash
 # Push wiki to full brain (after committing)
-git subtree push --prefix=wiki brain main
+# NOT git subtree push — that permanently non-fast-forwards once the brain
+# has commits from any other OS instance. Use the file-copy sync:
+python scripts/push_brain.py
 
-# Pull brain into wiki
-git subtree pull --prefix=wiki brain main --squash
+# Pull brain into wiki (file-copy sync, tracks last pull in .brain_last_pull)
+python scripts/pull_brain.py
 
 # Sync public-only nodes to hephzibah-brain-public
 python scripts/push_public.py
