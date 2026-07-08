@@ -39,9 +39,11 @@ Full automated pipeline — Tally Form → n8n → Claude AI (Italian script) �
 |---|---|---|
 | Milestone 1 | $1,000 | Delivered — 5-star review |
 | Milestone 2 | $1,000 | In progress |
-| Long-form pipeline (5–8 min) | $1,500 | Scoped, not started |
+| Long-form pipeline (5–8 min) | ~$1,500 (agreed floor, not a fixed quote) | Not started |
 
-**Total potential:** $3,500+
+**Net reality per $1,000 milestone:** Fiverr takes 20% → $800 → 50/50 with Oba → **$400 each.** The $1,500 figure is an agreement between Emmanuel and Oba that no future Giovanni job goes below $1,500 — not a price Giovanni has accepted.
+
+**Pricing note (2026-07-06):** This build is worth $5K–8K at market. Underpricing accepted as cost of the first flagship case study. Decision: never renegotiate delivered work; reprice future scope (long-form, retainer) with ROI framing. Giovanni signals budget pressure from his own partners ("I just have to keep my partners happy" — Jul 05), so any price move must arm him with ROI numbers he can show them, not squeeze him.
 
 ## Review (Milestone 1)
 
