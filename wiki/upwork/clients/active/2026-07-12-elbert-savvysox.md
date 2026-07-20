@@ -91,6 +91,14 @@ created: 2026-07-12
 
 Lead with full pipeline. Let him downgrade if needed.
 
+## Negotiation Plan (finalized 2026-07-14)
+
+- **Anchor price stated in proposal:** $1,200 — justified via [[automation-asset-pricing]] framing (pay once, forever asset)
+- **Realistic floor / expected close:** $700
+- **Fiverr order value:** $700 gross → 20% Fiverr fee (-$140) → $560 net
+- **Split (Emmanuel / Oba, 50/50):** $280 each
+- Floor still clears the $569 manual-cost baseline (37 videos × ~$15.38) and is ~100x raw API cost — defensible even at the bottom of the range
+
 ---
 
 ## Key Lesson Applied

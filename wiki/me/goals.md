@@ -30,16 +30,17 @@ year: 2026
 | Target | Timeline | Status |
 |--------|----------|--------|
 | $1,000–1,500/month stable | Q2 2026 | ⏳ |
-| Pay all Miva fees (₦125k gap) | Q2 2026 | ⏳ |
+| Pay all Miva fees (₦175k remaining) | September 2026 (deferred — Cyrus's call) | ⏳ |
 | MacBook Pro M2 (fairly used) | Q2 2026 | ⏳ |
 | Move to Yaba | Q3 2026 | ⏳ |
 | $10,000 total this year | Dec 2026 | ⏳ |
 
-**Current situation:**
+**Current situation (updated 2026-07-19):**
 - Monthly income: Under $300 equivalent (inconsistent)
-- Savings: ~₦25k (post phone deal)
-- Debt: Miva fees ₦125k, family support ongoing
-- Phone: Stolen — using borrowed phone
+- Savings: ₦0 — Oba's $400 gift (₦552k) fully spent on iPhone 14 Pro (₦610k, went ₦140k over the ₦470k target), mum repayment, and phone repair
+- Debt: Miva fees ₦175k (deferred to Sept), ₦110k phone balance (14 Pro, ₦610k total − ₦500k paid), ₦30k still owed to mum (doubled 30k→60k promised, only 30k paid so far)
+- No cash currently for food/living — new income needs to cover this gap first
+- Phone: Replaced — iPhone 14 Pro (balance owed). Oba separately bought himself an iPhone 14 (not Pro) with his own money.
 
 **What needs to happen:**
 - Land 2–3 consistent international clients ($500–1,500/project each)
