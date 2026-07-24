@@ -130,6 +130,7 @@ At 100 videos/month: ~400 approval interactions/month on client's end. Disclosed
 - Oba follow-up sent (2026-07-17) to re-engage before competing channel closes
 - Greedy middleman Upwork channel neutralized (2026-07-17)
 - Awaiting MadSoN response
+- **2026-07-24: LOST — Oba's Fiverr account permanently suspended. No off-platform contact captured. Unrecoverable.**
 
 ---
 

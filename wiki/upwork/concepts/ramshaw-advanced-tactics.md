@@ -227,6 +227,69 @@ Examples:
 
 ---
 
+---
+
+## NEW: Client-Psychology Title Formula (from "I Hired 70 People on Upwork")
+
+Source: `QWSZQr1oLQs` — video from the client side of Upwork.
+
+**The reframe:** Clients posting on Upwork are busy business owners. They are not browsing talent — they are hiring to remove a specific stress. Your title must answer: *what stress do I remove?* — not *what tools do I use?*
+
+**Old frame (capability-first):**
+> "n8n Automation Expert | AI Workflows, CRM Automation"
+Still keyword-valid but reads as a skill list.
+
+**New frame (stress-removal first):**
+> "n8n Automation Engineer | I build workflows that run while you sleep"
+> "AI Automation Engineer | n8n workflows so your team stops doing repetitive work"
+The keyword is still there. The second half removes a specific pain.
+
+**Test before publishing:** Read the title from a client's perspective. Is the client stressed about "AI Workflows"? No. Are they stressed about manual repetitive work, broken processes, or not having reliable systems? Yes. Write to that.
+
+---
+
+## NEW: Early Growth Sequencing (from "$40,000 Profiles" + "Hired 70 People" videos)
+
+This phase applies specifically to a new account with 0 reviews. Different rules apply here.
+
+### The $0 to First Review Phase
+
+**The rule:** The trajectory from 0 to first review is the hardest part. Do not skip it trying to look premium. Play the game correctly for this phase.
+
+1. **Start with smaller, faster jobs.** Not desperate jobs — just jobs with lower stakes. A $100-300 fixed price that you can deliver in 3-5 days beats a $2k project where the timeline stretches and the relationship gets complicated while you're building reputation.
+
+2. **Deliver exceptional quality on these.** Low price ≠ low effort. You're buying a review, not time.
+
+3. **Ask directly.** At project close:
+   > "Everything is wrapped up on my end. Would you be able to take a moment to leave me feedback on the contract? It really helps at this stage."
+   Simple. Direct. Most clients say yes if the work was good.
+
+4. **One 5-star review changes everything.** Ramshaw's words: "Before reviews — tough. One review and clients start to trust the profile." Do not underestimate this threshold.
+
+5. **Ignore certifications and LinkedIn testimonials at this exact phase.** Bio + portfolio is where the effort goes. Testimonials take 5-8 days to appear; they're a Day 14+ move, not Day 1.
+
+### What accelerates after the first review
+
+- Subsequent reviews come faster (each one builds the next)
+- Proposal view rate (PVR) rises
+- Invitations start arriving
+- The algorithm begins surfacing the profile without bids
+- Rate increases become defensible — with proof, not just claims
+
+---
+
+## NEW: Profile Bio — The "Human Voice" Test
+
+From the "$40,000 profiles" video: clients skim overviews and can detect AI-written bios in seconds. The bio carries more weight than certifications.
+
+**Ramshaw's rule:** Write the overview yourself. One time. Make it real. Don't use ChatGPT — "you'll end up with the same overview as everyone else."
+
+**The human voice test:** Read it out loud. If you wouldn't say it in a conversation, it doesn't go in the bio. Stiffer the language = more AI-detected = lower trust.
+
+**The bottom of the overview:** After the bio, add a keyword block at the very bottom. Pure keyword listing. This is the one place where keyword density matters more than readability. Ramshaw: "This works really well and I've tried it with a lot of students."
+
+---
+
 ## Wikilinks
 
-[[elite-freelancer-model]] · [[upwork-algorithm]] · [[proposal-anatomy]] · [[upwork-psychology]] · [[profile]]
+[[elite-freelancer-model]] · [[upwork-algorithm]] · [[proposal-anatomy]] · [[upwork-psychology]] · [[profile]] · [[account-launch]]

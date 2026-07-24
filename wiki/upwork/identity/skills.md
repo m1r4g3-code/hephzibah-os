@@ -25,22 +25,46 @@ Emmanuel is NOT a single-niche person. He is creative and technical. Do not skip
 ## Technical Skills
 
 **Automation & AI Workflows (primary)**
-- n8n (primary orchestration tool)
+- n8n (primary orchestration tool — multiple production deployments)
 - Make.com (Integromat)
 - Zapier
-- Claude API (Anthropic)
+- Claude API (Anthropic — primary AI layer across all OS projects)
 - OpenAI API (GPT-4, Assistants)
+- Gemini API
 - CrewAI, LangGraph (multi-agent systems)
 - Webhook design and implementation
 - REST API integration
 - AI agent development (research, classification, routing, generation)
+- Kie AI (AI hologram video generation)
 
 **Development**
-- Python (scripting, automation, data processing)
+- TypeScript (dominant language — 95%+ across repos)
+- Python (AI systems, automation pipelines, OSes)
 - JavaScript / Node.js
-- React / Next.js (frontend, MVPs)
-- TypeScript
-- HTML/CSS
+- React 19, Next.js 14 (frontend, full-stack)
+- Vite
+- HTML/CSS, Tailwind CSS, shadcn/ui
+- GSAP + ScrollTrigger (animations)
+- React Hook Form + Zod (forms + validation)
+
+**Backend / Database**
+- Supabase (PostgreSQL + Row Level Security + Auth) — used across multiple shipped apps
+- Firebase (Firestore + Auth) — zaynab-touch, deployed
+- Django + Django REST Framework (Python backend)
+- FastAPI (Python API — used in Distill, automation backends)
+- Cloudinary (image/media management)
+- EmailJS
+
+**Notifications**
+- Twilio (SMS — noryx-studio)
+- Resend (transactional email — noryx-studio)
+
+**AI / Specialized**
+- Whisper (offline speech-to-text — HephFlow)
+- Stockfish (chess engine integration — chess-tutor)
+- Poisson/Dixon-Coles math engine (kairos)
+- Kelly criterion calculator (kairos)
+- DSatur graph coloring + Dijkstra shortest-path (yct-exam-nav-system)
 
 **CRM & Business Tools**
 - HubSpot
@@ -50,9 +74,19 @@ Emmanuel is NOT a single-niche person. He is creative and technical. Do not skip
 - Notion
 
 **Data & Scraping**
-- Playwright (web automation)
+- Playwright (web automation + Google Maps scraping — Locaro)
 - Data pipeline design
-- Apify (mentioned in job requirements — familiar)
+- Apify
+
+**Video / Media**
+- HeyGen (AI avatar + video automation)
+- ffmpeg (audio/video processing)
+- yt-dlp (video download automation)
+
+**Deploy**
+- Vercel (primary — multiple live apps)
+- Railway (Distill API)
+- Lovable (vibe-try-on-shop)
 
 ---
 

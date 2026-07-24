@@ -2,8 +2,18 @@
 name: elbert-savvysox
 sensitivity: private
 platform: fiverr
-status: active
+status: suspended-platform
 created: 2026-07-12
+updated: 2026-07-24
+off_platform_contacts:
+  email: "elbert@savvysox.com"
+  linkedin: "https://linkedin.com/in/elbertirvingiv/"
+  instagram: "@savvysox"
+  twitter: "@savvysoxusa"
+  phone: "(909) 989-9100"
+  website: "https://www.savvysox.com"
+  notes: "Elbert Irving IV — Managing Director. Company at 9559 Center Ave Ste E, Rancho Cucamonga, CA 91730. Contacts retrieved 2026-07-24 after Fiverr suspension."
+recovery_action: "Email sent to elbert@savvysox.com on 2026-07-24 re: continuing Phase 2 automation pipeline directly"
 ---
 
 # Client: Elbert Irving — SavvySox

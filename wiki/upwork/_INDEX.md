@@ -62,12 +62,14 @@ upwork/
 │   ├── _template.md             ← client quality card
 │   └── active/                  ← active/past client nodes
 ├── playbooks/
+│   ├── account-launch.md        ← OWN ACCOUNT cold start (Day 0-30 sequence) ← READ THIS FIRST when launching
 │   ├── proposal-framework.md    ← master proposal methodology (6-pass pipeline)
 │   ├── loom-strategy.md         ← Loom video proposal playbook (Pass 6)
 │   ├── handoff.md               ← delivery brief + contract close + JSS engineering
 │   ├── discovery-call.md        ← pre-call prep, question bank, close script, red flags
 │   ├── objections.md            ← Upwork-specific objection library
 │   ├── client-types.md          ← client archetypes + psychology
+│   ├── profile-gravity.md       ← 90-day inbound engine build (profile → invited)
 │   ├── niche-dossiers.md        ← niche-specific positioning intel
 │   └── conversation-flows.md   ← post-proposal Upwork chat scripts
 ├── performance/

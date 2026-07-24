@@ -2,7 +2,7 @@
 sensitivity: private
 entity_type: concept
 name: Current Upwork Account — Temporary Situation
-last_updated: 2026-05-29
+last_updated: 2026-07-22
 ---
 
 # Current Upwork Account — Temporary Situation
@@ -41,13 +41,14 @@ No need to chase Top Rated on this account — the goal is cash, not badge build
 - Emmanuel's actual take-home = **50% of gross**
 - Note both figures when logging outcomes
 
-## Emmanuel's Own Account (future)
+## Emmanuel's Own Account (ready to launch — July 2026)
 
-- Launches ~June 2026
-- Starts Rising Talent or fresh
-- Rate floor: **$40/hr minimum** — built right from day 1 with portfolio
+- Account exists: `~011b48d2eabbfa6361` (inactive, unconfigured)
+- Was supposed to launch June 2026 — still pending as of July 22 2026
+- Rate floor: **$40/hr minimum** — no negotiating down from this
 - Full Upwork OS strategy applies: elite positioning, keyword dominance, Loom on every priority bid
 - Nothing from the partner's account transfers — JSS, reviews, history stays with the partner
+- Launch playbook: `upwork/playbooks/account-launch.md` — run this when ready to go live
 
 ## Key Point
 

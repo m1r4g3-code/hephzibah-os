@@ -1,6 +1,7 @@
 ---
 sensitivity: private
 entity_type: person
+platform: upwork
 name: ""
 upwork_username: ""
 country: ""
@@ -16,6 +17,13 @@ green_flags: []
 archetype: ""
 status: "prospect|active|closed-won|closed-lost"
 contracts: []
+off_platform_contacts:
+  email: ""
+  linkedin: ""
+  instagram: ""
+  twitter: ""
+  phone: ""
+  website: ""
 relationships:
   - target: "[[identity]]"
     type: sells_to
@@ -26,10 +34,24 @@ relationships:
 
 # [Client Name / Username]
 
-**Upwork:** [username]
+**Platform:** Upwork
+**Username:** [username]
 **Country:** [country]
 **Quality score:** [0-100]
 **Archetype:** [archetype]
+
+---
+
+## Off-Platform Contacts
+
+> Capture at intake. If Upwork account is restricted or closed, this is the only recovery path.
+
+| Channel | Detail |
+|---|---|
+| Email | [email or "unknown"] |
+| LinkedIn | [url or "unknown"] |
+| Website | [url or "unknown"] |
+| Instagram | [handle or "unknown"] |
 
 ---
 

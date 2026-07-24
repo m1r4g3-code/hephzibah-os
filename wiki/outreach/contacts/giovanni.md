@@ -11,7 +11,7 @@ website: shop.seraman.com
 country: Italy
 status: active
 introduced_by: Oba (Adelaja O.)
-last_updated: '2026-06-28'
+last_updated: '2026-07-24'
 relationships:
 - target: '[[seraman]]'
   type: works_at
@@ -90,12 +90,19 @@ M2 delivery includes scene-level approval + selective regen system (not charged 
 
 Kie AI (pay-per-use) · Creatomate ($29/mo) · Blotato ($29/mo) · n8n · Google Sheets · Tally form
 
+## Contact Log
+
+- **2026-07-24** — Direct email sent via Oba. Informed Giovanni that Fiverr was suspended, shared direct contact so relationship stays intact. No pitch.
+- **2026-07-24** — Giovanni replied same day. Warm. Not upset. Confirmed he saw Fiverr is down. Said he'll test the finished work this weekend and update ASAP. Said "these days are truly endless" — he's busy, not cold. M2 test pending this weekend.
+
 ## Flags
 
 - Green: pays, reviews promptly, expanding scope
 - Green: Italian speaker — content stays in Italian
 - Green: long-form already scoped at $1,500
+- Green: direct email contact established 2026-07-24 (seraman.adv@gmail.com)
 - Watch: Blotato posting failed once (execution 279) — social publishing still being confirmed
+- Watch: M2 ($500) still in progress — confirm delivery and payment when Giovanni replies
 
 ## Wikilinks
 

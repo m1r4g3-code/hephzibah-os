@@ -2,7 +2,7 @@
 sensitivity: private
 entity_type: domain
 name: Upwork Performance Metrics
-last_updated: 2026-05-27
+last_updated: 2026-07-24
 ---
 
 # Upwork Performance Metrics
@@ -11,9 +11,9 @@ Live performance tracker. Updated after every outcome. Source of truth for `/dai
 
 ---
 
-## Current State (as of 2026-05-29)
+## Current State (as of 2026-07-24)
 
-**Status:** Live. First proposals sent. Awaiting replies.
+**Status:** Account active — payment method restriction blocking bidding. Fix payment method to unlock.
 
 | Metric | Value |
 |---|---|
@@ -24,8 +24,9 @@ Live performance tracker. Updated after every outcome. Source of truth for `/dai
 | Contracts completed | 0 |
 | Total revenue via Upwork | $0 |
 | JSS | — (no contracts yet) |
-| Connects remaining | ~129 (as of 2026-05-29) |
+| Connects remaining | ~129 (estimate — not updated since 2026-05-29) |
 | Active contracts | 0 |
+| Account restriction | Payment method not added — BLOCKER |
 
 ---
 
@@ -60,7 +61,23 @@ Append a new section each week. Never delete old entries.
   File: `outputs/proposals/2026-05-29-social-media-specialist-greece.md`
 - Social Media role initially scored as SKIP (wrong niche assumption, corrected — Emmanuel is multi-niche)
 
-**Notes:** First live proposals. Both sent to same Greece-based agency (Thessaloniki). Dual-bid strategy: automation + creative. OS writing pipeline fully operational. Roast skill added today after voice quality iteration.
+**Notes:** First live proposals. Both sent to same Greece-based agency (Thessaloniki). Dual-bid strategy: automation + creative. OS writing pipeline fully operational. Roast skill added today after voice quality iteration. Both logged as ghosted as of 2026-07-24.
+
+### Week of 2026-07-24 (Week 9 — OS Structural Overhaul)
+
+**Proposals sent:** 0 (account payment-restricted)
+**Replies:** 0
+**Wins:** 0
+**Connects spent:** 0
+**Revenue:** $0
+
+**Events:**
+- Oba's Fiverr account permanently suspended (General TOS violation — AI video of public figures)
+- Lost: MadSoN ($3,500), Liubovi ($9,000) — no off-platform contacts captured
+- Elbert (SavvySox) recovery email sent to elbert@savvysox.com — Phase 2 pipeline $700-1,200
+- Revamp Consulting Loom recorded and sent to Bayonet — awaiting pricing confirmation + logo
+- OS structural overhaul: fiverr/ section, _PIPELINE.md, _SESSION.md, off-platform contact fields
+- LinkedIn profile rewrite completed for $10k positioning
 
 ---
 
