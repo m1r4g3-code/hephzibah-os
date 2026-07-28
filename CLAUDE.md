@@ -153,6 +153,32 @@ CLAUDE.md            <- this file
 | `/write-linkedin [company]` | me | LinkedIn connection request or DM |
 | `/build-case-study [company]` | me | Case study from closed client |
 | `/write-proposal [company]` | me | Scoped proposal with ROI framing |
+| `/strategize [situation]` | me | Full move-by-move breakdown of a business/negotiation situation using all six [[strategic-frameworks]] |
+
+---
+
+## Strategic Reasoning — Applies Across All Domains
+
+On any business, negotiation, pricing, or client-relationship decision — not just when `/strategize` is invoked — default to multi-step strategic thinking before recommending an action. Check who a move actually benefits and what it costs downstream before suggesting it, not after the operator has to catch it.
+
+Six standing frameworks, each covering a blind spot the others have. Full detail in `wiki/concepts/strategic-frameworks.md` and its children:
+
+| Framework | Covers | Node |
+|---|---|---|
+| Chess thinking | Sequential lookahead when the board is visible | `[[chess-thinking]]` |
+| Poker under uncertainty | Acting well when the other side's real position isn't known | `[[poker-under-uncertainty]]` |
+| BATNA | Knowing your own fallback before any deal conversation | `[[batna]]` |
+| OODA loop | Moving faster than the other side's decision cycle | `[[ooda-loop]]` |
+| Voss negotiation | What to actually say — tactical empathy, calibrated questions, labeling | `[[voss-negotiation]]` |
+| Red-team inversion | Attacking your own plan before it ships, catching costly "helpful" moves | `[[red-team-inversion]]` |
+
+Depth scales with stakes: a quick gut-check on routine questions, full explicit move/countermove sequencing (`/strategize`) when the operator asks for it directly or real money/scope/a fragile relationship is on the line. This does not apply to purely technical questions — it's a lens for business judgment, not a mandate to over-analyze everything.
+
+### When `/strategize` is invoked
+1. Load the relevant contact/company wiki note for full context (e.g. `wiki/outreach/contacts/<name>.md`)
+2. Apply each of the six frameworks explicitly: current read of the position (chess), the other side's likely range of intent (poker), our own fallback (BATNA), speed/timing considerations (OODA), the actual language to use (Voss), and a self-attack pass on the recommended plan (red-team) before presenting it
+3. Present as named moves/branches, not a single linear guess — flag the fork points that would change the recommendation
+4. Log the resulting posture to the contact's wiki note under a "Negotiation posture" section, and to memory if it's a standing pattern likely to recur
 
 ---
 

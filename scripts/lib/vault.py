@@ -12,30 +12,18 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-import yaml
 from filelock import FileLock
 
-from .utils import WIKI_DIR, VAULT_ROOT, slugify, today_iso
+from .utils import WIKI_DIR, VAULT_ROOT, slugify, today_iso, parse_frontmatter, render_frontmatter
 from .schemas import CallAnalysis, CallOutcome, EmailDraft, EnrichedProspect, ObjectionInstance, Relationship
 
 
 # ── FRONTMATTER ───────────────────────────────────────────────────────────────
+# Parsing/rendering lives in utils.py — shared with validate_vault.py. Kept as
+# module-level aliases here so the rest of this file doesn't need to change.
 
-def _parse_frontmatter(text: str) -> tuple[dict, str]:
-    """Split a markdown file into (frontmatter_dict, body_str)."""
-    if text.startswith("---"):
-        parts = text.split("---", 2)
-        if len(parts) >= 3:
-            try:
-                fm = yaml.safe_load(parts[1]) or {}
-                return fm, parts[2].lstrip("\n")
-            except yaml.YAMLError:
-                pass
-    return {}, text
-
-
-def _render_frontmatter(fm: dict, body: str) -> str:
-    return f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}"
+_parse_frontmatter = parse_frontmatter
+_render_frontmatter = render_frontmatter
 
 
 def _atomic_write(path: Path, content: str) -> None:
@@ -452,6 +440,13 @@ INVERSE_TYPE = {
     "teaches": "taught_by", "mentioned_in": "references",
     "relates_to": "relates_to", "informs": "informed_by",
     "extends": "extended_by", "targets": "targeted_by",
+    # added 2026-07-26 alongside the new RELATIONSHIP_TYPES entries
+    "child_of": "parent_of", "parent_of": "child_of",
+    "applies_to": "applied_by", "depends_on": "depended_on_by",
+    "governs": "governed_by", "implements": "implemented_by",
+    "prevents": "prevented_by", "works_with": "works_with",
+    # one-directional by nature — no meaningful inverse
+    "learned_during": None, "on_reading_list": None,
 }
 
 

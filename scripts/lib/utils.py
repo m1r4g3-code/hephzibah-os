@@ -8,6 +8,8 @@ import os
 from datetime import datetime
 from pathlib import Path
 
+import yaml
+
 # Load .env at import time if present
 try:
     from dotenv import load_dotenv
@@ -100,6 +102,23 @@ def today_iso() -> str:
 
 def now_iso() -> str:
     return datetime.now().isoformat(timespec="seconds")
+
+
+def parse_frontmatter(text: str) -> tuple[dict, str]:
+    """Split a markdown file into (frontmatter_dict, body_str). Shared by vault.py and validate_vault.py."""
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            try:
+                fm = yaml.safe_load(parts[1]) or {}
+                return fm, parts[2].lstrip("\n")
+            except yaml.YAMLError:
+                pass
+    return {}, text
+
+
+def render_frontmatter(fm: dict, body: str) -> str:
+    return f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}"
 
 
 def slugify(text: str) -> str:

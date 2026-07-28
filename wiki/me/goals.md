@@ -101,3 +101,39 @@ Trapped in the planning-execution gap permanently. Starts ten things, finishes n
 **The gap between those two versions is not talent. It's [[compound-discipline]] — the daily decision to show up when showing up is hard.**
 
 **The version that doesn't make it:** gets trapped in the [[planning-execution-gap]]. Lets [[financial-fragility]] push decisions toward desperation.
+
+## 6-Month Dead Focus Lock-In (2026-07-26 → 2027-01-26)
+
+**Why:** Self-identified pattern — fitness stopped, fasting forgotten, building stalled, YT never started. Too many fronts opened, none defended. Suspects possible ADHD, confirmed burnout. Wants to test whether real sustained discipline (not motivation) actually changes outcomes over 6 months. [[compound-discipline]] — no partial credit, skipped once resets the count.
+
+**Structure — private for the first 2-4 weeks (Month 1 baseline), consider public LinkedIn accountability only after proving consistency, not before** (flagged risk: announcing before proving repeats the exact stalled-front pattern this is meant to break, and undermines the honesty-first brand positioning already established).
+
+**Daily (every day, no exceptions):**
+1. Wake + cold shower
+2. Tongues + worship, 20 min — before phone
+3. Proverbs (chapter = day of month)
+4. Dead hangs (posture/height recovery — not literal height, growth plates are fused at 21)
+5. Voice training — read aloud (resonance/delivery, not pitch)
+6. Grooming compliance — hair, goatee, oral hygiene (AM + PM)
+7. Reading — minimum 10 pages
+8. Sleep — fixed wake time, hours logged
+
+**Weekdays:**
+9. 10 outreach messages sent
+
+**Spread across week (5x/week total):**
+10. Calisthenics — 3x/week
+11. Basketball or running — 2x/week
+
+**Fixed days:**
+12. Fast — every Thursday
+13. Church — every Sunday
+14. Saturday evening — startup night + weekly discipline audit (raw log numbers, no story)
+
+**Lower frequency:**
+15. Progress photo — weekly, same pose/lighting
+16. Measurements (waist, weight) — monthly
+
+**Fitness sub-goals reality-checked:** abs/cuts, strength, chest, grooming, internal health, and posture-recovered height are trainable via the above. Actual height growth, raw voice pitch, and "charming eyes" are not directly trainable at 21 — reframed as posture, vocal resonance, and rest/presence respectively.
+
+**Verdict at month 6:** not a feeling — the delta between month-0 and month-6 photos, lift numbers, and daily compliance % across all 16 items.

@@ -146,6 +146,11 @@ relationships:
   strength: 9
   first_seen: '2026-05-27'
   last_reinforced: '2026-05-27'
+- target: '[[strategic-frameworks]]'
+  type: uses
+  strength: 8
+  first_seen: '2026-07-26'
+  last_reinforced: '2026-07-26'
 - target: '[[doctor-admin-pain]]'
   type: sells_to
   strength: 8
@@ -191,7 +196,7 @@ Since then:
 
 **Tools:** [[n8n]] · [[claude-api]] · [[heygen]]
 **Platforms:** [[github]] · [[contra]] · [[linkedin]] · [[upwork]]
-**Concepts:** [[builds-before-asking]] · [[geographic-edge]] · [[planning-execution-gap]] · [[compound-discipline]] · [[financial-fragility]] · [[challenger-reframe]] · [[specificity-as-credibility]] · [[pain-before-pitch]]
+**Concepts:** [[builds-before-asking]] · [[geographic-edge]] · [[planning-execution-gap]] · [[compound-discipline]] · [[financial-fragility]] · [[challenger-reframe]] · [[specificity-as-credibility]] · [[pain-before-pitch]] · [[strategic-frameworks]]
 
 ## Inner Circle
 

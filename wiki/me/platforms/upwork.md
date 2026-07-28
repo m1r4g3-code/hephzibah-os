@@ -29,6 +29,8 @@ relationships:
 
 # Upwork
 
+**Profile URL:** https://www.upwork.com/freelancers/~011b48d2eabbfa6361
+
 ## Current Account State
 
 **Account type:** Partner account (Adelaja O.) — 50/50 revenue split
