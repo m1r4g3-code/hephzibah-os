@@ -43,11 +43,23 @@ Introduced by [[oba]] (Adelaja O.) — originally Oba's Fiverr client. Oba manag
 
 ## Financials
 
-| Milestone                    | Amount | Status                    |
-| ---------------------------- | ------ | ------------------------- |
-| Milestone 1                  | $500   | Delivered — 5-star review |
-| Milestone 2                  | $500   | In progress               |
-| Long-form pipeline (5–8 min) | $1,500 | Scoped, not started       |
+| Milestone                    | Amount | Status                                                    |
+| ---------------------------- | ------ | ---------------------------------------------------------- |
+| Milestone 1                  | $500   | Delivered — 5-star review                                  |
+| Milestone 2                  | $500   | **Paid** (the week after M1) — deliverable still outstanding |
+| Long-form pipeline (5–8 min) | $1,500 | Scoped, not started                                        |
+
+**Correction (2026-07-29):** M2 was paid up front, the week after M1 — not on delivery/approval as previously logged. This means the ArWa5G0 corrected-video work still owed is against money already collected, not money pending collection. No further payment is outstanding until the long-form pipeline is actually started.
+
+**The actual promise, verbatim recollection (2026-07-29):** Giovanni said, informally, that he's "gonna drop something for us after the workflow complete build" — no number, no scope, tied to the *build* being complete, not to any specific feature. Soft and goodwill-based, not a firm commitment. Emmanuel's own read, in hindsight: this should have been a proper pitched conversation about business risk/value at the start of the engagement, not left as a vague verbal goodwill offer — logged as a lesson for future client intake, not just this relationship.
+
+**When it becomes fair to raise it:** the six-workflow pipeline itself is functionally built and running end to end — what's outstanding on ArWa5G0 is content-level bug-fixing (packaging text, regen), not incomplete build work. Once the corrected video ships and is approved, it's honest (not opportunistic) to consider a low-pressure reference back to his own words — something like acknowledging the full build is complete and working well, no demand attached, giving him room to follow through or not. Raising it before the corrected video ships would look like asking for a bonus while the current thing is still broken — same timing problem as every other money conversation this week.
+
+**Business context sharpening the urgency (2026-07-29):** no other client work currently moving; Elbert (Fiverr client, savvysox) was lost in the Fiverr suspension crisis. Giovanni is currently the only near-term revenue path, which raises the cost of getting the sequencing wrong here — one bad move and there's no fallback client relationship to lean on in the meantime.
+
+**Honest tool-renewal ask sent via Oba (2026-07-29):** after ruling out the gift/psychology-based approaches, sent an honest, non-manipulative message via Oba: owns the original $1,000 pricing as our own call (not a complaint), explicitly decouples from what's already paid, mentions the incoming script-approval fix as a value-add rather than an apology, asks plainly for a contribution toward AI tooling costs, and gives him an explicit no-pressure exit ("nothing changes between us if the answer's no"). Deliberately does **not** invoke his earlier informal promise ("gonna drop something after the workflow complete build") — decision made to treat whatever he sends here, if anything, as the fulfillment of that promise rather than something separate, to avoid double-collecting on the same goodwill under two different names later. If he references the build-completion promise again unprompted once ArWa5G0 ships, that's his call to make — not something to re-raise ourselves.
+
+**Cash-flow pressure, flagged and declined (2026-07-29):** Emmanuel is out of runway (spent the prior $1k, Claude Pro renewal at risk) and floated asking Giovanni for $500 framed as a "gift," then as a psychology-driven ask leaning on Oba's rapport, Giovanni's age (60s), and his calm/trusting nature to extract money he doesn't owe — while the M2 deliverable he already prepaid for is still unfinished, and while he's independently dealing with partners leaving him. Advised strongly against it: exploits the one asset (trust) the long-form $1,500 deal depends on, and is a bad bet even self-interestedly — if it works, the relationship absorbs the cost later; if he ever recognizes it as engineered, the relationship is over. Agreed alternative: send an honest, no-ask-attached update (used Claude Pro to move faster on M2, own the pace decision) as information only, not a lead-in to a request. If he offers something unprompted, that's real. The only legitimate near-term revenue event remains finishing ArWa5G0 and, once trust is fully intact, the long-form pipeline conversation.
 
 **Total potential: $3,500+**
 
@@ -128,7 +140,7 @@ Researched SERAMAN independently (LinkedIn, D&B, europages) rather than assuming
 
 **Not yet confirmed** — plan is to surface this via one calibrated, low-pressure question once things are calm (post M2 close, post corrected-video delivery), not now while he's mid-crisis (partners leaving, still testing for bugs). Keep this conversation strictly about his goal — do not let it drift into "who else is using this," which is the separate reuse/scope conversation already deliberately sequenced for after M2.
 
-Personal rapport note: he plays golf. Real currency for later, not a lever to use while he's stressed.
+Personal rapport notes (context only, not leverage): plays golf; has no children. Logged for relationship reference — not to be used as a psychological angle in any future ask.
 
 ## Client Stack (his side)
 
