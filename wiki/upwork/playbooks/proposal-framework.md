@@ -124,6 +124,24 @@ Positioning angle: [how Emmanuel positions relative to this job]
 [Question — 1 sentence. Low friction. Answerable in 10 seconds.]
 ```
 
+**The "Mirror the Fear" hook — use this before writing the opener:**
+
+Derived from live 25-proposal research (2026-08-07). The single highest-performing hook formula observed. Works because it names the client's psychological state from their exact language, before offering anything.
+
+Formula:
+```
+[Specific word/phrase client used] + [what that reveals about their experience] + [what you'd address first]
+```
+
+Examples:
+- "You used 'reliable' three times. That's usually someone who's been burned by an automation that worked in testing and broke the first week in production."
+- "'Production-grade' in the title means you've seen what demo-grade looks like when it hits real data."
+- "You mentioned race conditions specifically — that's not a requirement someone writes unless they've already hit the problem."
+
+The hook does not open with a skill claim. It opens with the client's psychological state, derived from their own words. Force them to think "yes, exactly" in the first sentence. Then proof closes the rest.
+
+Source: `upwork/market/patterns/proposal-intel-2026-08-07.md`
+
 **The closing question rule (Ramshaw: "increases reply rate 50%+"):**
 A question mark creates an open loop the brain can't ignore. But the question must require minimal cognitive load. Ask something answerable in 10 seconds:
 - YES: "Is this project live yet or still in planning?"
