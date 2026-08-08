@@ -11,7 +11,7 @@ website: shop.seraman.com
 country: Italy
 status: active
 introduced_by: Oba (Adelaja O.)
-last_updated: '2026-07-24'
+last_updated: '2026-08-08'
 relationships:
 - target: '[[seraman]]'
   type: works_at
@@ -97,6 +97,16 @@ Tally Form → n8n → Claude AI (Italian script)
 ```
 
 Architecture: dual-branch parallel Kie AI generation (Branch A: scenes 1+8, Branch B: scenes 2-7), async state machines, retryCount 20, regenCount 3 per scene, item-identity integrity (scene_number travels explicitly through all nodes), Claude v4 trust-first prompt (Product → Experience → Feature → Benefit).
+
+### Source documents — proposal & handoff PDFs (found in Cyrus's WhatsApp history, cross-checked 2026-08-08)
+
+**Proposal v3 (2026-06-10) vs. actual build:** the written proposal PDF priced this as a single Phase 1 deliverable — $600 build-only or $800 build + 30 days support, 2-week timeline — using **Rendi** (cloud ffmpeg) for assembly, not Creatomate, and no scene-level approval/regen system. Per the 2026-06-12 chat with Cyrus, the workflow was updated to use Creatomate instead of Rendi before delivery, and Giovanni separately asked for a Kie AI cost estimate — consistent with the actual $500/$500 two-milestone ($1k total short-form) structure and Creatomate stack already logged above. Treat the proposal PDF as an early draft, not the delivered scope — the scene-level approval + regen system and the fuller Claude v4 script engine came later.
+
+**Handoff v1 (2026-06-22) — confirms build details, two small corrections:**
+- Confirms architecture matches what's logged here: 4 named n8n workflows (`SERAMAN Product Automation`, `Seraman Generate Videos`, `Seraman Edit Videos`, `SERAMAN Error Handler`), dual-branch Kie AI generation (Branch A: scenes 1+8, Branch B: scenes 2-7), scene_number-based item-identity fix, retryCount 20 / regenCount 3, Creatomate assembly, Blotato 4-platform publishing. (The pipeline is described elsewhere in this note as "6 workflows" — the handoff doc names only 4 actual n8n workflow objects, possibly counting pipeline stages rather than workflow objects; worth reconciling if it comes up.)
+- Claude script formula is written in the handoff as **Problem → Experience → Feature → Benefit** — this note previously said "Product → Experience → Feature → Benefit" above; likely a transcription slip, corrected here per the source document.
+- New detail not previously logged: a banned-language list hard-blocks words like *premium*, *revolutionary*, *mission-ready* in the script agent (tactical-audience skepticism triggers).
+- New detail: product submission form is `https://tally.so/r/obx5vx`; all platform accounts (Kie AI, Creatomate, Blotato, n8n) are registered in **Seraman's own name**, not Emmanuel's or Oba's — relevant to the reuse-risk discussion already logged (the NGO/Aquatabs job running on Giovanni's own infrastructure is consistent with him holding full account ownership).
 
 ## M2 Bugs (2026-06-28)
 

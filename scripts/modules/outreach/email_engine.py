@@ -78,9 +78,9 @@ def _get_gmail_service():
 
 # ── DRAFT CREATION ────────────────────────────────────────────────────────────
 
-def _build_mime(to: str, subject: str, body: str) -> str:
+def _build_mime(to: str, subject: str, body: str, html: bool = False) -> str:
     """Build a base64url-encoded MIME message."""
-    msg = MIMEText(body, "plain")
+    msg = MIMEText(body, "html" if html else "plain")
     msg["to"] = to
     msg["subject"] = subject
     return base64.urlsafe_b64encode(msg.as_bytes()).decode()
@@ -90,6 +90,7 @@ def create_gmail_draft(
     to: str,
     subject: str,
     body: str,
+    html: bool = False,
 ) -> tuple[str | None, str | None]:
     """
     Create a Gmail draft. Returns (draft_id, draft_url) or (None, None).
@@ -100,7 +101,7 @@ def create_gmail_draft(
         return None, None
 
     try:
-        raw = _build_mime(to, subject, body)
+        raw = _build_mime(to, subject, body, html=html)
         result = service.users().drafts().create(
             userId="me",
             body={"message": {"raw": raw}},
@@ -121,12 +122,13 @@ def run(
     subject: str,
     body: str,
     email_type: str = "cold",
+    html: bool = False,
 ) -> EmailDraft:
     logger = EngineLogger("email_engine")
     logger.start()
 
     # Create Gmail draft (silently skips if not configured)
-    gmail_id, gmail_url = create_gmail_draft(to_email, subject, body)
+    gmail_id, gmail_url = create_gmail_draft(to_email, subject, body, html=html)
 
     draft = EmailDraft(
         company_name=company,
@@ -177,6 +179,7 @@ if __name__ == "__main__":
     parser.add_argument("--body", required=True)
     parser.add_argument("--type", default="cold", dest="email_type",
                         choices=["cold", "follow-up", "sequence"])
+    parser.add_argument("--html", action="store_true", help="Send body as HTML instead of plain text")
     args = parser.parse_args()
 
     console.print(f"\n[bold]Email Engine[/bold] — {args.email_type} email for {args.company}")
@@ -189,6 +192,7 @@ if __name__ == "__main__":
         subject=args.subject,
         body=args.body,
         email_type=args.email_type,
+        html=args.html,
     )
 
     slug = slugify(args.company)
