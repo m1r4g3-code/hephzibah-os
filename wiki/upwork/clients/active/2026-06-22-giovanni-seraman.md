@@ -165,6 +165,24 @@ Veo3 has a recurring shape-drift defect on hand/joint contact scenes (observed o
 
 **Status:** 4-way comparison video sent to Giovanni with cost breakdown and recommendation to switch to Gemini Omni (cheaper than Kling, fixes the defect, better VO). Awaiting his greenlight. If approved, production workflow `fygNTt3a5LphUJO7` ("Seraman Generate Videos") needs its Kie submit nodes pointed at `gemini-omni-video`. Only tested against this one defect class — character consistency across a full 8-scene job and material hallucination not yet stress-tested on Omni.
 
+## Prompt Hardening v5.14–v5.16 — Confirmed Fixed on a Real Live Job (2026-08-15)
+
+Root-caused and fixed three separate hallucination/pacing defects flagged after reviewing job rDkyR8v, all via direct image/video inspection (downloaded and viewed the actual reference image, generated stills, and extracted video frames rather than guessing from prompt text alone):
+
+1. **Long pauses** — every dialogue scene's system prompt instructed a 2-second silent freeze-frame hold at the close ("Beat 3"), compounding to ~15-18s of dead time across the ~56s video. Fixed: Beat 3 now requires continuous handling motion through the full close, never a static pose. (`SERAMAN | Generate Script`, v5.14)
+2. **Background hallucination** — traced to the image-generation step (nano-banana-pro), not the video step. It was wholesale-redrawing the shop background (wrong shelf layout, SERAMAN wall signage dropped entirely), not just adding stray marks — the old negative tail only banned additions, not full reconstruction. Fixed with an explicit structural-lock clause. (v5.16)
+3. **Clothing-logo hallucination** — Kie's video step (gemini-omni-video) separately invented a fake apparel brand logo on the presenter's fleece, a hallucination class the negative tail never covered. Added an explicit ban. (v5.16)
+
+Each fix was verified in isolation before publishing (rejected a "padding trick" video test that fixed nothing and actually made background fidelity worse; confirmed the real fix via a side-by-side image regen showing the SERAMAN signage correctly restored).
+
+**Live validation:** a real fresh job — Helikon-Tex T25 wrist compass, JOB_ID `Z9ZNaqv`, submitted via the real Tally intake (not a synthetic test) — ran through the fully patched pipeline end to end. Result confirmed clean: no long pauses, no background hallucination, no clothing-logo hallucination. First real proof the fixes hold on a brand-new product, not just the one job they were diagnosed against.
+
+**Correction (same session):** initially misread this — both approval stages for this job were submitted for real via the live Tally webhook (same `respondentId` as prior self-testing, not a Giovanni submission), and the pipeline did run all the way through `SERAMAN | Call Post to Socials`, all 4 platform nodes (IG/TikTok/FB/YouTube Shorts) reporting success. First read was "this actually posted live" — wrong. There's a deliberate dead end wired into each platform branch (by design, per the operator) so the full pipeline can be exercised end to end without ever actually publishing during testing. Confirms as fake/non-live: all 4 "Create Post" nodes returned the identical media ID and URL, which isn't what distinct real per-platform post confirmations look like — it's passthrough from the upload step. One real side effect: the automated "[Report] Social Media Publishing — 4 post(s) scheduled" notification email did genuinely send to `seraman.adv@gmail.com` (Giovanni's real inbox) — worth knowing it's sitting there, but it says "scheduled," not "published," and is likely indistinguishable from routine test telemetry to him.
+
+**Fixed the same night:** VO dialogue extraction was silently truncating lines containing an internal apostrophe (Italian elisions like "L'ago") — the model was doubling the straight quote as an improvised escape (`L''ago`), which broke the regex used both for the client review email preview and for splicing in Giovanni's corrections. Confirmed via job Z9ZNaqv scene 5. Fixed at the source: elisions inside spoken VO must now use the typographic apostrophe (’), reserving the straight `'` exclusively as the `says: '...'` delimiter. (v5.17, published)
+
+---
+
 ## Ad Creative — Background Music Research (2026-07-20)
 
 Investigated whether to replace the current stock background track. Key findings:
@@ -173,9 +191,18 @@ Investigated whether to replace the current stock background track. Key findings
 - Commercial-library tracks in the **100–140 BPM** range consistently outperform generic background music for this content type.
 - Pairing music with voiceover (already the Seraman format) gets roughly **2x the conversion** of either alone per TikTok ad data — don't let music compete with/drown the VO.
 - One concretely documented reference: Artlist track **"Game Over" by 2050** — electronic + orchestral, builds from dramatic strings/synths into driving percussion and brass. Picked by an automotive brand for a cinematic commercial. Closest verified match to the rugged/confident/builds-to-a-payoff register Seraman needs. Worth previewing directly on Artlist.
-- **Real validation method (not yet run):** check Meta Ad Library (facebook.com/ads/library) for live video ads from comparable DTC tactical/EDC brands — Tactical Geek, 5.11 Tactical, Elite Survival Systems, Marsupial Gear, M-Tac, Falco. A track reused across multiple currently-running ads from different advertisers is real proof it converts (they're paying to keep it live).
+- **Real validation method (not yet run):** check Meta Ad Library (facebook.com/ads/library) for live video ads from comparable DTC tactical/EDC brands — Tactical Geek, 5.11 Tactical, Elite Survival Systems, Marsupial Gear, M-Tac, Falco. A track reused across multiple currently-running ads from different advertisers is real proof it converts (they're paying to keep it live). Attempted again 2026-08-15 — Meta's ad library is a JS-heavy app that refuses automated/non-browser fetches outright (socket hang up, not just a block page). This check needs an actual human browsing session; it cannot be done by the OS. Still open.
 
-**Status:** research only, no track selected yet. Next step is the Meta Ad Library check above before locking a replacement track.
+### Round 2 (2026-08-15) — re-verified + new candidates
+
+- **"Game Over" by 2050 re-confirmed real and live**: present on [Artlist](https://artlist.io/royalty-free-music/song/game-over/77369), [SoundCloud](https://soundcloud.com/2050music/2050-game-over), and [YouTube](https://www.youtube.com/watch?v=mKHqMpHyWX8) — safe to preview/license from any of the three. Still the strongest single lead.
+- **Platform split confirmed:** Epidemic Sound has the deeper catalog (~50k tracks) and better mood/BPM filtering, plus a dedicated Tactical/Equipment *sound-effects* category (not music) — better for discovery once someone can browse and filter live. Artlist is smaller (~30k) but more tightly curated for cinematic/corporate moods and is where "Game Over" already lives — one less new account to manage.
+- **Two new named candidates found (Uppbeat, free tier w/ attribution or paid tier without):**
+  - **"No Turning Back" by Albert Behar** — tagged Dramatic / Cinematic / Tense. Closer to a slow-build tension register than Game Over; worth an A/B preview against it.
+  - **"Currents" by Philip Anderson** — tagged Dramatic / Cinematic / Documentary. Closest match yet to the "documentary realism, calm authority, not hyped" brand voice specifically — worth checking first since it's the only candidate that leans documentary rather than trailer/epic.
+- All three (Game Over, No Turning Back, Currents) still need actual listening + Giovanni's ear against a real cut — genre tags and descriptions can't substitute for hearing it under the Italian VO. None of the automated research tools here can play audio.
+
+**Status:** three concrete, named, verified-real candidates now on the table (up from one). No track selected yet — next step is a human listening pass (ideally against an actual Seraman scene cut, since "2x conversion" only holds when music doesn't fight the VO) and, separately, someone browsing Meta Ad Library directly in a real browser to close out the validation method above.
 
 ## Tech Stack (Giovanni's side)
 
