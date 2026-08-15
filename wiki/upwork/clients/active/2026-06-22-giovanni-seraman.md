@@ -181,6 +181,16 @@ Each fix was verified in isolation before publishing (rejected a "padding trick"
 
 **Fixed the same night:** VO dialogue extraction was silently truncating lines containing an internal apostrophe (Italian elisions like "L'ago") — the model was doubling the straight quote as an improvised escape (`L''ago`), which broke the regex used both for the client review email preview and for splicing in Giovanni's corrections. Confirmed via job Z9ZNaqv scene 5. Fixed at the source: elisions inside spoken VO must now use the typographic apostrophe (’), reserving the straight `'` exclusively as the `says: '...'` delimiter. (v5.17, published)
 
+## Two More Real Bugs Found and Fixed — Job 7XpW0OZ (2026-08-15, SOG Aegis AT Tanto knife)
+
+Operator ran another live test and reported a black flash between scene 1 and scene 2, and scene 1 feeling shorter than 8 seconds. Root-caused directly against the Creatomate render template (`AH4d4awNiHliDToR` → `SERAMAN | Render Final Video`), not guessed from symptoms:
+
+1. **Scene 1 missing `duration: 8`.** Every scene (2–8) in the render composition has an explicit `"duration": 8` locking it to fill its full slot. Scene 1 was the only one missing that key — it only had `"speed": "114%"` (from the earlier "continuous motion" pacing fix). Without a locked duration, Creatomate just played the clip at its natural length adjusted for the 114% speed-up: 8s ÷ 1.14 ≈ 7.02s. Scene 2 is hardcoded to start at t=8 regardless of when Scene 1 actually finishes. That left a ~0.98s window with nothing on Scene 1's track before Scene 2 faded in — the blackout, and the reason Scene 1 felt short. **Fix:** added `"duration": 8` to Scene 1, matching every other scene. Published.
+
+2. **Render-failure alert node was non-functional.** While investigating, found `SERAMAN | Creatomate Render Timeout Alert` (a Gmail node, live-wired from both the "render explicitly failed" and "15 polling attempts / ~15 min timeout" branches) was missing its `resource`/`operation` discriminators and had no Gmail credential attached at all — it would have errored the instant it tried to fire. Checked the two historical error executions on this workflow (781, 770): both died earlier in the pipeline before ever reaching this node, so the gap has been live and untested since it was built — nobody would have found out until a real render actually timed out. The downstream halt step always throws regardless (so a broken video still could never have reached Giovanni), but the human alert itself would have silently failed to send. **Fix:** added `resource: message`, `operation: send`, attached the existing Gmail account credential (`seraman.adv@gmail.com`, same one the working review-email nodes use). Published.
+
+Both fixes are the same class as the push_brain.py sync gap found earlier tonight: correct-looking on the surface, invisible until the specific failure path actually executes. Worth another test render to confirm the scene 1/2 transition is clean.
+
 ---
 
 ## Ad Creative — Background Music Research (2026-07-20)
