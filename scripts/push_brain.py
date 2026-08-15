@@ -10,11 +10,19 @@ file-copy sync, so the subtree's synthetic history can never fast-forward).
 How it works:
   1. Creates a temp clone of hephzibah-brain (or reuses cached .brain-staging/)
   2. Resets staging to origin/main (integrates other OS instances' pushes)
-  3. Copies ALL local wiki files over it, preserving structure
+  3. Copies any staging-only files down into local wiki/ (never overwrites an
+     existing local file — local edits always win). Without this step, other
+     instances' work would reach the brain remote via step 4 below but never
+     actually land in this machine's wiki/, while .brain_last_pull would still
+     get stamped as fully synced in step 6 — silently hiding the gap from
+     pull_brain.py forever (real incident, 2026-08-15: 36 files from other
+     instances sat unpulled for a week because of exactly this).
+  4. Copies ALL local wiki files over staging, preserving structure
      — never deletes nodes that exist only in the brain (append, don't delete)
-  4. Commits + pushes to origin main (fast-forward, no force)
-  5. Records the new brain HEAD in .brain_last_pull so pull_brain.py
-     doesn't echo our own push back
+  5. Commits + pushes to origin main (fast-forward, no force)
+  6. Records the new brain HEAD in .brain_last_pull so pull_brain.py
+     doesn't echo our own push back — now honest, since step 3 already
+     reconciled local wiki/ with anything brain-only.
 
 Requirements:
   - git remote 'brain' configured:
@@ -65,7 +73,22 @@ def main():
     run(["git", "config", "user.email", "adekoyaemmanuel15@gmail.com"], cwd=STAGING)
     run(["git", "config", "user.name", "m1r4g3-code"], cwd=STAGING)
 
-    # 2. Copy all wiki files over staging, preserving structure.
+    # 2. Reconcile: copy any staging-only files down into local wiki/ first.
+    #    Never overwrites a file that already exists locally — local edits win.
+    #    This is what lets step 6 honestly mark .brain_last_pull as caught up.
+    staging_files = [f for f in STAGING.rglob("*") if f.is_file() and ".git" not in f.parts]
+    reconciled = 0
+    for src in staging_files:
+        rel = src.relative_to(STAGING)
+        dest = WIKI / rel
+        if not dest.exists():
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dest)
+            reconciled += 1
+    if reconciled:
+        print(f"Reconciled {reconciled} brain-only file(s) down into local wiki/ before pushing.")
+
+    # 4. Copy all wiki files over staging, preserving structure.
     #    No wipe first: nodes that exist only in the brain must survive.
     for src in files:
         rel = src.relative_to(WIKI)
@@ -73,7 +96,7 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, dest)
 
-    # 3. Commit and push
+    # 5. Commit and push
     run(["git", "add", "-A"], cwd=STAGING)
 
     status = subprocess.run(
@@ -95,7 +118,7 @@ def main():
     )
     run(["git", "push", "origin", "main"], cwd=STAGING)
 
-    # 4. Record new brain HEAD so pull_brain.py doesn't re-pull our own push
+    # 6. Record new brain HEAD so pull_brain.py doesn't re-pull our own push
     new_head = run(["git", "rev-parse", "HEAD"], cwd=STAGING).stdout.strip()
     LAST_PULL_FILE.write_text(new_head)
 
