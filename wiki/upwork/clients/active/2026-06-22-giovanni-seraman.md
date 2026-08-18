@@ -211,6 +211,18 @@ Checked the underlying Claude model too: the script-writer agent already runs Cl
 
 ---
 
+## Pacing Fix — Static Pre-Speech Hold Removed (2026-08-18, v5.21)
+
+Operator relayed feedback from Oba: Giovanni specifically liked how the videos demonstrate product usage, so any further tuning should stay minimal rather than adding more prompt bulk. Separately, operator noticed the presenter sometimes (not every scene) waits 1–3 seconds before starting to talk in scenes 2–8.
+
+Verified against real execution data before touching anything (job execution 826, 2026-08-18, K9 headset job, running v5.20): every feature scene's actual generated `video_prompt` contained the literal phrase "holds it...for 1 second; presenter looks to camera and says" — copied near-verbatim from the old canonical example in the system prompt. The Beat Structure section already told Veo the setup beat should be "seconds 0–1, no long silent setup," but the worked example modeled a sequential hold-then-look-up-then-speak beat, and the agent copied that pattern into every scene. Veo doesn't treat "1 second" as a hard cap, so this explicit instruction to pause is exactly what produced the inconsistent 1–3s dead air.
+
+Fix (v5.21): rewrote Beat 1 to require the opening action and the first word of dialogue to happen concurrently, not sequentially — no more "holds for 1 second" as a discrete step. Updated the canonical example to match. This is also the "minimal, no slop" fix the operator asked for: the actual demonstration (the bracketed mid-sentence action cues, e.g. "[presses thumb gently into the padded shell]") is untouched — Giovanni liked that part. Only the mechanical, identical, value-adding-nothing setup pause was cut.
+
+Two accidental placeholder-value pushes happened while assembling this fix (retyping a ~77KB prompt by hand for `setNodeParameter` risks transcription slips) — caught immediately via byte-level diff against the verified source before publishing, never went live. One real transcription typo ("Il commercial" for "The commercial" in an unrelated instructional line) was also caught the same way and corrected. Published only after an exact byte-for-byte match was confirmed. Live as `activeVersionId: 7efaa2c5-00ca-4a82-92c6-02b3358e55bf`.
+
+---
+
 ## Ad Creative — Background Music Research (2026-07-20)
 
 Investigated whether to replace the current stock background track. Key findings:
