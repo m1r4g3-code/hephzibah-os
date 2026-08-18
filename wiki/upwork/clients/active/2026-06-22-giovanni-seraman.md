@@ -191,6 +191,16 @@ Operator ran another live test and reported a black flash between scene 1 and sc
 
 Both fixes are the same class as the push_brain.py sync gap found earlier tonight: correct-looking on the surface, invisible until the specific failure path actually executes. Worth another test render to confirm the scene 1/2 transition is clean.
 
+## Real Bug Found the Hard Way — Scene 1 Blackout Root Cause Corrected (2026-08-17/18)
+
+The Scene-1-duration fix above turned out to be the wrong theory. A follow-up test (job BE29x15) still showed the blackout. Root-caused properly this time by checking the script itself, not just the render template: the master script-writer prompt had scenes 1 and 8 explicitly defined as short "cold open" / "end card" beats (3–4 seconds), directly contradicting the render template's fixed 8-second-per-scene grid — a structural mismatch nobody had reconciled. Fixed at the actual source: Scene 1 now required to generate a full 8 seconds, matching every other scene (v5.18). Scene 8 left as-is (4s, by design, per operator decision).
+
+**Second real bug found while verifying the fix, on Giovanni's own submitted product** (K9 canine ear protection, job kbkxD6Z, 2026-08-18): visually compared all 8 generated images against the real product photo. Two scenes (5, 6) showed the model hallucinating a rigid over-ear headphone cushion — an oval foam driver pad that does not exist on the real product, which is a single continuous soft fabric hood. Root cause: the script described the product as having "ear cups" and instructed the model to "open" one "to expose the interior," pulling Veo/nano-banana toward its generic two-cup headphone prior. Fixed at the source with a new rule banning cup/interior-reveal language for single-piece soft products (v5.19).
+
+**Also added same session:** a CLOTHING/APPAREL entry to the product-handling table (garments held and demonstrated by hand, never worn by the presenter — same reference-image-fidelity risk already proven costly by the clothing-logo hallucination incident).
+
+Both new fixes verified against real execution data (ffprobe on actual generated video durations; direct visual comparison of generated images against the product reference photo) before being applied — not assumed from symptoms.
+
 ---
 
 ## Ad Creative — Background Music Research (2026-07-20)
