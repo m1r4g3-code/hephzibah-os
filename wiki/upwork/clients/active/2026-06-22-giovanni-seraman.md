@@ -201,6 +201,14 @@ The Scene-1-duration fix above turned out to be the wrong theory. A follow-up te
 
 Both new fixes verified against real execution data (ffprobe on actual generated video durations; direct visual comparison of generated images against the product reference photo) before being applied — not assumed from symptoms.
 
+## Architectural Fix — Product Handling Table Replaced with Axis Classification (2026-08-18)
+
+Operator flagged a real structural problem: the product-handling logic was a growing list of named categories (footwear, medical, vests, knives, optics, clothing), meaning every unusual product Giovanni sends ("special products, precisely to better stress the system," per his own framing) potentially needs a new category added by hand — not sustainable given he's explicitly sending edge cases on purpose.
+
+Replaced the named-category table with a 4-axis structural classification (v5.20): how the product attaches to the body, structural rigidity, hazard profile, operable mechanism. Every prior named category collapses into a combination of these axes (a vest is "worn-in-real-use"; a knife is "held + edged"; the K9 headset is "held + single-piece-soft"), and any future product — including ones never seen before — is covered without needing a prompt edit. This reuses the physical classification Engine 2 already produces internally instead of running a second, redundant category system alongside it.
+
+Checked the underlying Claude model too: the script-writer agent already runs Claude Opus 4.8, which is not the bottleneck — the K9 hallucination happened downstream in Veo's video generation, not in Opus's script reasoning. Opus 5 is now available as an incremental upgrade if wanted, but flagged separately since it wasn't the cause of anything found so far.
+
 ---
 
 ## Ad Creative — Background Music Research (2026-07-20)
