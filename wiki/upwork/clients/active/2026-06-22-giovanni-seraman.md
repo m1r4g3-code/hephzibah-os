@@ -237,6 +237,20 @@ Not yet done: a fresh test job to confirm scene 2 renders correctly under the ne
 
 ---
 
+## Policy Reversal — Clothing Now Shown Worn by Presenter, Per Client Preference (2026-08-19, v5.23)
+
+Operator reran the pipeline for a Lynx merino wool midlayer top (job `RWVO1Ov`) to test whether the v5.22 fixes held on a fresh job. They did — Scene 1 duration, no pre-speech hold, and (since this is soft apparel, not a two-hand rigid product) no headphone collision either.
+
+Before recommending the video be sent to Giovanni, checked the actual final render frame-by-frame and found the presenter wearing the garment on his body in scenes 3 through 7 — collar sitting naturally, sleeve down his arm — instead of holding it up, which directly violated the standing AXIS 1 rule ("never shown worn by the presenter") that had been in place since v5.19. Flagged this as a real defect and recommended against sending, since the existing rule existed specifically to avoid inventing fit/drape that was never in the reference image.
+
+Operator corrected this: Oba reports Giovanni specifically likes it when the presenter wears the product — held-only demonstration was never what he wanted for apparel. This is new, confirmed client preference that overrides the original engineering-caution rule, and the actual renders looked clean and natural in every scene checked (no visible fit/drape distortion, no fabricated logos), so the original risk the rule was guarding against didn't materialize here anyway.
+
+Fix (v5.23): split AXIS 1's "worn on body" bullet in two. **Soft apparel** (shirts, base layers, jackets, pants) is now shown worn by the presenter, matching Giovanni's stated preference. **Structural worn gear** (vests, plate carriers, chest rigs, harnesses, headwear) still follows the original never-worn rule, since an invented strap routing or plate position is a tactical-credibility risk apparel doesn't carry — scoped narrowly rather than reversing the whole AXIS 1 rule wholesale. Published as `activeVersionId: 7226b4f3-994c-40a0-9c9b-cb1e70b73220`, verified byte-exact against source before publishing.
+
+Open question for Giovanni, not yet asked: does the "shown worn" preference extend to structural worn gear (vests, plate carriers, headwear) too, or is it apparel-specific? Left scoped narrow until confirmed either way.
+
+---
+
 ## Ad Creative — Background Music Research (2026-07-20)
 
 Investigated whether to replace the current stock background track. Key findings:
