@@ -223,6 +223,20 @@ Two accidental placeholder-value pushes happened while assembling this fix (rety
 
 ---
 
+## Real Bug Found in the Rerun — Two-Hand Lift Hallucinates a Rigid Headphone (2026-08-19, v5.22)
+
+Operator asked which 2 of 3 available product photos to submit for a rerun (a dog wearing the goggles+hood combo, plus two isolated hood shots in different colors) — recommended the dog-wearing shot + the black isolated shot, since the isolated shot gives clean construction detail and the worn shot gives real scale/integration context the isolated shots can't (exactly the kind of context that would have prevented the earlier ear-cup hallucination). Operator submitted product photo #1 (unchanged from the original job) plus a second file (`..._6600.jpg`, confirmed via download to be the dog-wearing shot).
+
+Reran the pipeline (job `dbkOLGo`). Static images came out clean per operator confirmation. Operator then reported the **video** still "mistook it for a headset" and shared frames proving it. Verified directly against the real generated video (not assumptions): checked the raw Kie clips for scenes 1,3,4,5,6,7 (all clean, soft fabric hood throughout) and the final Creatomate-stitched render frame-by-frame. Found the hallucination isolated to **scene 2 only** — starts right at the scene transition, a fully rigid two-cup over-ear headphone with a hard headband, for several seconds of the 8-second clip.
+
+Root cause: not a language problem — scene 2's `video_prompt` never says "cup," "headphone," or anything like it; it correctly says "canine hearing-protection hood" and "soft fabric-and-foam shell" throughout. The trigger was the **motion**: "lifts the hood into frame with both hands and turns it toward camera" — a symmetric two-hand lift-and-rotate at chest height. That exact gesture matches Veo's training prior for a person holding up or putting on headphones strongly enough to override the correct product shape for a few seconds, independent of what the text says. This only surfaced now because this job's Engine 2 classified the product as **two-hand scale** (the dog-wearing photo gave it real proportional context — last time, with only isolated photos, it was misclassified as one-hand and used an asymmetric cup-in-palm motion that never triggers this).
+
+Fix (v5.22): new standalone rule — two-hand-scale products must stage their opening lift asymmetrically (one hand supports/tilts, mirroring the one-hand pattern that already renders correctly everywhere else), never both hands mirrored lifting-and-rotating symmetrically. Referenced from AXIS 1 and added to the pre-output trust-score checklist. Confirmed failure mode documented inline with job ID and exact phrasing. Published as `activeVersionId: 129c7a28-4133-4258-a81d-b3d57be8283b`, verified byte-exact against source before publishing.
+
+Not yet done: a fresh test job to confirm scene 2 renders correctly under the new rule.
+
+---
+
 ## Ad Creative — Background Music Research (2026-07-20)
 
 Investigated whether to replace the current stock background track. Key findings:
