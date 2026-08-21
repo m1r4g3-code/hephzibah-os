@@ -251,6 +251,24 @@ Open question for Giovanni, not yet asked: does the "shown worn" preference exte
 
 ---
 
+## Scene-Correction Field Was Misused, Not Broken — Mechanism Fixed, Disc-O-Bed Job Completed (2026-08-20/21)
+
+Operator flagged that Giovanni likely submitted an independent test himself: a Disc-O-Bed Disc-Bunk (modular camping bunk/cot, job `6DMe8Ak`), the first genuinely novel furniture-scale product run through the pipeline. Script and image generation handled it correctly with zero prompt changes — validates the v5.20 axis system on real unseen product data (JOINT/CONNECTOR rule applied correctly, real numbers from his product description carried through, no lift-related issues since a bunk bed is never lifted).
+
+Video generation failed for 6 of 8 scenes with identical Kie `gemini-omni-video` failCode 500 "Internal Error" — a Kie-side outage, not a prompt problem (confirmed via raw API responses: clean-prompt scenes failed identically to the two affected ones below). `SERAMAN | All Videos Ready Gate` correctly blocked the job from being marked done — nothing broken reached posting.
+
+Separately, scenes 2 and 5 had genuine director feedback from Giovanni ("The aluminum bar along the tarp doesn't exist. Rest your hand on the orange mat.") typed into the "corrected line" field built in an earlier session. That field's mechanism only ever anticipated literal replacement dialogue — it spliced his raw English staging note directly into `says: '...'`, and never touched `IMAGE PROMPT` at all, so even the wording fix wouldn't have addressed the actual complaint (presenter gripping the aluminum frame rail instead of the orange fabric deck).
+
+**Fix, `NysDrlj3XSi7RDDo` (SERAMAN Scene Approval):** replaced the blind regex splice with a new `SERAMAN | Interpret Scene Correction` agent (same Anthropic-agent pattern as the existing `Clean Regen Prompt` node) that classifies the note as a wording fix vs. a staging fix vs. both, and rewrites `IMAGE PROMPT` + `VIDEO PROMPT` + `VOICEOVER TEXT` accordingly — never echoes the client's raw text into spoken dialogue. Corrected-line scenes now also auto-trigger image regeneration (confirmed operator preference: no longer gated behind the checkbox), via a new `Apply Voiceover Corrections → Get Job Record (Image)` connection that reuses the checkbox path's existing round-limited entry point rather than skipping into the middle of it — first wiring attempt skipped straight to `Get Sheet1 Data (Image Regen)` and broke the downstream round-counter step, caught via a real test run and corrected.
+
+**Verified against production, not simulation:** used `test_workflow` with pinned trigger data (real field labels pulled from a genuine prior execution, not guessed) — pinning only the trigger meant everything downstream ran for real. First run exercised the new correction path against Giovanni's actual note for job `6DMe8Ak`; confirmed by downloading and viewing the regenerated images directly — hand now flat on the orange fabric deck in both scenes, matching exactly what he asked for. Second run replayed a real "Approve All" for the same job, which resubmitted all 6 previously-failed scenes to Kie (now recovered) and completed the full pipeline through to final Creatomate render. Confirmed in the actual final rendered video, not just intermediate state.
+
+Final video: `https://f002.backblazeb2.com/file/creatomate-c8xg3hsxdu/cc7b32fe-b81c-4ddd-87a1-5cd059510ca0.mp4`
+
+Not yet done: operator to send Giovanni a short follow-up on the completed Disc-O-Bed video (separate from the earlier message explaining the VO-field vs. checkbox distinction).
+
+---
+
 ## Ad Creative — Background Music Research (2026-07-20)
 
 Investigated whether to replace the current stock background track. Key findings:
