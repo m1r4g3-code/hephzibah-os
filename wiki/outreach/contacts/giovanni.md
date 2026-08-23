@@ -144,6 +144,17 @@ Applying [[strategic-frameworks]] to this relationship: [[poker-under-uncertaint
 4. Keep leading with maintenance/reliability value, not "you can't use what you already have access to"
 5. Match his register (warm, not formal) per [[oba]]'s established rapport, but keep the actual asks concrete underneath the casual tone
 
+### Negotiation posture — institutional reframe + no-strings gift (2026-08-23)
+
+Full six-framework pass run against current state (dossier + this file + this session). Key reads: sophistication corrected upward (see update above); ArWa5G0 trigger has not fired yet; real conflict between this file's $500/$500 milestone figures and the Upwork client file's $1,000/$1,000 figures — **unresolved, needs operator confirmation before any pricing conversation uses either number**.
+
+**Two moves queued, different timing:**
+
+1. **Institutional/CROZ reframe pitch** — held until ArWa5G0 ships clean and Giovanni confirms it. Opens the long-form conversation without a price attached (calibrated question, not a pitch) — reframes the pipeline as a procurement/pitch-closing tool and introduces the CROZ own-brand angle as a "this could work for your own line too" idea. Full draft text kept in conversation history (2026-08-23 session), not duplicated here — ask if it needs retrieving.
+2. **LinkedIn content gift** — three ready-to-post Italian captions (K9 hood, Disc-O-Bed, general positioning), built from jobs already produced. No ask attached, can go out anytime, does not need to wait for the ArWa5G0 trigger the way the pricing conversation does — a pure gift ahead of any ask strengthens reciprocity for when the real conversation happens. Directly addresses the dossier's "19 followers, severe underperformance" finding.
+
+**Self-attack notes carried forward:** don't combine the two moves into one message — the gift should read as unconditional, not as a lead-in to the pitch. If sent close together, send the gift first, let it sit, then raise the pitch separately once the ArWa5G0 trigger actually fires.
+
 ### Correction — don't hand over the how-to for free (2026-07-26)
 
 Caught mid-session: the NGO partner's test is stalled at the review/flag step, and the immediate instinct was to offer a polished walkthrough video showing exactly how to use it. Wrong move — the partner's confusion at that one step is currently the only thing protecting the "maintenance/reliability" leverage above. Teaching them to self-serve past it, for free, before any scope conversation, gives away the exact thing that leverage depends on. This matters more than usual here specifically because Giovanni and his partner read as **not business-sophisticated** — a savvy operator would proactively ask about terms before leaning on a tool further; a naive one just keeps using what works once shown how, with no natural checkpoint ever firing on their side. The checkpoint has to be installed deliberately, not assumed.
