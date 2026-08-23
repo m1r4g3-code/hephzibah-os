@@ -287,6 +287,34 @@ Also requested a copy change: replace the end-card "Shop now at: https://seraman
 
 ---
 
+## Hardening Pass — Cross-Job Dedup Bug, Idempotency, Alert/Coverage Gaps (2026-08-21)
+
+Operator's "editorial plan until January" comment prompted a "higher bar" audit against coming recurring volume, naming three suspects from an old 2026-07-06 hardening note (scene 1/8 regen using an old generation mode, no idempotency guard, Sheet2 stale duplicate rows) and explicitly excluding social posting.
+
+**Two of the three named suspects were already fixed** — confirmed by reading current node configs, not assumed from the stale note:
+- Scene 1/8 regen submission (`NysDrlj3XSi7RDDo`) is byte-for-byte identical to Branch A's first-pass submission (`fygNTt3a5LphUJO7`) — same model, params, everything.
+- Sheet2 writes are all keyed `update`/`appendOrUpdate` on `["SCENE","JOB_ID"]`, never a bare append; `AH4d4awNiHliDToR`'s URL-map builder additionally sorts by `row_number` for last-write-wins protection. No exploitable stale-duplicate path exists.
+
+**The real, more serious gap was new, found via a direct read of `94ON9lonhDLNPc99` (SERAMAN Error Handler):** node `Clear Stale Dedup Rows` deleted every `status:"started"` dedup row (table `AN3YgyQOI1D8BG42`) on **any** workflow error anywhere in the SERAMAN system, with no JOB_ID or time-window scoping. At one-job-at-a-time test volume this rarely collided with anything. Under Giovanni's coming recurring/overlapping volume, one job's failure would routinely wipe every *other* concurrently in-flight job's duplicate-submission protection — meaning a redelivered/duplicate Tally webhook during that window would no longer be blocked, and the full pipeline (script + 8 images + 8 videos) would rerun and re-charge. **Fix:** added a `processed_at < now-3h` condition (matchType `allConditions`) so only genuinely stuck rows get cleared, not rows for jobs still legitimately in progress. Confirmed `lt` is a valid condition operator for the string column via `explore_node_resources` before writing it (ISO 8601 timestamps sort correctly as strings).
+
+**Bonus fix found while verifying the above:** `Notify Seraman` — the single Gmail node all 5 workflows' error alerts ultimately route through — had the same missing-`resource`/`operation` defect already confirmed twice this session as a real silent-send-failure (not a safe runtime default, per `get_node_types`). The validator flagged it as "pre-existing, can be intentional"; fixed anyway rather than trusting that caveat, since this is the system's entire failure-visibility backbone.
+
+**Idempotency guards added** (no pre-submit check existed anywhere; a crash-then-manual-retry before a sheet's STATUS flips to Done would resubmit and burn duplicate paid credits):
+- `fygNTt3a5LphUJO7` (Generate Videos): new `SERAMAN | Get Existing Video Results` → `SERAMAN | Skip Already-Submitted Scenes` inserted between `Scene-count` and `Sort1` — drops any scene already holding a non-empty, non-FAILED `VIDEO URL` for the job before the branch split into the two Kie submit nodes. `Scene-count`'s own expected-count (used by `All Videos Ready Gate`) is computed before the filter, so it still reflects the full original scene set.
+- `AH4d4awNiHliDToR` (Edit Videos): new parallel Sheet3 lookup (`SERAMAN | Check Existing Final Video` → `SERAMAN | Normalize Existing Check`) merged via a position-combine `Merge` node with the existing video-map output, gated by a new IF node. False (normal) branch reaches `SERAMAN | Render Final Video` completely unchanged; true (already-rendered) branch terminates in a new No-Op rather than reusing the existing success-path update chain, since that chain's node-reference expression (`$('SERAMAN | Extract Final Video URL')...`) would break on a path where that node never ran.
+- **Not applied** to the three Scene Approval regen-submit nodes (`Regen Submit (Scene 1/8)`, `Regen Submit (Middle Scenes)`, `Submit Image Regen`) — investigated directly rather than mechanically copying the same pattern. Regen is *supposed* to overwrite an existing (flagged-as-wrong) Sheet2 value, so "does a URL already exist" isn't a valid "already done" signal here the way it is for first-pass generation — there's no round/timestamp marker in the current schema to distinguish "this regen round already completed" from "the prior, now-flagged-wrong result is still sitting there." Forcing a guard without a clean signal risked a worse bug (silently skipping a legitimate correction Giovanni actually asked for) than the one being prevented. Left as-is; flagged here rather than silently dropped.
+
+**Also fixed:**
+- `R2uqd2tnN687vcuH` (Generate Images) and `NysDrlj3XSi7RDDo` (Scene Approval) had no `errorWorkflow` configured at all — any unhandled throw in either alerted no one. Both now point at `94ON9lonhDLNPc99`, matching the other 3 workflows.
+- Two more broken alert nodes in Scene Approval, same defect class as ones fixed earlier this session: `SERAMAN | Approval Confirmed Alert` and `SERAMAN | Send Video For Review` — correct `sendTo`/`subject`/`message`/credential, just missing `resource`/`operation`.
+- `SERAMAN | Get Sheet1 Scene Data` (Scene Approval) read all of Sheet1 unfiltered, relying on a downstream JS fallback (`!jobId || scene.JOB_ID === jobId`) that would match every job's rows if `jobId` ever came back falsy, and an unbounded read that grows with total historical scene rows as volume climbs. Added a direct `JOB_ID` filter matching the pattern used everywhere else in the pipeline.
+
+**Explicitly out of scope this pass** (real gaps, bigger structural decisions, flagged not fixed): no 429/rate-limit handling for Kie bursts under concurrent jobs; no credential-expiry monitoring for any of the 6 credentials in use (the Creatomate key already expired once, 2026-07-05); Anthropic script-gen `retryOnFail=true, maxTries=3` left as-is (pennies per retry vs. Kie's $0.30–$1+/clip, and auto-retry on a transient LLM failure is often desirable).
+
+Every change published and verified against a fresh fetch of the live workflow (not assumed from the update call's own response) before moving to the next — same discipline used all session. One real process note: `addNode` operations silently drop `executeOnce` (not a supported field on that op) — caught on the first new Sheets node via verification, had to be set separately via `setNodeSettings` on both new read nodes added this pass.
+
+---
+
 ## Ad Creative — Background Music Research (2026-07-20)
 
 Investigated whether to replace the current stock background track. Key findings:
