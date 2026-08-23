@@ -238,4 +238,4 @@ A separate OSINT-style dossier landed in the brain from another OS instance: [[2
 
 ## Wikilinks
 
-[[seraman]] · [[oba]] · [[n8n]] · [[claude-api]] · [[identity]] · [[2026-08-23-giovanni-deep-intel]]
+[[seraman]] · [[oba]] · [[n8n]] · [[claude-api]] · [[identity]] · [[2026-08-23-giovanni-deep-intel]] · [[aquatabs-medentech]]
