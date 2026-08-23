@@ -265,7 +265,25 @@ Separately, scenes 2 and 5 had genuine director feedback from Giovanni ("The alu
 
 Final video: `https://f002.backblazeb2.com/file/creatomate-c8xg3hsxdu/cc7b32fe-b81c-4ddd-87a1-5cd059510ca0.mp4`
 
-Not yet done: operator to send Giovanni a short follow-up on the completed Disc-O-Bed video (separate from the earlier message explaining the VO-field vs. checkbox distinction).
+Follow-up sent (2026-08-21) consolidated both threads into one message rather than risking contradiction with whatever had already gone out on Fiverr (no visibility into that thread from here): explained the correction box now handles any scene issue (wording or staging), not just VO text, and confirmed the Disc-O-Bed video was done with his note applied.
+
+### Giovanni's reply — two messages (2026-08-21)
+
+**Message 1** (general reaction to the fix + finished video):
+> I've seen both of them and I think the final product is excellent. There are still some small details, but as I said before, I sent you products that were difficult to produce so I could see how the system reacted. I'd definitely start testing with already-made products to see how it reacts. I see there are now two photos to upload. Let's see what happens. I'd say it's getting better and better. GREAT WORK. [...] I'm preparing the editorial plan until January. Let's see what happens.
+
+Also requested a copy change: replace the end-card "Shop now at: https://seraman.com/" with "Compra su Seraman.com" — "much cleaner and more direct."
+
+**Message 2** (sent after the correction-mechanism update went live):
+> When I saw the scenes, I corrected it by writing it in the box. I hope I did it correctly. Did you intervene at this point, or was it regenerating everything on its own? So now I can tell it what to do if I find a scene that's incorrect? As soon as I get back, I'll try to generate the video of the water purification tablets, which had several things wrong.
+
+**Read on this exchange:**
+- Confirms he deliberately stress-tested with hard products on purpose ("difficult to produce so I could see how the system reacted") and is now satisfied enough to move to normal production — a real trust milestone, not just politeness ("GREAT WORK" + noticing small remaining details unprompted).
+- **"Editorial plan until January"** is the load-bearing sentence — it signals recurring content volume planned out ~4-5 months, which is exactly the retainer-shaped opening the pricing note above has been waiting for ("reprice future scope with ROI framing," never renegotiate delivered work). Worth raising the long-form/retainer conversation soon, while he's expressing satisfaction — waiting risks him settling into "this is just free/uncapped" before a boundary is set. See [[project_giovanni_negotiation]] memory.
+- **"Water purification tablets"** is almost certainly Aquatabs — the product flagged in standing memory as possibly already reused for an NGO context without new scope being agreed. Not raised with Giovanni here (would be a bad-faith read on a message where he's happy and being transparent, and there's no confirmation yet it's the same use case) — just worth the operator watching for when this job actually runs, and factoring into the scope conversation above rather than reacting to this message in isolation.
+- His question ("did you intervene, or was it regenerating on its own?") got an honest answer: yes, automatic on our end for interpreting his note; separately flagged that this specific job hit an unrelated one-time Kie-provider hiccup needing manual resubmit, unconnected to how he used the box.
+
+**Fixed same session:** end-card CTA text changed from "Shop now at: https://seraman.com/" to "Compra su Seraman.com" in the Creatomate render template (`AH4d4awNiHliDToR`, node `SERAMAN | Render Final Video`, element `Text-BZZ`). Published, verified byte-exact against the rest of the JSON body (only that one text field changed).
 
 ---
 
