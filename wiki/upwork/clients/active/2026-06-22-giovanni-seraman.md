@@ -37,11 +37,11 @@ Full automated pipeline — Tally Form → n8n → Claude AI (Italian script) �
 
 | Milestone | Amount | Status |
 |---|---|---|
-| Milestone 1 | $1,000 | Delivered — 5-star review |
-| Milestone 2 | $1,000 | In progress |
+| Milestone 1 | $500 | Delivered — 5-star review |
+| Milestone 2 | $500 | In progress |
 | Long-form pipeline (5–8 min) | ~$1,500 (agreed floor, not a fixed quote) | Not started |
 
-**Net reality per $1,000 milestone:** Fiverr takes 20% → $800 → 50/50 with Oba → **$400 each.** The $1,500 figure is an agreement between Emmanuel and Oba that no future Giovanni job goes below $1,500 — not a price Giovanni has accepted.
+**Net reality (M1+M2 combined, $1,000 total):** Fiverr takes 20% off the $1,000 total → $800 → 50/50 with Oba → **$400 each**, across both milestones combined — not $400 each per milestone. (Correction 2026-08-23: this section previously read $1,000 per milestone, conflicting with the actual $500/$500 figures tracked in `wiki/outreach/contacts/giovanni.md` — confirmed by the operator as $500 per milestone, $1,000 total.) The $1,500 figure is an agreement between Emmanuel and Oba that no future Giovanni job goes below $1,500 — not a price Giovanni has accepted.
 
 **Pricing note (2026-07-06):** This build is worth $5K–8K at market. Underpricing accepted as cost of the first flagship case study. Decision: never renegotiate delivered work; reprice future scope (long-form, retainer) with ROI framing. Giovanni signals budget pressure from his own partners ("I just have to keep my partners happy" — Jul 05), so any price move must arm him with ROI numbers he can show them, not squeeze him.
 

@@ -146,7 +146,9 @@ Applying [[strategic-frameworks]] to this relationship: [[poker-under-uncertaint
 
 ### Negotiation posture — institutional reframe + no-strings gift (2026-08-23)
 
-Full six-framework pass run against current state (dossier + this file + this session). Key reads: sophistication corrected upward (see update above); ArWa5G0 trigger has not fired yet; real conflict between this file's $500/$500 milestone figures and the Upwork client file's $1,000/$1,000 figures — **unresolved, needs operator confirmation before any pricing conversation uses either number**.
+Full six-framework pass run against current state (dossier + this file + this session). Key reads: sophistication corrected upward (see update above); ArWa5G0 trigger has not fired yet.
+
+**Resolved (2026-08-23):** the M1/M2 dollar conflict was a documentation error, not a real discrepancy. Confirmed by the operator: $500 per milestone, $1,000 total for M1+M2, Fiverr's 20% cut applies to the $1,000 total (not per milestone) → $800 net → $400 each after the Oba split. The Upwork client file (`wiki/upwork/clients/active/2026-06-22-giovanni-seraman.md`) had mistakenly logged $1,000 per milestone — corrected there to match this file's figures.
 
 **Two moves queued, different timing:**
 
