@@ -57,6 +57,7 @@ Six total workflows. Approval gate: social publishing only fires after explicit 
 
 | Date | Contact | Outcome | Follow-up |
 |------|---------|---------|-----------|
+| 2026-08-26 | Giovanni (async, email) | Aquatabs corrected video shipped and delivered. Real K9 Tourniquet job (M1MozPE) ran through the pipeline for real — images clean, video blocked on Kie credit exhaustion. Two real production bugs found and fixed (row-collision on new-job writes, stale caption/image inheritance). Full detail in [[giovanni]] and `wiki/upwork/clients/active/2026-06-22-giovanni-seraman.md`. | Awaiting Giovanni's confirmation Aquatabs is clean (retainer-conversation trigger); Kie top-up needed before K9 video/30-product launch can proceed. |
 
 ## Wikilinks
 
