@@ -298,6 +298,48 @@ Also closed the loop on the stray "4 posts scheduled" email himself: "no problem
 
 **Prediction logged** (see `prediction_log.md`): given the honest/decoupled framing and his 2026-07-29 precedent of responding generously to direct, no-pressure asks, expect a positive or at minimum warm-and-understanding response, low risk of relationship damage regardless of outcome. Resolve on his reply.
 
+### Negotiation posture — referral/pitch timing, full six-framework pass (2026-09-08)
+
+Same day as the caption-link fixes, JOB PR40y65 (real, verified end-to-end, zero flagged scenes), Oba asked directly whether it was time to pitch Giovanni for expansion and ask him to connect us to his network. Ran the standing six frameworks explicitly rather than answering on instinct — full reasoning below, verdict: **not yet, and a referral ask specifically would be the wrong move right now, not just mistimed.**
+
+- **Chess:** strong position today (proactive same-day bug catches, verified, on a job he called correct) — but attaching any ask to it repeats the exact mistake this relationship has already paid for three times (2026-07-26, 2026-08-26, 2026-09-04): a win and an ask land as one conditional transaction when adjacent in time.
+- **Poker — new, directly relevant evidence:** earlier the same day, Oba tested personal rapport (the Lagos-friend warmth) and Giovanni's reply engaged only the technical content, zero acknowledgment of the personal opening (see negotiation posture update above / `project_giovanni_negotiation.md`). A referral ask is a *relational/social-capital* ask, not a transactional one — he just demonstrated, hours earlier in the same thread, that he doesn't engage on that register over this channel. This is fresh, direct evidence specifically against a referral-style ask right now, distinct from the general "don't stack asks on wins" timing rule.
+- **BATNA:** still weak — Giovanni remains the only near-term revenue path (no other client work moving). Weak BATNA argues for less risk-tolerance on a move that could read as opportunistic, not more.
+- **OODA:** no real external clock. The only urgency is internal (wanting to "regain dignity" after underpricing M1/M2) — acting on our own pressure rather than a genuine trigger is the same pattern already flagged as a mistake earlier in this build.
+- **Voss:** when the real moment comes, it's a calibrated question (already proven once, 2026-09-04: "are you thinking about doing this for other brands too?"), never a direct ask.
+- **Red-team:** best case of asking now is a low-commitment non-answer that spends today's goodwill for nothing; worst case, a client who already catches exact dollar amounts and link-format details reads it as cashing in — right after he told us, unprompted and in his own words, the actual mechanism he wants: "When I need support... I'll get in touch. When I need to optimize and automate a business process, I'll definitely talk to you about it." That's client-initiated escalation, stated for free. Pitching him now overrides a signal he just handed us.
+
+**Verdict:** let today's win stand alone, no attachment. The real trigger (his promised editorial-plan file, Dec/Feb cadence, first mentioned 2026-08-27) is still unfired as of this entry — no evidence it's landed since 2026-09-02. The one safe move available, and not today: a plain, no-pressure nudge on that file, days from now, separated from this win — a follow-up on something he said he'd send, not a pitch. That's consistent with his stated preference for initiating expansion himself.
+
+**Correction, same day, hours later — the sizing data actually already arrived, and sat unseen for 4 days.** Oba surfaced a screenshot of `video_09_10.xlsx`, which Giovanni had sent ~4 days earlier (around 2026-09-04) and never got shared into this working context — a real instance of the exact gap `feedback_vault_discipline` exists to catch. This is a concrete production schedule, not the Dec/Feb file referenced elsewhere (that one's status is still unknown) — 16 products across September/October, ~2/week, matching his 2026-09-06 message ("about two a week until the end of October") exactly:
+
+- **September:** Hikmicro Habrok 4K (shipped 2026-09-02, job `xV6dzDd`), Pantofola pedalabile (BCB International), Cappello lana riflessi (G.I. wool cap), Armadillo Merino Panther, Gatorz Marauder, Disc-O-Bed, PAX Wow (shipped 2026-09-08, job `PR40y65`), Cappello Merino Kepak.
+- **October:** Infield (McKid Systema), Tripiede Vertex carbon, Multi tool, Hikmicro Lynx thermal monocular, Vortex Razor UHD, Armadillo Merino Lynx, Calze Merino, Collare Merino.
+
+Each row includes the real product link — meaning the "no Product Link field on Tally" gap fixed earlier today wasn't even necessary for these 16 if this file had been read in time; it independently confirms the *shape* of the fix was right (Giovanni supplying real per-product URLs directly) via a channel that already existed.
+
+**Effect on the verdict above: precise, not blanket.** The timing reasoning (don't stack an ask on today's win; he told us he initiates himself) is unchanged — this file doesn't touch that. What it does change: the *sizing* precondition that was blocking a grounded retainer conversation is now satisfied for real — not a future ask, already-in-hand data. When the right moment comes (his initiation, or a well-separated nudge), the conversation can cite these exact 16 products and this exact cadence instead of a vague reference to "volume." Materially stronger position than described above, just not a reason to move today.
+
+### Long-form pitch — corrected draft, ready but not sent (2026-09-08)
+
+The 2026-08-23 draft (institutional/CROZ deal-closing framing) was invalidated by his own 2026-09-02 funnel explanation and never rewritten. Drafted a corrected version, calibrated question not a pitch, no price attached — same pattern that worked 2026-09-04. Saved here in full so it doesn't sit only in conversation history (the video_09_10.xlsx near-miss above is exactly why — draft text left un-persisted before has already caused one real loss).
+
+**Framing logic:** doesn't contradict his stated funnel (video = traffic, Google Ads = sales) because it's positioned as a third function — institutional/partner credibility — which he discovered himself via the real 2026-09-04 distributor-approval win, not one we're inventing. Grounded in something that actually happened, not a hypothetical.
+
+**Full draft text:**
+
+> Ciao Giovanni,
+>
+> Something's been on my mind since you mentioned getting the distributor's approval using the Habrok 4K video — that wasn't something we originally built the short videos for, but it clearly worked for a purpose beyond social.
+>
+> It made me think: a short video is great for the traffic/interest side of things, but for a conversation like that — a distributor, a partner, someone who needs to actually evaluate the product before signing off — a longer, more thorough piece (5-8 minutes, going deeper on certifications, specs, real use cases) might serve that specific use case even better than repurposing a short one.
+>
+> Is that something that would actually be useful for you — for distributor conversations, partner decks, that kind of thing? Not asking to build anything yet, genuinely just curious whether that's a real need or whether the short-form is already doing everything you need there.
+>
+> Grazie mille
+
+**Not yet sent.** Held for the 2026-09-22 checkpoint (or sooner if he initiates first), separated from the 2026-09-08 wins, possibly bundled with a light Dec/Feb-file nudge if that still hasn't landed by then.
+
 ## Wikilinks
 
 [[seraman]] · [[oba]] · [[n8n]] · [[claude-api]] · [[identity]] · [[2026-08-23-giovanni-deep-intel]] · [[aquatabs-medentech]] · [[project_giovanni_negotiation]]
