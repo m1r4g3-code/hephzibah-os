@@ -33,14 +33,24 @@ year: 2026
 | Pay all Miva fees (₦175k remaining) | September 2026 (deferred — Cyrus's call) | ⏳ |
 | MacBook Pro M2 (fairly used) | Q2 2026 | ⏳ |
 | Move to Yaba | Q3 2026 | ⏳ |
-| $10,000 total this year | Dec 2026 | ⏳ |
+| $10,000 total this year | Dec 2026 | ⏳ ~$600 / $10,000 (6%) — see breakdown below |
 
-**Current situation (updated 2026-07-19):**
-- Monthly income: Under $300 equivalent (inconsistent)
-- Savings: ₦0 — Oba's $400 gift (₦552k) fully spent on iPhone 14 Pro (₦610k, went ₦140k over the ₦470k target), mum repayment, and phone repair
-- Debt: Miva fees ₦175k (deferred to Sept), ₦110k phone balance (14 Pro, ₦610k total − ₦500k paid), ₦30k still owed to mum (doubled 30k→60k promised, only 30k paid so far)
-- No cash currently for food/living — new income needs to cover this gap first
-- Phone: Replaced — iPhone 14 Pro (balance owed). Oba separately bought himself an iPhone 14 (not Pro) with his own money.
+**Current situation (updated 2026-09-09 — partial update only, see flags below):**
+- Monthly income: last hard number was under $300 equivalent as of 2026-07-19 (54 days stale) — no new baseline given this update
+- **New income event (reported 2026-09-09, exact send date unconfirmed):** Giovanni sent €200 unprompted, in response to the honest/decoupled tool-renewal ask sent 2026-09-04 (see [[project_giovanni_negotiation]] — this resolves PREDICTION-005 in `prediction_log.md`, positive outcome). Converted with transfer fees, **₦155k landed.** Operator confirmed this counts toward the $10k-this-year target (2026-09-09).
+
+**$10,000 target — running tally, counted as net-to-Emmanuel (what actually lands, not gross client billing that gets split with Oba):**
+- SERAMAN M1+M2: $1,000 gross → after Fiverr's 20% and the 50/50 Oba split → **~$400 net**
+- Giovanni's €200 gift: landed undivided (personal gift, not project fee subject to the split) → **~$200 USD-equivalent (approximate — no exact EUR/USD rate given, correct this if you have the real figure)**
+- **Running total: ~$600 / $10,000 (6%), with ~3.5 months left in the year**
+- Not yet counted: long-form pipeline ($1,500, not started), any future SERAMAN retainer, and anything from Akash Jain / Roger Jiang / the other Fiverr OSINT leads — all still prospects, not closed.
+- **Debt: ₦110k iPhone 14 Pro vendor balance — now fully paid off**, using the Giovanni money. Phone debt is cleared as of this update.
+- **New expense:** Claude Pro renewal — joint contribution, Oba ₦15k + Emmanuel ₦11k = ₦26k total.
+- **Gap resolved:** of the ~₦34k left after the phone payoff and Claude Pro share, ₦4k went to a friend who needed help paying for a video project (he asked for ₦5k, operator sent ₦4k). **₦30k is real, current cash on hand** as of this update — first actual savings logged all year.
+- **Miva fees (₦175k):** operator now expects to defer the semester again until financially stable — do not treat the "September 2026" deadline as live anymore; no new target date set.
+- ₦30k owed to mum: no update given this pass, still showing the 2026-07-19 figure until confirmed otherwise.
+- **Upwork channel — real movement, not just a target line anymore:** Oba has started self-funding Upwork Connects out of his own money, actively investing in Upwork as a channel. Directly advances the existing "Get Grey card — unlock Upwork properly" line below — worth checking in on as a live thread, not a someday-intention.
+- Phone: iPhone 14 Pro, now fully owned (balance cleared 2026-09-09). Oba separately owns an iPhone 14 (not Pro), his own money.
 
 **What needs to happen:**
 - Land 2–3 consistent international clients ($500–1,500/project each)
