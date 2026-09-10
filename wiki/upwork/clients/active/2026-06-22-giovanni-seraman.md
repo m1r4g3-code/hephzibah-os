@@ -641,6 +641,24 @@ Giovanni asked why the presenter looks "static" across videos and whether the sw
 
 **One line to remember for future sessions:** the season is manual. When Giovanni signals a season change (as he did for the T-shirt), update the single `CURRENT_SEASON` constant in `SERAMAN | Select Presenter Variant` — same process as any other live prompt/config change this build has made.
 
+## Full end-to-end audit of the outfit rotation feature, requested directly ("leave no stone unturned") — 4 real gaps found and fixed (2026-09-10, same day)
+
+Went through every new node's failure modes systematically rather than trusting the passing test suite alone. Found and fixed:
+
+1. **Reliability regression, most severe:** the new selection logic added two hard Google Sheets dependencies into the critical path of every future job, with zero retry protection — in a pipeline that has already suffered one real transient Sheets 503 that broke a live submission (2026-09-08). Before this feature, the reference image was a hardcoded constant with no external dependency at this stage. Fixed: `retryOnFail`/`maxTries: 3`/`waitBetweenTries: 2000` added to both `SERAMAN | Get Presenter Variants` and `SERAMAN | Update Variant Last Used`, matching the exact remediation pattern already proven for this exact class of failure elsewhere in this build.
+
+2. **Silent-stall risk:** if `Presenter Variants` is ever emptied or misconfigured, n8n's default behavior on a 0-item read is to silently skip every downstream node — meaning `Generate Script` would simply never run and the job would stall with zero alert, bypassing the explicit error-throw already written into `Select Presenter Variant` (which would never get the chance to execute). Fixed: `alwaysOutputData: true` added to `Get Presenter Variants`, so an empty result still produces a synthetic item that reaches the selection code and triggers the loud, alerting error instead of a silent no-op.
+
+3. **Season matching didn't trim whitespace** — a future sheet row with a stray leading/trailing space in the season column would silently drop out of the rotation pool with no error signal, not loudly. Fixed with `.trim()` on both the season and active-flag string comparisons.
+
+4. **No NaN protection on `last_used` date parsing** — if Google Sheets ever reformats a stored ISO timestamp into its own date serial number, `new Date(...).getTime()` returns NaN, which corrupts the rotation sort unpredictably instead of failing cleanly. Fixed with a `safeTime()` helper that treats any unparseable value as "never used" (0) — same safe-default philosophy as everywhere else in this pipeline.
+
+5. **Design correction, found during the audit, not a bug in the original code:** `Update Variant Last Used` is pure bookkeeping (which variant gets picked least recently) — it doesn't gate whether the job can proceed, since the actual selection already happened one step earlier and `Restore Job Fields` doesn't even read this node's own output. Left as blocking-on-failure by default would mean a persistent Sheets hiccup on a cosmetic timestamp write could stall real video generation for no good reason. Fixed: `onError: continueRegularOutput` added, so a genuine failure here (after retries) degrades to "rotation fairness slightly imperfect this one time," never "job blocked."
+
+**Deliberately not fixed, low severity, documented not engineered around:** concurrent job submissions could theoretically both read `Presenter Variants` before either writes back its `last_used`, causing two jobs in a row to pick the same variant instead of strict rotation. Given SERAMAN's actual submission cadence (a few jobs a day, not concurrent bursts), a real race is unlikely, and the worst case is just reduced variety for one pair of videos, not a functional failure — engineering a lock for this would add real complexity against a low-probability, low-impact scenario.
+
+Republished, re-confirmed `versionId === activeVersionId` via full byte-diff re-fetch (all four fixes present exactly as intended, connections still clean with no stale/duplicate path to `Generate Script`), then re-ran the exact deployed selection code locally against 5 new audit-specific edge cases (whitespace-padded season, garbage date value, whitespace-padded active flag, the synthetic empty-item case, mixed boolean/string active values) — all 5 passed.
+
 ## Engagement research — what actually moves views, and a real analytics-workflow option found (2026-09-08, same day)
 
 Operator asked what would grow views/engagement on the now-live platforms, and whether a future analytics workflow is worth pitching. Researched current (2026) ranking mechanics rather than relying on stale priors — algorithms shifted materially since this pipeline's captions/hashtags were last tuned.
