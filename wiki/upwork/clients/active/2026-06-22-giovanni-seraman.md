@@ -617,6 +617,30 @@ Told Giovanni honestly: real publish confirmed, ~2 minutes end to end, and gave 
 
 Giovanni independently confirmed the same night, unprompted: "I was just about to write to you about it, because I've seen it on all the platforms. Fantastic!!"
 
+## Presenter outfit rotation — built, tested, and shipped live (2026-09-09/10)
+
+Giovanni asked why the presenter looks "static" across videos and whether the sweater could change color; confirmed via the live `SERAMAN | Generate Script` prompt (workflow `bIDbAPsBbK9wh0c6`) that this was by design — one fixed reference photo is "the absolute authority for subject appearance," reused on every job, so every video has literally always shown the same photo. Giovanni confirmed the safe, per-video interpretation (different sweater color each video, not a mid-scene change) and added a real seasonal requirement: a T-shirt once weather warms up.
+
+**Generated 6 new reference-image variants via Kie AI (nano-banana-pro, edit-style generation against the existing reference photo)**, reusing the exact technique already proven best for background/identity preservation during the 2026-07-29 sachet/blister-pack investigation: black, dark green, and charcoal crew-neck knit sweaters (winter), deep red sweater (Christmas), grey T-shirt and olive polo (summer). Total cost: 108 Kie credits across 6 generations. Verified every variant by downloading and visually comparing against the original — face, pose, and Seraman store background held consistent in all 6; one real, honestly-reported deviation: the AI-generated variants share a slightly wider framing than the original photo's tighter crop (consistent with each other, just not with the original) — judged acceptable rather than blocking, since it doesn't affect within-video consistency and arguably reinforces the "less static" goal.
+
+**Persisted all 6 variants to permanent storage** (the generation service's URLs are temp links by design) via Google Drive upload + public sharing, using the existing Drive credential already connected to this n8n instance. Verified each new link resolves correctly (303 redirect to binary content, same behavior as the original reference URL) before considering it done.
+
+**Created a new `Presenter Variants` tab** in the same tracking spreadsheet (`variant_id`, `image_url`, `season`, `label`, `active`, `last_used`), populated with all 7 rows (6 new + the original navy sweater, relabeled as the default winter entry rather than regenerated — no need to recreate what already exists).
+
+**Wired live selection into the production pipeline.** Root cause of the "static" appearance: `SERAMAN | Append Script in sheet` hardcoded the same reference-image URL as a literal string, for every scene, every job, forever. Fixed by inserting 4 new nodes inline on the connected path between `SERAMAN | Setup Job Accumulator` and `SERAMAN | Generate Script` (deliberately not a disconnected side-branch — confirmed `Generate Script`'s prompt reads bare `{{ $json.Product_Image }}` etc. from its immediate predecessor, so anything inserted upstream has to explicitly preserve those fields or the script generation step breaks):
+- `SERAMAN | Get Presenter Variants` — reads all rows from the new sheet
+- `SERAMAN | Select Presenter Variant` — filters to active rows matching a manually-set `CURRENT_SEASON` constant (currently `'winter'`; deliberately not auto-computed from calendar dates, matching how Giovanni actually communicates seasonal needs — he tells us directly, as he did for the T-shirt), picks whichever active match has the oldest `last_used` (true rotation, not random — guarantees no back-to-back repeats), and re-attaches the original job-level fields (`JOB_ID`, `Product_Image`, etc.) alongside the new `SelectedReferenceImage`
+- `SERAMAN | Update Variant Last Used` — writes the rotation timestamp back to the sheet
+- `SERAMAN | Restore Job Fields` — re-pulls the full merged object explicitly (the Sheets update node's own output would otherwise overwrite/lose the job fields one more time)
+
+`SERAMAN | Append Script in sheet`'s `REFERENCE IMAGE` column changed from the hardcoded string to `={{ $('SERAMAN | Restore Job Fields').item.json.SelectedReferenceImage }}`.
+
+**Verified before trusting it, same discipline as every other live change this build:** re-fetched the workflow after publishing and confirmed `versionId === activeVersionId` (first publish response reported success but the fetch showed the new version wasn't actually live yet — caught and fixed by publishing again and re-confirming, not by trusting the response). Extracted the exact deployed selection code and ran it locally against realistic mock data: cold-start selection, rotation after one use, inactive-row exclusion, season filtering, job-field preservation, and the empty-pool case throwing a clear error instead of failing silently — all 6 cases passed.
+
+**Real cost note:** every future video, not just the existing catalog, now automatically gets outfit variety for pennies of Kie credit per new reference image needed — the same low-cost pattern makes future Italian→English localization economics (queued for Giovanni's January checkpoint) also cheap, since it reuses the same edit-style generation approach.
+
+**One line to remember for future sessions:** the season is manual. When Giovanni signals a season change (as he did for the T-shirt), update the single `CURRENT_SEASON` constant in `SERAMAN | Select Presenter Variant` — same process as any other live prompt/config change this build has made.
+
 ## Engagement research — what actually moves views, and a real analytics-workflow option found (2026-09-08, same day)
 
 Operator asked what would grow views/engagement on the now-live platforms, and whether a future analytics workflow is worth pitching. Researched current (2026) ranking mechanics rather than relying on stale priors — algorithms shifted materially since this pipeline's captions/hashtags were last tuned.
